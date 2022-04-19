@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+#header {
+    position: fixed;
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0);
+    /* border-bottom: 0.05px solid #ccc;  */
+}
+
+#header #nav {
+    /* position: relative; */
+    text-align: right;
+}
+
+#nav .user-management {
+    position: relative;
+}
+
+#nav .login {
+    position: relative;
+}
+
+#header #nav > li > a {
+    color: #fff;
+    padding: 0 16px;
+    border-left: 1px solid #ccc;
+    text-decoration: none;
+    line-height: 60px;
+    display: block;
+}
+
+#header #nav li:hover a {
+    color: rgb(0, 96, 196);
+    background-color: #fff;
+}
+
+#logo {
+    align-items: center;
+    line-height: 60px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+#nav > li {
+    display: inline-block;
+    float: left;
+}
+
+#nav .fa-solid {
+    margin-right: 4px;
+}
+
+#nav .nav-user-management li a {
+    display: block;
+}
+
+#nav .nav-user-management {
+    text-align: left;
+    position: absolute;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    background-color: #fff;
+    width: 370px;
+    height: 320px;
+    padding: 20px;
+    text-align: left;
+    animation: userManagement ease 0.5s;
+}
+
+#nav .user-management-header {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0771c4;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+#nav .user-management-sub-header {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 7px;
+    line-height: 1.6;
+}
+
+#nav .user-management-label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#nav .user-management-input {
+    height: 34px;
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #bfbfbf;
+    margin-bottom: 20px;
+}
+
+#nav .user-management-select {
+    float: right;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #00874d;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#nav .user-management-select:hover {
+    background-color: #006e3e;
+}
+
+#nav li:hover .nav-user-management {
+    display: block;
+}
+
+#nav .hotline {
+    position: relative;
+}
+
+#nav .hotline-header {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0771c4;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+#nav .hotline-select {
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 380px;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    animation: userManagement ease 0.5s;
+}
+
+#nav .hotline-sub-header {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 7px;
+}
+
+#nav .number-1 {
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+#nav .number-2 {
+    line-height: 1.6;
+    font-size: 15px;
+    padding-top: 8px;
+}
+
+#nav li:hover .hotline-select {
+    display: block;
+}
+
+#nav .hotline-select li {
+    display: block;
+}
+
+#nav .login-select {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+#nav .register {
+    color: #0064c8;
+    background-color: #fff;
+    margin-top: 5px;
+    border: none;
+    line-height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#nav .login-btn {
+    margin-top: 10px;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #00874d;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#nav .or {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+#slider {
+    /* margin-top: 60px;  */
+    position: relative;
+    padding-top: 50%;
+    background: url('/Car-rentals/assets/img/ha-giang.png') top center / cover no-repeat;
+}
+
+#slider .content {
+    position: absolute;
+    bottom: 250px;
+    top: 250px;
+    background-color: #fff;
+    width: 1050px;
+    max-width: calc(100% - 32px);
+    border-radius: 5px;
+    height: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+} 
+
+#slider .content-select {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    /* justify-content: space-between; */
+}
+
+#slider .fa-solid {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.pick-up-location,
+.drop-off-location,
+.pick-up-time,
+.drop-off-time {
+    margin-left: 8px;  
+}
+
+.pick-up-location-input,
+.drop-off-location-input,
+.pick-up-time-input,
+.drop-off-time-input {
+    font-size: 18px;
+    height: 56px;
+    width: 170px;
+    border: none;
+    margin: 0 10px;
+    outline: none;
+}
+
+#slider .search-wrapper {
+    background-color: rgb(248, 174, 0);
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    line-height: 56px;
+    width: 12%;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#slider .search {
+    display: block;
+    padding: 12px 0;
+    line-height: 56px;
+    height: 56px;
+    text-decoration: none;
+    color: rgb(72, 72, 72);
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.register-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-modal .register-container {
+    position: relative;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    background-color: #fff;
+}
+
+.register-modal .register-content {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.register-modal .register-header {
+    height: 66px;
+    background-image: linear-gradient(90deg, #fff,rgb(226, 159, 36));
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 25px;
+    padding-left: 20px;
+    color: #0064c8;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.register-modal .register-close {
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    padding: 8px 16px;
+    color: #000;
+    cursor: pointer;
+}
+
+.register-modal .register-close:hover {
+    /* background-color: #fff; */
+    color: #0064c8;
+}
+
+.register-modal .register-introduce {
+    width: 58%;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+.register-modal .register-intro {
+    position: relative;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.register-modal .register-intro::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    display: block;
+    width: 450px;
+    height: 1.5px;
+    background-color: rgb(145, 142, 142);
+}
+
+.register-modal .password-intro {
+    padding: 20px;
+    font-size: 16px;
+}
+
+.register-modal .password-order,
+.register-modal .password-intro-label {
+    display: block;
+}
+
+.register-intro .fa-circle-check {
+    font-size: 14px;
+    color: #0064c8;
+    padding-left: 8px;
+    padding-right: 6px;
+}
+
+.register-modal .password-intro-label .fa-circle-check {
+    padding-left: 8px;
+    color: rgb(46, 43, 43);
+    padding-right: 6px;
+    font-size: 14px;
+}
+
+.register-modal .register-intro-label {
+    display: block;
+}
+
+.register-modal .password-request {
+    padding-left: 48px;
+}
+
+.register-modal .registration-frame {
+    width: 42%;
+    padding: 20px;
+}
+
+.register-modal .register-frame-header {
+    color: #0064c8;
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.register-modal .register-frame-label {
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.register-modal .register-frame-input {
+    width: 100%;
+    height: 34px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #bfbfbf;
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+
+.register-modal .about {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.register-modal .register-btn {
+    margin-top: 10px;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #00874d;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    float: right;
+}
+
+.register-modal.open {
+    display: flex;
+}
+
+#contain {
+
+}
+
+#common {
+
+}
+
+#related {
+
+}
+
+#footer {
+
+}
+
+
+@keyframes userManagement {
+   from {
+       opacity: 0;
+   }
+   to {
+       opacity: 1;
+   }
+}
