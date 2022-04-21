@@ -98,37 +98,39 @@
 
                 <img src="./assets/img/ha-giang.png" alt="">
             </div>
+            <form action="test.php" method = "get">
             <div class="content">
                 <div class="content-select">
                     <div class="pick-up-location">
                         <label for="pu-input">
                             <i class="fa-solid fa-location-dot"></i>
                         </label>
-                        <input id="pu-input" type="text" class="pick-up-location-input" placeholder="Địa điểm lấy xe">
+                        <input id="pu-input" type="text" name = "pickUp" class="pick-up-location-input" placeholder="Địa điểm lấy xe">
                     </div>
                     <div class="drop-off-location">
                         <label for="do-input">
                             <i class="fa-solid fa-location-dot"></i>
                         </label>
-                        <input id="do-input" type="text" class="drop-off-location-input" placeholder="Địa điểm trả xe">
+                        <input id="do-input" type="text" name ="dropOff" class="drop-off-location-input" placeholder="Địa điểm trả xe">
                     </div>
                     <div class="pick-up-time">
                         <label for="pu-time-input">
                             <i class="fa-solid fa-calendar-days"></i>
                         </label>
-                        <input id="pu-time-input" type="text" class="pick-up-time-input" placeholder="Thời gian lấy xe">
+                        <input id="pu-time-input" type="text" name = "pickUpDate" class="pick-up-time-input" placeholder="Thời gian lấy xe">
                     </div>
                     <div class="drop-off-time">
                         <label onclick="openCalendar()" for="do-time-input">
                             <i class="fa-solid fa-calendar-days"></i>
                         </label>
-                        <input id="do-time-input" type="text" class="drop-off-time-input" placeholder="Thời gian trả xe">
+                        <input id="do-time-input" type="text" name = "dropOffDate" class="drop-off-time-input" placeholder="Thời gian trả xe">
                     </div>
                 </div>
                 <div class="search-wrapper">
-                    <a href="" class="search" >Tìm chuyến</a>
+                    <button type = "submit" class="search">tìm chuyến</button>
                 </div>
             </div>
+            </form>
         </div>
 
         <div id="contain">
