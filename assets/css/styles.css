@@ -241,6 +241,7 @@ html {
     background-color: #fff;
     width: 1050px;
     max-width: calc(100% - 32px);
+    margin: 0 auto;
     border-radius: 5px;
     height: 56px;
     left: 50%;
@@ -256,33 +257,51 @@ html {
     padding-left: 10px;
     display: flex;
     align-items: center;
-    margin-right: auto;
+    width: 88%;
+    /* margin-right: auto; */
     /* justify-content: space-between;*/
 }
 
 #slider .fa-solid {
+    width: 12%;
     font-size: 20px;
     padding-left: 10px;
 }
 
 .pick-up-location,
-.drop-off-location,
+.drop-off-location {
+    margin-left: 8px;  
+    color: #000;
+    width: 24%;
+}
+
 .pick-up-time,
 .drop-off-time {
     margin-left: 8px;  
-    color:rgb(0, 96, 196);
+    color: #000;
+    width: 26%;
 }
 
-.pick-up-location-input,
-.drop-off-location-input,
+
 .pick-up-time-input,
 .drop-off-time-input {
     font-size: 18px;
     height: 56px;
-    width: 170px;
+    width: 100%;
     border: none;
     margin: 0 10px;
     outline: none;
+    padding-left: 8px;
+}
+
+::-webkit-calendar-picker-indicator {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 10px;
+    line-height: 56px;
+    display: block;
+    filter: invert(0);
 }
 
 #slider .search-wrapper {
@@ -296,7 +315,22 @@ html {
     border-top-right-radius: 5px;
 }
 
+#do,
+#pu {
+    border: none;
+    height: 56px;
+    width: 75%;
+    outline: none;
+    margin: 0 10px;
+    font-size: 18px;
+    padding-left: 8px;
+    cursor: pointer;
+}
+
 #slider .search {
+    background-color: rgb(248, 174, 0);
+    width: 100%;
+    border: none;
     display: block;
     padding: 12px 0;
     line-height: 56px;
@@ -305,6 +339,8 @@ html {
     color: rgb(72, 72, 72);
     font-weight: bold;
     line-height: 1.6;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .register-modal {
@@ -317,6 +353,7 @@ html {
     display: none;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .register-modal .register-container {
@@ -325,6 +362,7 @@ html {
     max-width: calc(100% - 32px);
     min-height: 200px;
     background-color: #fff;
+    animation: show_register ease 0.4s;
 }
 
 .register-modal .register-content {
@@ -335,7 +373,7 @@ html {
 
 .register-modal .register-header {
     height: 66px;
-    background-image: linear-gradient(90deg, #fff,rgb(226, 159, 36));
+    background-image: linear-gradient(90deg, #fff,rgb(248, 174, 0));
     font-size: 20px;
     font-weight: bold;
     padding-top: 25px;
@@ -489,4 +527,13 @@ html {
    to {
        opacity: 1;
    }
+}
+
+@keyframes show_register {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
 }

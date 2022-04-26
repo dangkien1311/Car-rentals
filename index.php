@@ -8,13 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
-    <!-- <script>
-        setInterval(function(){
-    open("https://beta.choibaidoithuong.net/wp-content/uploads/2021/01/avatar-yua-mikami.jpg","_blanket");
-            
-    alert('tang em "Kien" con chym');
-},60000);
-    </script> -->
 </head>
 <body>
     
@@ -81,7 +74,7 @@
                             <i class="fa-solid fa-key"></i>
                             Mật khẩu
                         </label>
-                        <input id="user-management-password" type="text" class="user-management-input" placeholder="Mật khẩu">
+                        <input id="user-management-password" type="password" class="user-management-input" placeholder="Mật khẩu">
                         <div class="login-select">
                             <button class="login-btn">
                                 Đăng nhập
@@ -102,28 +95,50 @@
             <div class="content">
                 <div class="content-select">
                     <div class="pick-up-location">
-                        <label for="pu-input">
+                        <label for="pu">
                             <i class="fa-solid fa-location-dot"></i>
                         </label>
-                        <input id="pu-input" type="text" name = "pickUp" class="pick-up-location-input" placeholder="Địa điểm lấy xe">
+                        <select name="pu" id="pu">
+                            <option value="">--Điểm bịp--</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                            <option value="Hải Phòng">Hải Phòng</option>
+                            <option value="Quảng Ninh">Quảng Ninh</option>
+                            <option value="Ninh Bình">Ninh Bình</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                            <option value="Hải Phòng">Hải Phòng</option>
+                            <option value="Quảng Ninh">Quảng Ninh</option>
+                            <option value="Ninh Bình">Ninh Bình</option>
+                        </select>
+                        <!-- <input id="pu-input" type="text" name = "pickUp" class="pick-up-location-input" placeholder="Địa điểm lấy xe"> -->
                     </div>
                     <div class="drop-off-location">
-                        <label for="do-input">
+                        <label for="do">
                             <i class="fa-solid fa-location-dot"></i>
                         </label>
-                        <input id="do-input" type="text" name ="dropOff" class="drop-off-location-input" placeholder="Địa điểm trả xe">
+                        <select name="do" id="do">
+                            <option value="">--Điểm mù--</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                            <option value="Hải Phòng">Hải Phòng</option>
+                            <option value="Quảng Ninh">Quảng Ninh</option>
+                            <option value="Ninh Bình">Ninh Bình</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                            <option value="Hải Phòng">Hải Phòng</option>
+                            <option value="Quảng Ninh">Quảng Ninh</option>
+                            <option value="Ninh Bình">Ninh Bình</option>
+                        </select>
+                        <!-- <input id="do-input" type="text" name ="dropOff" class="drop-off-location-input" placeholder="Địa điểm trả xe"> -->
                     </div>
                     <div class="pick-up-time">
-                        <label for="pu-time-input">
+                        <!-- <label for="pu-time-input">
                             <i class="fa-solid fa-calendar-days"></i>
-                        </label>
-                        <input id="pu-time-input" type="text" name = "pickUpDate" class="pick-up-time-input" placeholder="Thời gian lấy xe">
+                        </label> -->
+                        <input id="pu-time-input" type="datetime-local" name = "pickUpDate" class="pick-up-time-input" placeholder="Thời gian lấy xe">
                     </div>
                     <div class="drop-off-time">
-                        <label onclick="openCalendar()" for="do-time-input">
+                        <!-- <label onclick="openCalendar()" for="do-time-input">
                             <i class="fa-solid fa-calendar-days"></i>
-                        </label>
-                        <input id="do-time-input" type="text" name = "dropOffDate" class="drop-off-time-input" placeholder="Thời gian trả xe">
+                        </label> -->
+                        <input id="do-time-input" type="datetime-local" name = "dropOffDate" class="drop-off-time-input" placeholder="Thời gian trả xe">
                     </div>
                 </div>
                 <div class="search-wrapper">
@@ -201,26 +216,26 @@
                         </ul>
                     </div>
                 </div>
-                <div class="registration-frame">
+                <form action="test.php" method ="POST" class="registration-frame">
                     <header class="register-frame-header">Đăng ký</header>
-                    <label for="register-phone-number" class="register-frame-label">
+                    <label for="register-phone-number"  class="register-frame-label">
                         <i class="fa-solid fa-square-phone"></i>
                             Số điện thoại
                     </label>
-                    <input id="register-phone-number" type="text" class="register-frame-input" placeholder="Số điện thoại">
+                    <input id="register-phone-number" name = "phone_data" type="text" class="register-frame-input" placeholder="Số điện thoại">
                     <label for="register-identify" class="register-frame-label">
                         <i class="fa-solid fa-id-card"></i>
                         Thẻ căn cước
                     </label>
-                    <input id="register-identify" type="text" class="register-frame-input" placeholder="Số thẻ căn cước">
+                    <input id="register-identify" name = "reg_data" type="text" class="register-frame-input" placeholder="Số thẻ căn cước">
                     <label for="register-password" class="register-frame-label">
                         <i class="fa-solid fa-key"></i>
                         Mật khẩu
                     </label>
-                    <input id="register-password" type="text" class="register-frame-input" placeholder="Mật khẩu">
+                    <input id="register-password" name = "pass_data" type="text" class="register-frame-input" placeholder="Mật khẩu">
                     <p class="about">Bằng việc đăng nhập hoặc đăng ký tài khoản, bạn đồng ý với Điều Khoản & Điều Kiện và Thông báo về Quyền riêng tư.</p>
-                    <button class="register-btn">Đăng kí</button>
-                </div>
+                    <button type = "submit" class="register-btn">Đăng kí</button>
+                </form>
             </div>
         </div>
     </div>
