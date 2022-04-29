@@ -4,14 +4,6 @@ class loginManager extends controller {
     function __construct()
     {
         parent::__construct();
-
-        function alert($message) {
-      
-            // Display the alert box 
-            echo "<script>alert('$message');
-                    </script>";
-        }
-
         if(isset($_POST['phone_data'])) { 
             $username_data = $this->model->escape_string($_POST['phone_data']);
             $idcard_data = $this->model->escape_string($_POST['reg_data']);
@@ -30,14 +22,20 @@ class loginManager extends controller {
                         'password' => $password_data,
                     );
                     if($this->model->insert('accountmanager', $data) !== false){
-                        alert("Đăng kí thành công");
+                        echo "<script>alert('Đăng kí thành công');
+                                window.location.replace('index.php');
+                                </script>";
                     }
                     else {
                         die('sign up: Failed!');
-                        alert("sign up: Failed!"); 
+                        echo "<script>alert('sign up: Failed!');
+                                window.location.replace('index.php');
+                                </script>";
                     }
                 } else {
-                    alert("Tên đăng kí đã tồn tại");
+                    echo "<script>alert('Tên đăng kí đã tồn tại');
+                                window.location.replace('index.php');
+                                </script>";
                 }
                 // unset($data);
             }
