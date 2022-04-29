@@ -5,12 +5,12 @@ $password = "";
 $dbname = "carrental";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-  exit();
-}
+// $conn = new mysqli($servername, $username, $password, $dbname);
+// // Check connection
+// if ($conn->connect_error) {
+//   die("Connection failed: " . $conn->connect_error);
+//   exit();
+// }
 
 // if(isset($_GET["pickUp"])) {
    
@@ -86,39 +86,39 @@ if ($conn->connect_error) {
 // } 
 
 
-$username_data= '';
-$idcard_data = '';
-$password_data = '';
+// $username_data= '';
+// $idcard_data = '';
+// $password_data = '';
  
-//Lấy giá trị POST từ form vừa submit
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["phone_data"])) {
-        $username_data = $_POST['phone_data'];
-    }
-    if (isset($_POST["reg_data"])) {
-        $idcard_data = $_POST['reg_data'];
-    }
-    if (isset($_POST["pass_data"])) {
-      $password_data = $_POST['pass_data'];
-  }
+// //Lấy giá trị POST từ form vừa submit
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     if (isset($_POST["phone_data"])) {
+//         $username_data = $_POST['phone_data'];
+//     }
+//     if (isset($_POST["reg_data"])) {
+//         $idcard_data = $_POST['reg_data'];
+//     }
+//     if (isset($_POST["pass_data"])) {
+//       $password_data = $_POST['pass_data'];
+//   }
  
 
-  // echo "<h2>Your Input:</h2>";
-  //       echo $username_data; 
-  //       echo "<br>";
-  //       echo $idcard_data;
-  //       echo "<br>";
-  //       echo $password_data;
-//insert dữ liệu vào database table
-    $sql = "INSERT INTO accountmanager (username, citizenID, password)
-                        VALUES ('{$username_data}', '{$idcard_data}','{$password_data}')";
+//   // echo "<h2>Your Input:</h2>";
+//   //       echo $username_data; 
+//   //       echo "<br>";
+//   //       echo $idcard_data;
+//   //       echo "<br>";
+//   //       echo $password_data;
+// //insert dữ liệu vào database table
+//     $sql = "INSERT INTO accountmanager (username, citizenID, password)
+//                         VALUES ('{$username_data}', '{$idcard_data}','{$password_data}')";
  
-    if ($conn->query($sql) === TRUE) {
-        echo "Thêm dữ liệu thành công";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
- }
+//     if ($conn->query($sql) === TRUE) {
+//         echo "Thêm dữ liệu thành công";
+//     } else {
+//         echo "Error: " . $sql . "<br>" . $conn->error;
+//     }
+//  }
 // //Đóng database
 // $conn->close();
 
