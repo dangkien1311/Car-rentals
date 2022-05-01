@@ -1,6 +1,6 @@
 <div id="slider">
             <div class="slider__background">
-                <img src="../view/assets/img/ha-giang.png" alt="">
+                <img src="../view//assets//img//ha-giang.png" alt="">
             </div>
             <form action="test.php" method = "get">
             <div class="content">

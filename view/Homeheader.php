@@ -19,7 +19,7 @@
     <div id="wrapper">
         <div id="header">
             <div id="logo">
-                <img src="../view/assets/img/logo1.png" alt="" height="50px" width="80px">
+                <img src="../view//assets//img//logo1.png" alt="" height="50px" width="80px">
             </div>
             <ul id="nav">
                 <li class="user-management">
@@ -28,11 +28,25 @@
                         Quản lí đặt chỗ
                     </button>
                     <div class="nav-user-management js-nav-user-management">
-                        <header class="user-management-header">Các lượt xe bạn thuê:</header>
+                        <header class="user-management-header">Quản lý đặt chỗ</header>
+                        <p class="user-management-sub-header">Nếu bạn không có tài khoản, bạn vẫn có thể quản lý đặt xe của mình.</p>
+                        <label for="user-management-identify" class="user-management-label">
+                            <i class="fa-solid fa-id-card"></i>
+                            Thẻ căn cước
+                        </label>
+                        <input id="user-management-identify" type="text" class="user-management-input" placeholder="Số thẻ căn cước">
+                        <label for="user-management-phone-number" class="user-management-label">
+                            <i class="fa-solid fa-square-phone"></i>
+                            Số điện thoại
+                        </label>
+                        <input id="user-management-phone-number" type="text" class="user-management-input" placeholder="Số điện thoại">
+                        <button class="user-management-select">
+                            Chọn
+                        </button>
                     </div>
                 </li>
                 <li class="hotline">
-                    <button class="hotline-btn js-hotline-btn" onclick="showHideHotlineFrame()">
+                    <button class="hotline-btn js-hotline-btn" onclick="showHideHomeHotlineFrame()">
                         <i class="fa-solid fa-phone"></i>
                         Hotline
                     </button>
@@ -52,14 +66,15 @@
                         <i class="fa-solid fa-circle-user"></i>
                         Tài khoản của tôi
                     </button>
-                    <div class="nav-user js-login">
-                        <button class="user-information-btn js-user-information-btn">
-                            Thông tin tài khoản của tôi
-                        </button>
-                        <a href="./index.php" class="logout">
-                            Đăng xuất
-                        </a>
-                    </div>
+                    <ul class="nav-user js-login">
+                        <li>Số điện thoại: 0379883623</li>
+                        <li>Thẻ căn cước: 034202004760</li>
+                        <li>
+                            <a href="index.php" class="logout">
+                                Đăng xuất
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
