@@ -48,7 +48,7 @@ html {
 
 #nav .hotline-btn:hover,
 #nav .user-management-btn:hover,
-#header #nav li:hover a {
+#header #nav li:hover > a {
     color: rgb(0, 96, 196);
     background-color: #fff;
     cursor: pointer;
@@ -81,45 +81,19 @@ html {
     right: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: #fff;
-    width: 370px;
+    width: 360px;
     display: none;
     height: 320px;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: left;
     transform-origin: top right;
     animation: userManagement ease 0.5s;
 }
 
-#nav .user-management-header {
-    font-size: 18px;
-    font-weight: 600;
-    color: #0771c4;
-    line-height: 1.6;
-    margin-bottom: 5px;
-    letter-spacing: 0.5px;
-}
-
-#nav .user-management-sub-header {
-    font-size: 14px;
-    color: #666666;
-    margin-bottom: 7px;
-    line-height: 1.6;
-}
-
-#nav .user-management-label {
-    display: block;
+.nav-user-management .user-management-header {
     font-size: 16px;
-    margin-bottom: 10px;
-}
-
-#nav .user-management-input {
-    height: 34px;
-    width: 98%;
-    font-size: 14px;
+    opacity: 0.8;
     padding: 8px;
-    border-radius: 3px;
-    border: 1px solid #bfbfbf;
-    margin-bottom: 20px;
 }
 
 #nav .user-management-btn {
@@ -130,21 +104,6 @@ html {
     text-decoration: none;
     line-height: 60px;
     background-color: rgba(0, 0, 0, 0);
-}
-
-#nav .user-management-select {
-    float: right;
-    color: #fff;
-    padding: 10px 20px;
-    background-color: #00874d;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-#nav .user-management-select:hover {
-    background-color: #006e3e;
 }
 
 #nav .hotline {
@@ -206,19 +165,60 @@ html {
 }
 
 .login .nav-user {
-    /* display: none; */
+    display: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 240px;
+    width: 220px;
     position: absolute;
     right: 0;
     text-align: left;
     background-color: #fff; 
-    padding: 20px;
+    padding: 10px;
     transform-origin: top right;
-    list-style-type: none;
     animation: userManagement ease 0.5s;
     line-height: 1.6;
     font-size: 15px;
+}
+
+.login .user-information-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.login .logout::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    width: 80%;
+    background-color: #ccc;
+    height: 1.5px;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login .logout {
+    position: relative;
+    margin-top: 5px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    opacity: 0.8;
+}
+
+.user-information-btn:hover,
+.logout:hover {
+    color: #fff;
+    background-color: #ccc; 
 }
 
 .slider__background img{
@@ -337,6 +337,106 @@ html {
     cursor: pointer;
 }
 
+.user-information-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.user-information-modal.open {
+    display: flex;
+}
+
+.user-information-modal .container {
+    position: relative;
+    width: 450px;
+    max-width: calc(100% - 32px);
+    min-height: 170px;
+    background-color: #fff;
+    animation: show_register ease 0.4s;
+}
+
+.user-information-modal .user-information-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 18px;
+    padding: 8px;
+    color: #000;
+    cursor: pointer;
+}
+
+.user-information-modal .user-information-close:hover {
+    color: #0064c8;
+}
+
+.user-information-modal .user-information-header {
+    height: 44px;
+    background-image: linear-gradient(90deg, #fff,rgb(248, 174, 0));
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 15px;
+    color: #0064c8;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.user-information-modal .user-information-body {
+    padding: 15px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.user-information-modal .user-information-input {
+    outline: none;
+    border: none;
+    background-color: #fff;
+}
+
+.user-information-modal .edit-user-phone {
+    float: right;
+    background-color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-information-modal .fa-pen {
+    display: none;
+    margin-right: 4px;
+    font-size: 14px;
+}
+
+.user-information-modal .fa-pen.open {
+    display: inline-block;
+}
+
+.user-information-modal .accept-edit {
+    padding: 6px;
+    float: right;
+    color: #fff;
+    /* background-color: #0064c8; */
+    background-color: #00874d;
+    font-weight: 600;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.user-information-modal .accept-edit:hover {
+    background-color: #006e3e;
+}
+
 @keyframes userManagement {
     from {
         transform: scale(0.4);
@@ -345,5 +445,14 @@ html {
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes show_register {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
     }
 }

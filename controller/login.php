@@ -64,7 +64,7 @@ class signUpManager extends controller {
                         && $checkuser !== NULL
                         && $checkuser[0]['username'] == $signInuser
                         && $checkpassword[0]['password'] == $signInPassword){
-                        header("Location: home.php");
+                        header("Location: index.php?act=home");
                     } else {
                         //header("Location:index.php");
                         echo "<script>alert('thông tin đăng nhập chưa chính xác');
