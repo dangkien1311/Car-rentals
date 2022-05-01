@@ -14,6 +14,14 @@
         var loginPassword = document.getElementById("user-management-password")
         var slider = document.getElementById("slider")
         var header = document.getElementById("header")
+        const userInformationBtn = document.querySelector('.js-user-information-btn')
+        const userInformationModal = document.querySelector('.js-user-information-modal')
+        const userInformationContainer = document.querySelector('.js-container')
+        const userInformationClose = document.querySelector('.js-user-information-close')
+        const userInformationAcceptEdit = document.querySelector('.js-accept-edit')
+        const userInformationEdit = document.querySelector('.js-edit-user-phone')
+        const userInformationFapen = document.querySelector('.js-fa-pen')
+        const userPhone = document.querySelector('.js-user-phone')
 
         function showHideUserManagement() {
             if (showUserManagement.style.display == 'none') {
@@ -133,7 +141,44 @@
                 event.stopPropagation()
             }
         })
-                
+            
+        userInformationBtn.addEventListener('click', function () {
+    userInformationModal.classList.add('open')
+})
+
+userInformationClose.addEventListener('click', function () {
+    userInformationModal.classList.remove('open')
+    userPhone.disabled = true
+})
+
+userInformationAcceptEdit.addEventListener('click', function () {
+    userInformationModal.classList.remove('open')
+    userPhone.disabled = true
+})
+
+userInformationModal.addEventListener('click', function () {
+    userInformationModal.classList.remove('open')
+    userPhone.disabled = true
+})
+
+userInformationContainer.addEventListener('click', function (event) {
+    event.stopPropagation()
+})
+
+userInformationEdit.addEventListener('mouseover', function () {
+    userInformationEdit.style.textDecoration = 'underline'
+    userInformationFapen.classList.add('open')
+})
+
+userInformationEdit.addEventListener('mouseout', function () {
+    userInformationEdit.style.textDecoration = 'none'
+    userInformationFapen.classList.remove('open')
+})
+
+userInformationEdit.addEventListener('click', function () {
+    userPhone.disabled = false
+    userPhone.value = ""
+})       
 
     </SCript>
 </body>

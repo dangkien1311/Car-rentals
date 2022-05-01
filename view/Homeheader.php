@@ -66,15 +66,38 @@
                         <i class="fa-solid fa-circle-user"></i>
                         Tài khoản của tôi
                     </button>
-                    <ul class="nav-user js-login">
-                        <li>Số điện thoại: 0379883623</li>
-                        <li>Thẻ căn cước: 034202004760</li>
-                        <li>
-                            <a href="index.php" class="logout">
-                                Đăng xuất
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="nav-user js-login">
+                        <button class="user-information-btn js-user-information-btn">
+                            Thông tin tài khoản của tôi
+                        </button>
+                        <a href="./index.php" class="logout">
+                            Đăng xuất
+                        </a>
+                    </div>
                 </li>
             </ul>
         </div>
+
+        <div class="user-information-modal js-user-information-modal">
+        <div class="container js-container">
+            <div class="user-information-close js-user-information-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <header class="user-information-header">Thông tin chi tiết của tôi</header>
+            <div class="user-information-body">
+                <span class="user-information">Số điện thoại: </span>
+                <input id="user-phone-input" type="text" class="user-information-input js-user-phone" value="0379883623" disabled>
+                <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
+                    <i class="fa-solid fa-pen js-fa-pen"></i>
+                    Chỉnh sửa
+                </label>
+                <br>
+                <span class="user-information">Thẻ căn cước: </span>
+                <input type="text" class="user-information-input" value="034202004760" disabled>
+                <br>
+                <button class="accept-edit js-accept-edit">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
