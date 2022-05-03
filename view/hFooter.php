@@ -143,43 +143,48 @@
         })
             
         userInformationBtn.addEventListener('click', function () {
-    userInformationModal.classList.add('open')
-})
+        userInformationModal.classList.add('open')
+        })
 
-userInformationClose.addEventListener('click', function () {
-    userInformationModal.classList.remove('open')
-    userPhone.disabled = true
-})
+        userInformationClose.addEventListener('click', function () {
+            userInformationModal.classList.remove('open')
+            userPhone.disabled = true
+        })
 
-userInformationAcceptEdit.addEventListener('click', function () {
-    userInformationModal.classList.remove('open')
-    userPhone.disabled = true
-})
+        userInformationAcceptEdit.addEventListener('click', function () {
+            userInformationModal.classList.remove('open')
+            userPhone.disabled = true
+        })
 
-userInformationModal.addEventListener('click', function () {
-    userInformationModal.classList.remove('open')
-    userPhone.disabled = true
-})
+        userInformationModal.addEventListener('click', function () {
+            userInformationModal.classList.remove('open')
+            userPhone.disabled = true
+        })
 
-userInformationContainer.addEventListener('click', function (event) {
-    event.stopPropagation()
-})
+        userInformationContainer.addEventListener('click', function (event) {
+            event.stopPropagation()
+        })
 
-userInformationEdit.addEventListener('mouseover', function () {
-    userInformationEdit.style.textDecoration = 'underline'
-    userInformationFapen.classList.add('open')
-})
+        userInformationEdit.addEventListener('mouseover', function () {
+            userInformationEdit.style.textDecoration = 'underline'
+            userInformationFapen.classList.add('open')
+        })
 
-userInformationEdit.addEventListener('mouseout', function () {
-    userInformationEdit.style.textDecoration = 'none'
-    userInformationFapen.classList.remove('open')
-})
+        userInformationEdit.addEventListener('mouseout', function () {
+            userInformationEdit.style.textDecoration = 'none'
+            userInformationFapen.classList.remove('open')
+        })
 
-userInformationEdit.addEventListener('click', function () {
-    userPhone.disabled = false
-    userPhone.value = ""
-})       
+        userInformationEdit.addEventListener('click', function () {
+            userPhone.disabled = false
+        })       
 
-    </SCript>
+        var usp  = '<?php echo $_SESSION['UserPhone']; ?>';
+        var usi =  '<?php echo $_SESSION['UserIDcard']; ?>';
+        document.getElementById("user-phone-input").value = usp;
+        document.getElementById("user-id-input").value = usi;
+
+
+ </SCript>
 </body>
 </html>

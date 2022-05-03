@@ -54,7 +54,7 @@ class signUpManager extends controller {
             $signInPassword =  $this->model->escape_string($_GET['signInpass']);
             $checkuser = $this->model->query("select * from `accountmanager` where username = '$signInuser';", true);
             $checkpassword =  $this->model->query("select * from `accountmanager` where password = '$signInPassword';", true);
-            
+            $checkUserIDcard = $this->model->query("select `citizenID` from `accountmanager` where username = '$signInuser';", true);
             if($checkuser === false || $checkpassword === false) {
                 die("Failed in loginManager 1");
             }
@@ -64,7 +64,10 @@ class signUpManager extends controller {
                         && $checkuser !== NULL
                         && $checkuser[0]['username'] == $signInuser
                         && $checkpassword[0]['password'] == $signInPassword){
+                        $_SESSION['UserPhone'] = "(+84)"." ".$checkuser[0]['username'];
+                        $_SESSION['UserIDcard'] = $checkUserIDcard[0]['citizenID'];
                         header("Location: index.php?act=home");
+                        //echo "<script>console.log('Debug Objects: " . $_SESSION['UserPhone']. "' );</script>";
                     } else {
                         //header("Location:index.php");
                         echo "<script>alert('thông tin đăng nhập chưa chính xác');
@@ -85,4 +88,39 @@ class signUpManager extends controller {
         return $this->model->disconnect();
     } 
 }
+
+class UserIformationController extends controller {
+   
+    function __construct()
+    {
+        parent::__construct();
+        if(isset($_GET['UserPhoneNum'])) { 
+            $username_data = $this->model->escape_string($_GET['UserPhoneNum']);
+            $user_id = $_SESSION['UserIDcard'];
+            echo "<script>console.log('Debug Objects: " .$username_data. "' );</script>";
+            //search username in database
+            // $result = NULL;
+            if(isset($_GET['UserConfirm'])) { // sign up
+                $checkUpdate = $this->model->query("update `accountmanager` set username = '$username_data' where citizenID = '$user_id';", true);
+                    if($checkUpdate === true){
+                        echo "<script>alert('Update thông tin thành công');
+                                window.location.replace('index.php');
+                                </script>";
+                    }
+                    else {
+                        die('sign up: Failed!');
+                        echo "<script>alert('sign up: Failed!');
+                                window.location.replace('index.php');
+                                </script>";
+                    }
+                } else {
+                    echo "<script>alert('sửa thất bại');
+                                window.location.replace('index.php');
+                                </script>";
+                }
+                // unset($data);
+            }
+            $this->model->disconnect();
+        }
+    }
 ?>
