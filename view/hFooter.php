@@ -18,10 +18,11 @@
         const userInformationModal = document.querySelector('.js-user-information-modal')
         const userInformationContainer = document.querySelector('.js-container')
         const userInformationClose = document.querySelector('.js-user-information-close')
-        const userInformationAcceptEdit = document.querySelector('.js-accept-edit')
+        const userInformationAcceptEdit = document.querySelector('.js-accept')
         const userInformationEdit = document.querySelector('.js-edit-user-phone')
         const userInformationFapen = document.querySelector('.js-fa-pen')
         const userPhone = document.querySelector('.js-user-phone')
+        const userNewPhone = document.querySelector('.js-user-new-phone')
 
         function showHideUserManagement() {
             if (showUserManagement.style.display == 'none') {
@@ -176,7 +177,11 @@
         })
 
         userInformationEdit.addEventListener('click', function () {
-            userPhone.disabled = false
+            if (userNewPhone.style.display === 'none') {
+                userNewPhone.style.display = 'block'
+            } else {
+                userNewPhone.style.display = 'none'
+            }
         })       
 
         var usp  = '<?php echo $_SESSION['UserPhone']; ?>';

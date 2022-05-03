@@ -91,17 +91,30 @@
             </div>
             <header class="user-information-header">Thông tin chi tiết của tôi</header>
             <div class="user-information-body">
-                <span class="user-information">Số điện thoại: </span>
-                <input id="user-phone-input" type="text" name = "UserPhoneNum" class="user-information-input js-user-phone" value="" disabled>
-                <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
-                    <i class="fa-solid fa-pen js-fa-pen"></i>
-                    Chỉnh sửa
-                </label>
-                <br>
-                <span class="user-information">Thẻ căn cước: </span>
-                <input id = "user-id-input" type="text"  name = "UserIdNum" class="user-information-input" value="" disabled>
-                <br>
-                <button name = "UserConfirm" type="submit" class="accept-edit js-accept-edit">
+                <div class="user-phone-edit-box">
+                    <span class="user-information">Số điện thoại: </span>
+                    <input id="user-phone-input" type="text" name = "UserPhoneNum" class="user-information-input js-user-phone" value="" disabled>
+                    <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
+                        <i class="fa-solid fa-pen js-fa-pen"></i>
+                        Chỉnh sửa
+                    </label>
+                    <div class="user-new-phone js-user-new-phone">
+                        <div class="wrapper-input">
+                            <span>Số điện thoại mới: </span>
+                            <input type="text" class="user-new-phone-input">
+                        </div>
+                        <button class="accept-edit">
+                            Xác nhận
+                        </button>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="user-Id-box">
+                    <span class="user-information">Thẻ căn cước: </span>
+                    <input id = "user-id-input" type="text"  name = "UserIdNum" class="user-information-input" value="" disabled>
+                </div>
+                <button name = "UserConfirm" type="submit" class="accept js-accept">
                     OK
                 </button>
             </div>

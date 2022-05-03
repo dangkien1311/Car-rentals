@@ -4,6 +4,10 @@
     box-sizing: inherit;
 }
 
+.clear {
+    clear: both;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -420,7 +424,7 @@ html {
     display: inline-block;
 }
 
-.user-information-modal .accept-edit {
+.user-information-modal .accept {
     padding: 6px;
     float: right;
     color: #fff;
@@ -430,11 +434,54 @@ html {
     border-radius: 3px;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 10px 0 16px 0;
 }
 
-.user-information-modal .accept-edit:hover {
+.user-information-modal .accept:hover {
     background-color: #006e3e;
+}
+
+.user-phone-edit-box {
+    padding: 8px;
+    /* background-color: #ccc; */
+    /* margin-bottom: 8px; */
+}
+
+.user-new-phone {
+    /* background-color: #000; */
+    width: 100%;
+    /* min-height: 30px; */
+    display: none;
+    float: right;
+}
+
+.user-new-phone .user-new-phone-input {
+    outline: none;
+    padding: 2px;
+    font-size: 14px;
+    /* display: block; */
+}
+
+.wrapper-input {
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.user-new-phone .accept-edit {
+    /* float: inline; */
+    padding: 4px;
+    color: #fff;
+    background-color: #00874d;
+    font-weight: 500;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    /* display: inline-block; */
+}
+
+.user-Id-box {
+    padding: 8px;
 }
 
 @keyframes userManagement {
