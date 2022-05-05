@@ -89,38 +89,41 @@ class signUpManager extends controller {
     } 
 }
 
-class UserIformationController extends controller {
-   
+class UserIformationController extends Controller{
     function __construct()
     {
         parent::__construct();
-        if(isset($_GET['UserPhoneNum'])) { 
-            $username_data = $this->model->escape_string($_GET['UserPhoneNum']);
-            $user_id = $_SESSION['UserIDcard'];
-            echo "<script>console.log('Debug Objects: " .$username_data. "' );</script>";
-            //search username in database
-            // $result = NULL;
-            if(isset($_GET['UserConfirm'])) { // sign up
-                $checkUpdate = $this->model->query("update `accountmanager` set username = '$username_data' where citizenID = '$user_id';", true);
-                    if($checkUpdate === true){
-                        echo "<script>alert('Update thông tin thành công');
-                                window.location.replace('index.php');
-                                </script>";
-                    }
-                    else {
-                        die('sign up: Failed!');
-                        echo "<script>alert('sign up: Failed!');
-                                window.location.replace('index.php');
-                                </script>";
+        if(isset($_POST['newUserPhoneNum'])){
+            $userPhonedata = $this->model->escape_string($_POST['newUserPhoneNum']);
+            $userIdnum = $_SESSION['UserIDcard'];
+            $checkresult = $this->model->query("select * from `accountmanager` where username = '$userPhonedata';", true);
+            //header("Location: index.php");
+             if($checkresult === false){ 
+                die("Failed in get data 1");
+            }
+            if(isset($_POST['UserConfirm'])){
+                if($checkresult === NULL) {
+                    $data = array(
+                        'username' => $userPhonedata
+                    );
+                    if($this->model->update('accountmanager',$data,$userIdnum) !== FALSE) {
+                        echo "<script>alert('cập nhật thông tin thành công');
+                        window.location.replace('logout.php');
+                        </script>";
+                        //header("Location: index.php");
+                    } else {
+                        echo "<script>alert('cập nhật thông tin thất bại');
+                        window.location.replace('index.php?act=home');
+                        </script>";
                     }
                 } else {
-                    echo "<script>alert('sửa thất bại');
-                                window.location.replace('index.php');
-                                </script>";
+                    echo "<script>alert('Số điện thoại đã tồn tại');
+                    window.location.replace('index.php?act=home');
+                    </script>";
                 }
-                // unset($data);
             }
-            $this->model->disconnect();
         }
+        //return $this->model->disconnect(); 
     }
+}
 ?>

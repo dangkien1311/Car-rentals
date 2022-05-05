@@ -58,7 +58,7 @@
                 $content .= $key." = '".$this->conn->escape_string($value)."', ";
             }
             $content = trim($content, ', ');
-            $sql = "UPDATE `$table` SET $content WHERE id = $id;";
+            $sql = "UPDATE `$table` SET $content WHERE citizenID = $id;";
             return $this->conn->query($sql);
         }
     

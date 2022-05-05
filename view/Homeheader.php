@@ -20,6 +20,7 @@
        include "../model//controller.php";
        include "../controller/login.php";
        include "../model//model.php";
+       //include "../controller/switch.php";
        session_start();
     ?>
     <div id="wrapper">
@@ -84,7 +85,10 @@
             </ul>
         </div>
 
-        <form action ="../controller/switch.php" method ="GET" class="user-information-modal js-user-information-modal">
+        <form action ="" method ="POST" class="user-information-modal js-user-information-modal">
+             <?php
+                new UserIformationController(); 
+            ?> 
         <div class="container js-container">
             <div class="user-information-close js-user-information-close">
                 <i class="fa-solid fa-xmark"></i>
@@ -101,11 +105,11 @@
                     <div class="user-new-phone js-user-new-phone">
                         <div class="wrapper-input">
                             <span>Số điện thoại mới: </span>
-                            <input type="text" class="user-new-phone-input">
+                            <input type="text" name= "newUserPhoneNum" class="user-new-phone-input">
                         </div>
-                        <button class="accept-edit">
+                        <!-- <button type="submit" name="UserConfirm" class="accept-edit">
                             Xác nhận
-                        </button>
+                        </button> -->
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -114,7 +118,7 @@
                     <span class="user-information">Thẻ căn cước: </span>
                     <input id = "user-id-input" type="text"  name = "UserIdNum" class="user-information-input" value="" disabled>
                 </div>
-                <button name = "UserConfirm" type="submit" class="accept js-accept">
+                <button type = "submit" name="UserConfirm" class="accept js-accept">
                     OK
                 </button>
             </div>
