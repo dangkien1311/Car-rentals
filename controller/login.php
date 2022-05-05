@@ -107,8 +107,10 @@ class UserIformationController extends Controller{
                         'username' => $userPhonedata
                     );
                     if($this->model->update('accountmanager',$data,$userIdnum) !== FALSE) {
+                        unset($_SESSION['UserPhone']);
+                        $_SESSION['UserPhone'] = $userPhonedata;
                         echo "<script>alert('cập nhật thông tin thành công');
-                        window.location.replace('logout.php');
+                        window.location.replace('index.php?act=home');
                         </script>";
                         //header("Location: index.php");
                     } else {
