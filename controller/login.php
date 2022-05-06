@@ -101,31 +101,37 @@ class UserIformationController extends Controller{
              if($checkresult === false){ 
                 die("Failed in get data 1");
             }
-            if(isset($_POST['UserConfirm'])){
-                if($checkresult === NULL) {
-                    $data = array(
-                        'username' => $userPhonedata
-                    );
-                    if($this->model->update('accountmanager',$data,$userIdnum) !== FALSE) {
-                        unset($_SESSION['UserPhone']);
-                        $_SESSION['UserPhone'] = $userPhonedata;
-                        echo "<script>alert('cập nhật thông tin thành công');
-                        window.location.replace('index.php?act=home');
-                        </script>";
-                        //header("Location: index.php");
+            if($userPhonedata) {
+                if(isset($_POST['UserConfirm'])){
+                    if($checkresult === NULL) {
+                        $data = array(
+                            'username' => $userPhonedata
+                        );
+                        if($this->model->update('accountmanager',$data,$userIdnum) !== FALSE) {
+                            unset($_SESSION['UserPhone']);
+                            $_SESSION['UserPhone'] = $userPhonedata;
+                            echo "<script>alert('cập nhật thông tin thành công');
+                            window.location.replace('index.php?act=home');
+                            </script>";
+                            //header("Location: index.php");
+                        } else {
+                            echo "<script>alert('cập nhật thông tin thất bại');
+                            window.location.replace('index.php?act=home');
+                            </script>";
+                        }
                     } else {
-                        echo "<script>alert('cập nhật thông tin thất bại');
+                        echo "<script>alert('Số điện thoại đã tồn tại');
                         window.location.replace('index.php?act=home');
                         </script>";
                     }
-                } else {
-                    echo "<script>alert('Số điện thoại đã tồn tại');
-                    window.location.replace('index.php?act=home');
-                    </script>";
                 }
+            } else {
+                echo "<script>alert('Số điện thoại không được để trống');
+                            window.location.replace('index.php?act=home');
+                            </script>";
             }
-        }
         //return $this->model->disconnect(); 
+        }
     }
 }
 ?>
