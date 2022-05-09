@@ -261,7 +261,6 @@ html {
 
 .slider__background img{
     width: 100%;
-    height: 100vh;
     vertical-align: middle;
 }
 
@@ -283,9 +282,6 @@ html {
 } 
 
 #slider .content-select {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
     display: flex;
     align-items: center;
     width: 88%;
