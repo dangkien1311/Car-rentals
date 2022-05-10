@@ -158,23 +158,23 @@
                     </label>
                     <div class="category-select-box js-price-range-box">
                         <label class="category-select">
-                            <input type="checkbox" name = "Price[]" value = "LowPrice">
-                            Từ 1.000.000 vnd - 2.000.000 vnd
+                            <input type="checkbox" name = "Price[]" value = "1">
+                            Từ 1.000.000 - 2.000.000 vnd
                         </label>
                         <label class="category-select">
-                            <input type="checkbox" name = "Price[]" value = "MediumPrice">
-                            Từ 2.000.000 vnd - 3.000.000 vnd
+                            <input type="checkbox" name = "Price[]" value = "2">
+                            Từ 2.000.000 - 3.000.000 vnd
                         </label>
                         <label class="category-select">
-                            <input type="checkbox" name = "Price[]" value = "highPrice">
-                            Từ 3.000.000 vnd - 4.000.000 vnd
+                            <input type="checkbox" name = "Price[]" value = "3">
+                            Từ 3.000.000 - 4.000.000 vnd
                         </label>
                         <label class="category-select">
-                            <input type="checkbox" name = "Price[]" value = "Luxury">
+                            <input type="checkbox" name = "Price[]" value = "4">
                             Trên 4.000.000 vnd
                         </label>
                     </div> 
-                    <input name = "CarType" type="submit" value="submit">
+                    <input name = "CarType" type="submit" value="Sort">
                 </form>
                 <div class="list-car">
                     <header class="list-car-header">Kết quả tìm kiếm:</header>

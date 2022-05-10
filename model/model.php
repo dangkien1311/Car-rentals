@@ -61,11 +61,19 @@
             return false;
         }
 
-        function getArrayInPrice($table,$col,$CarName,$Hprice,$EPrice) {
+        function getArrayInPriceAndCar($table,$col,$CarName,$EPrice) {
             if(!is_string($table) ||!is_string($col)|| is_array($CarName)) 
                 return false;
             $CarName = (String)$CarName;
-            $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarName' AND dailyHireRate BETWEEN $Hprice AND $EPrice;";
+            $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarName' AND 
+            (CASE
+                WHEN $EPrice = 1 THEN dailyHireRate BETWEEN 1 AND 2
+                WHEN $EPrice = 2 THEN dailyHireRate BETWEEN 2 AND 3
+                WHEN $EPrice = 3 THEN dailyHireRate BETWEEN 3 AND 4
+                ELSE dailyHireRate > 4
+                
+            END) 
+            ORDER BY dailyHireRate ASC;";
             if($result = $this->conn->query($sql)) {
                 $data = null;
                 while ($row = $result->fetch_assoc()) {
@@ -75,6 +83,29 @@
             } 
             return false;
         }
+
+        function getArrayInPrice($table,$EPrice) {
+            if(!is_string($table)) 
+                return false;
+            $sql = "SELECT * FROM `$table` WHERE 
+            (CASE
+                WHEN $EPrice = 1 THEN dailyHireRate BETWEEN 1 AND 2
+                WHEN $EPrice = 2 THEN dailyHireRate BETWEEN 2 AND 3
+                WHEN $EPrice = 3 THEN dailyHireRate BETWEEN 3 AND 4
+                ELSE dailyHireRate > 4
+                
+            END) 
+            ORDER BY dailyHireRate ASC;";
+            if($result = $this->conn->query($sql)) {
+                $data = null;
+                while ($row = $result->fetch_assoc()) {
+                    $data[] = $row;
+                }
+                return $data;
+            } 
+            return false;
+        }
+
 
         function insert($table, $data) {
             if(!is_array($data) || !is_string($table)) 
