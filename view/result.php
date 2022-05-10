@@ -12,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Rentals</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./assets/css/result.css">
-    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="stylesheet" href="../view/assets/css/result.css">
+    <link rel="stylesheet" href="../view/assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
     <div id="wrapper">
@@ -123,7 +123,7 @@
     
             </div>
             <div id="container-body">
-                <div class="container-body-category">
+                <form action = "" method = "get" class="container-body-category">
                     <header class="container-body-category-header">
                         <i class="fa-solid fa-filter"></i>
                         BỘ LỌC TÌM KIẾM
@@ -135,19 +135,19 @@
                     </label>
                     <div class="category-select-box js-types-of-cars-box">
                         <label class="category-select">
-                            <input type="checkbox">
-                            Xe Huyndai
+                            <input type="checkbox" name = "CarBrand[]" value = "Hyundai">
+                            Xe Hyundai
                         </label>
                         <label class="category-select">
-                            <input type="checkbox">
-                            Xe Honda
+                            <input type="checkbox" name = "CarBrand[]" value = "BMW">
+                            Xe BMW
                         </label>
                         <label class="category-select">
-                            <input type="checkbox">
+                            <input type="checkbox" name = "CarBrand[]" value = "Audi">
                             Xe Audi
                         </label>
                         <label class="category-select">
-                            <input type="checkbox">
+                            <input type="checkbox" name = "CarBrand[]" value= "Mercedes">
                             Xe Mercedes
                         </label>
                     </div>
@@ -158,132 +158,56 @@
                     </label>
                     <div class="category-select-box js-price-range-box">
                         <label class="category-select">
-                            <input type="checkbox">
-                            Từ 1000000 vnd - 1500000 vnd
+                            <input type="checkbox" name = "Price[]" value = "LowPrice">
+                            Từ 1.000.000 vnd - 2.000.000 vnd
                         </label>
                         <label class="category-select">
-                            <input type="checkbox">
-                            Từ 1500000 vnd - 2000000 vnd
+                            <input type="checkbox" name = "Price[]" value = "MediumPrice">
+                            Từ 2.000.000 vnd - 3.000.000 vnd
                         </label>
                         <label class="category-select">
-                            <input type="checkbox">
-                            Từ 2000000 vnd - 2500000 vnd
+                            <input type="checkbox" name = "Price[]" value = "highPrice">
+                            Từ 3.000.000 vnd - 4.000.000 vnd
                         </label>
                         <label class="category-select">
-                            <input type="checkbox">
-                            Trên 2500000 vnd
+                            <input type="checkbox" name = "Price[]" value = "Luxury">
+                            Trên 4.000.000 vnd
                         </label>
-                    </div>
-                </div>
-                
+                    </div> 
+                    <input name = "CarType" type="submit" value="submit">
+                </form>
                 <div class="list-car">
                     <header class="list-car-header">Kết quả tìm kiếm:</header>
-                    <div class="list-car-select">
-                        <img src="./assets/img/mercedes.png" alt="" class="car-img">
-                        <div class="car-information">
-                            <div class="car-brand">Mercedes</div>
-                            <p for="" class="reg-number">Biển số xe: 17A-35421</p>
-                            <label for="" class="car-seat">
-                                <i class="fa-solid fa-people-group"></i>
-                                4 chỗ ngồi
-                            </label>
-                            <label for="" class="package">
-                                <i class="fa-solid fa-suitcase"></i>
-                                3 hành lí
-                            </label>
-                            <br>
-                            <label for="" class="car-gearbox">
-                                <i class="fa-solid fa-gears"></i>
-                                Hộp số tự động
-                            </label>
-                            <label for="" class="car-gearbox">
-                                <i class="fa-solid fa-circle-dollar-to-slot"></i>
-                                Giá thuê xe(theo ngày): 2.000.000 vnd
-                            </label>
-                            <button class="book">Đặt xe</button>
-                        </div>
-                    </div>
-
-                    <div class="list-car-select">
-                        <img src="./assets/img/mercedes.png" alt="" class="car-img">
-                        <div class="car-information">
-                            <div class="car-brand">Mercedes</div>
-                            <p for="" class="reg-number">Biển số xe: 17A-35421</p>
-                            <label for="" class="car-seat">
-                                <i class="fa-solid fa-people-group"></i>
-                                4 chỗ ngồi
-                            </label>
-                            <label for="" class="package">
-                                <i class="fa-solid fa-suitcase"></i>
-                                3 hành lí
-                            </label>
-                            <br>
-                            <label for="" class="car-gearbox">
-                                <i class="fa-solid fa-gears"></i>
-                                Hộp số tự động
-                            </label>
-                            <label for="" class="car-gearbox">
-                                <i class="fa-solid fa-circle-dollar-to-slot"></i>
-                                Giá thuê xe(theo ngày): 2.000.000 vnd
-                            </label>
-                            <button class="book">Đặt xe</button>
-                        </div>
-                    </div>
-
-                    <div class="list-car-select">
-                        <img src="./assets/img/mercedes.png" alt="" class="car-img">
-                        <div class="car-information">
-                            <div class="car-brand">Mercedes</div>
-                            <p for="" class="reg-number">Biển số xe: 17A-35421</p>
-                            <label for="" class="car-seat">
-                                <i class="fa-solid fa-people-group"></i>
-                                4 chỗ ngồi
-                            </label>
-                            <label for="" class="package">
-                                <i class="fa-solid fa-suitcase"></i>
-                                3 hành lí
-                            </label>
-                            <br>
-                            <label for="" class="car-gearbox">
-                                <i class="fa-solid fa-gears"></i>
-                                Hộp số tự động
-                            </label>
-                            <label for="" class="car-gearbox">
-                                <i class="fa-solid fa-circle-dollar-to-slot"></i>
-                                Giá thuê xe(theo ngày): 2.000.000 vnd
-                            </label>
-                            <button class="book">Đặt xe</button>
-                        </div>
-                    </div>
-                    <div class="list-car-select">
-                        <img src="./assets/img/mercedes.png" alt="" class="car-img">
-                        <div class="car-information">
-                            <div class="car-brand">Mercedes</div>
-                            <p for="" class="reg-number">Biển số xe: 17A-35421</p>
-                            <label for="" class="car-seat">
-                                <i class="fa-solid fa-people-group"></i>
-                                4 chỗ ngồi
-                            </label>
-                            <label for="" class="package">
-                                <i class="fa-solid fa-suitcase"></i>
-                                3 hành lí
-                            </label>
-                            <br>
-                            <label for="" class="car-gearbox">
-                                <i class="fa-solid fa-gears"></i>
-                                Hộp số tự động
-                            </label>
-                            <label for="" class="car-gearbox">
-                                <i class="fa-solid fa-circle-dollar-to-slot"></i>
-                                Giá thuê xe(theo ngày): 2.000.000 vnd
-                            </label>
-                            <button class="book">Đặt xe</button>
-                        </div>
-                    </div>
-
+                    <?php
+                        include '../controller/CarList.php';
+                        new CarList();
+                    ?>
         <div id="footer">
              
         </div>
+        <div class="user-information-modal js-user-information-modal">
+        <div class="container js-container">
+            <div class="user-information-close js-user-information-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <header class="user-information-header">Thông tin chi tiết của tôi</header>
+            <div class="user-information-body">
+                <span class="user-information">Số điện thoại: </span>
+                <input id="user-phone-input" type="text" class="user-information-input js-user-phone" value="0379883623" disabled>
+                <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
+                    <i class="fa-solid fa-pen js-fa-pen"></i>
+                    Chỉnh sửa
+                </label>
+                <br>
+                <span class="user-information">Thẻ căn cước: </span>
+                <input type="text" class="user-information-input" value="034202004760" disabled>
+                <br>
+                <button class="accept-edit js-accept-edit">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
     </div>
 
     <div class="user-information-modal js-user-information-modal">

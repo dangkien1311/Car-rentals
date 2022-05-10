@@ -2,7 +2,7 @@
             <div class="slider__background">
                 <img src="../view//assets//img//ha-giang.png" alt="">
             </div>
-            <form action="test.php" method = "get">
+            <form action="../view/result.php" method = "get">
             <div class="content">
                 <div class="content-select">
                     <div class="pick-up-location">

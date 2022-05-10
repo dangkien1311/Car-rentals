@@ -31,7 +31,51 @@
         function escape_string($s) {
             return $this->conn->escape_string($s);
         } 
-        
+
+        function getArray($table) {
+            if(!is_string($table)) 
+                return false;
+            $sql = "SELECT * FROM `$table`;";
+            if($result = $this->conn->query($sql)) {
+                $data = null;
+                while ($row = $result->fetch_assoc()) {
+                    $data[] = $row;
+                }
+                return $data;
+            } 
+            return false;
+        }
+
+        function getArrayIn($table,$col,$CarValue) {
+            if(is_array($CarValue) || !is_string($table) ||!is_string($col)) 
+                return false;
+            $CarValue = (string)$CarValue;
+            $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarValue';";
+            if($result = $this->conn->query($sql)) {
+                $data = null;
+                while ($row = $result->fetch_assoc()) {
+                    $data[] = $row;
+                }
+                return $data;
+            } 
+            return false;
+        }
+
+        function getArrayInPrice($table,$col,$CarName,$Hprice,$EPrice) {
+            if(!is_string($table) ||!is_string($col)|| is_array($CarName)) 
+                return false;
+            $CarName = (String)$CarName;
+            $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarName' AND dailyHireRate BETWEEN $Hprice AND $EPrice;";
+            if($result = $this->conn->query($sql)) {
+                $data = null;
+                while ($row = $result->fetch_assoc()) {
+                    $data[] = $row;
+                }
+                return $data;
+            } 
+            return false;
+        }
+
         function insert($table, $data) {
             if(!is_array($data) || !is_string($table)) 
                 return false;
