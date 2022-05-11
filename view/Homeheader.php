@@ -4,29 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mvc</title>
+    <title>Car Rentals</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="../view/assets/css/home.css">
+    <link rel="stylesheet" href="../view/assets/css/result.css">
     <link rel="stylesheet" href="../view/assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
     <?php
-       include "../model//controller.php";
-       include "../controller/login.php";
-       include "../model//model.php";
-       //include "../controller/switch.php";
-       session_start();
+        include '../model/controller.php';
+        include '../model/model.php';
+        session_start();
     ?>
     <div id="wrapper">
         <div id="header">
             <div id="logo">
-                <img src="../view//assets//img//logo1.png" alt="" height="50px" width="80px">
+                <img src="../view/assets/img/logoCar.png" alt="" width="80px">
             </div>
             <ul id="nav">
                 <li class="user-management">
@@ -35,25 +33,11 @@
                         Quản lí đặt chỗ
                     </button>
                     <div class="nav-user-management js-nav-user-management">
-                        <header class="user-management-header">Quản lý đặt chỗ</header>
-                        <p class="user-management-sub-header">Nếu bạn không có tài khoản, bạn vẫn có thể quản lý đặt xe của mình.</p>
-                        <label for="user-management-identify" class="user-management-label">
-                            <i class="fa-solid fa-id-card"></i>
-                            Thẻ căn cước
-                        </label>
-                        <input id="user-management-identify" type="text" class="user-management-input" placeholder="Số thẻ căn cước">
-                        <label for="user-management-phone-number" class="user-management-label">
-                            <i class="fa-solid fa-square-phone"></i>
-                            Số điện thoại
-                        </label>
-                        <input id="user-management-phone-number" type="text" class="user-management-input" placeholder="Số điện thoại">
-                        <button class="user-management-select">
-                            Chọn
-                        </button>
+                        <header class="user-management-header">Các lượt xe bạn thuê:</header>
                     </div>
                 </li>
                 <li class="hotline">
-                    <button class="hotline-btn js-hotline-btn" onclick="showHideHomeHotlineFrame()">
+                    <button class="hotline-btn js-hotline-btn" onclick="showHideHotlineFrame()">
                         <i class="fa-solid fa-phone"></i>
                         Hotline
                     </button>
@@ -77,16 +61,16 @@
                         <button class="user-information-btn js-user-information-btn">
                             Thông tin tài khoản của tôi
                         </button>
-                        <a href="../controller//logout.php" class="logout">
+                        <a href="./index.php" class="logout">
                             Đăng xuất
                         </a>
                     </div>
                 </li>
             </ul>
         </div>
-
         <form action ="" method ="POST" class="user-information-modal js-user-information-modal">
              <?php
+                include "../controller/login.php";
                 new UserIformationController(); 
             ?> 
             <div class="container js-container">
@@ -124,3 +108,4 @@
                 </div>
             </div>
         </form>
+        

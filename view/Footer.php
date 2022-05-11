@@ -21,6 +21,14 @@
         var registerPassword = document.getElementById("register-password")
         var slider = document.getElementById("slider")
         var header = document.getElementById("header")
+        const typesOfCars = document.querySelector('.js-types-of-cars')
+        const typesOfCarsBox = document.querySelector('.js-types-of-cars-box')
+        const priceRange = document.querySelector('.js-price-range')
+        const priceRangeBox = document.querySelector('.js-price-range-box')
+        const typesOfCarsDown = document.querySelector('.js-types-of-cars-down')
+        const typesOfCarsUp = document.querySelector('.js-types-of-cars-up')
+        const priceRangeDown = document.querySelector('.js-price-range-down')
+        const priceRangeUp = document.querySelector('.js-price-range-up')
 
         function showHideUserManagement() {
             if (showUserManagement.style.display == 'none') {
@@ -72,7 +80,7 @@
                 hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
-                showHomeHotlineFrame.style.display = 'none'
+                showHotlineFrame.style.display = 'none'
             }
 
             if (showUserManagement.style.display === 'block') {
@@ -180,6 +188,30 @@
                 showRegisterPassword.classList.remove('close')
             }
         }
+
+        typesOfCars.addEventListener('click', function () {
+                 if (typesOfCarsBox.style.display === 'none') {
+                     typesOfCarsBox.style.display = 'block'
+                     typesOfCarsDown.classList.add('close')
+                     typesOfCarsUp.classList.add('open')
+                 } else {
+                     typesOfCarsBox.style.display = 'none'
+                     typesOfCarsDown.classList.remove('close')
+                     typesOfCarsUp.classList.remove('open')
+                 }
+             })
+     
+        priceRange.addEventListener('click', function () {
+            if (priceRangeBox.style.display === 'none') {
+                priceRangeBox.style.display = 'block'
+                priceRangeDown.classList.add('close')
+                priceRangeUp.classList.add('open')
+            } else {
+                priceRangeBox.style.display = 'none'
+                priceRangeDown.classList.remove('close')
+                priceRangeUp.classList.remove('open')
+            }
+        })
         
      </script>
 </body>

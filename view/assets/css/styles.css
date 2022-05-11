@@ -269,33 +269,37 @@ html {
     opacity: 0.7;
 }
 
-.slider__background img {
-    width: 100%;
-    height: 100vh;
-    vertical-align: middle;
+#container {
+    background-color: #fff;
+}
+
+#slider {
+    position: relative;
+    background-color: #fff;
+    height: 120px;
+    display: flex;
+    align-items: center;
 }
 
 #slider .content {
-    position: absolute;
-    bottom: 250px;
-    top: 250px;
-    background-color: #fff;
+    
     width: 1050px;
     max-width: calc(100% - 32px);
     margin: 0 auto;
     border-radius: 5px;
     height: 56px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: space-between;
-} 
+    /* z-index: 99; */
+}
 
 #slider .content-select {
+    
     display: flex;
     align-items: center;
     width: 88%;
+    border: 1px solid #ccc;
     /* margin-right: auto; */
     /* justify-content: space-between;*/
 }
@@ -330,6 +334,7 @@ html {
     margin: 0 10px;
     outline: none;
     padding-left: 8px;
+    z-index: -1;
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -363,10 +368,11 @@ html {
     font-size: 18px;
     padding-left: 8px;
     cursor: pointer;
+    z-index: -1;
 }
 
 #slider .search {
-    background-color: rgb(248, 174, 0);
+    background-color: rgb(255, 197, 0);
     width: 100%;
     border: none;
     display: block;
@@ -380,6 +386,153 @@ html {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;
+}
+
+#slider .search:hover {
+    background-color: rgb(248, 174, 0);
+}
+
+#container-body {
+    display: flex;
+    background-color: #fff;
+    /* border-top: 1px solid #ccc; */
+    margin: 20px 80px 0 80px;
+    line-height: 1.5;
+}
+
+#container-body .container-body-category {
+    width: 20%;
+    margin-right: 20px;
+    /* border-right: 1px solid red; */
+}
+
+#container-body .container-body-category-header {
+    font-size: 18px;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+
+#container-body .category-select-header {
+    display: block;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+
+#container-body .category-select-box {
+    padding-bottom: 6px;
+    display: none;
+}
+
+#container-body .category-select input{
+    margin-right: 6px;
+}
+
+#container-body .category-select {
+    display: block;
+    cursor: pointer;
+}
+
+#container-body .fa-filter {
+    font-size: 16px;
+    padding-right: 4px;
+}
+
+#container-body .fa-sort-down {
+    margin-left: 4px;
+    font-size: 16px;
+    bottom: 3px;
+    line-height: 16px;
+    transform: translateY(-2px);
+}
+
+#container-body .fa-sort-down.close {
+    display: none;
+}
+
+#container-body .fa-sort-up {
+    margin-left: 4px;
+    transform: translateY(6px);
+    display: none;
+}
+
+#container-body .fa-sort-up.open {
+    display: inline-block;
+}
+
+#container-body .category-select-header {
+    font-size: 16px;
+}
+
+#container-body .category-search-btn {
+    float: left;
+    margin: 10px 0;
+    color: #fff;
+    padding: 6px;
+    background-color: #00874d;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#container-body .list-car {
+    width: 80%;
+    /* overflow: auto; */
+}
+
+#container-body .list-car-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#container-body .list-car-select {
+    display: flex;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+#container-body .list-car-select:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+#container-body .list-car-select img {
+    width: 24%;
+    object-fit: contain;
+}
+
+.list-car-select .car-information {
+    width: 60%;
+    margin: 6px 0 6px 20px;
+}
+
+.list-car-select .car-brand {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.list-car-select .car-seat {
+    margin-right: 40px;
+}
+
+.list-car-select .car-gearbox {
+    display: block;
+}
+
+.list-car-select .book {
+    float: right;
+    margin: 6px 0 10px 0;
+    color: #fff;
+    padding: 10px;
+    background-color: #00874d;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.list-car-select .book:hover {
+    background-color: #006e3e;
 }
 
 .register-modal {
@@ -552,22 +705,6 @@ html {
 
 .register-modal .fa-eye-slash.open {
     display: inline-block;
-}
-
-#contain {
-
-}
-
-#common {
-
-}
-
-#related {
-
-}
-
-#footer {
-
 }
 
 

@@ -1,6 +1,4 @@
 <?php
-include "../model/controller.php";
-include "../model/model.php";
     class CarList extends controller {
         function __construct()
         {
@@ -13,7 +11,16 @@ include "../model/model.php";
                             foreach($CarPrice as $price){
                                 $product = $this->model->getArrayInPriceAndCar('carcategory','Brand',$Car,$price);
                                 if($product == false) {
-                                    die("Hiện tại xe không sẵn sàng bấm sort để tiếp tục");
+                                        if($_SERVER['PHP_SELF'] == '/Car-rentals/controller/index.php' ) {
+                                            echo "<script>alert('Hiện tại xe không sẵn sàng');
+                                            window.location.replace('../controller/index.php');
+                                            </script>";
+                                        }
+                                        else {
+                                            echo "<script>alert('Hiện tại xe không sẵn sàng');
+                                            window.location.replace('../controller/main.php');
+                                            </script>";
+                                        }
 
                                 }
                                 for( $i = 0; $i < count($product);$i++) {

@@ -19,7 +19,7 @@
     <div id="wrapper">
         <div id="header">
             <div id="logo">
-                <img src="../view//assets//img//logo1.png" alt="" height="50px" width="80px">
+                <img src="../view/assets/img/logoCar.png" alt="" width="80px">
             </div>
 
             <ul id="nav">

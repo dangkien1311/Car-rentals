@@ -438,7 +438,7 @@ html {
 }
 
 #container-body .category-search-btn {
-    float: right;
+    float: left;
     margin: 10px 0;
     color: #fff;
     padding: 6px;
