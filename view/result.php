@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="../view/assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
+    <?php
+       session_start();
+    ?>
     <div id="wrapper">
         <div id="header">
             <div id="logo">
@@ -56,7 +59,7 @@
                         <button class="user-information-btn js-user-information-btn">
                             Thông tin tài khoản của tôi
                         </button>
-                        <a href="./index.php" class="logout">
+                        <a href="../controller//logout.php" class="logout">
                             Đăng xuất
                         </a>
                     </div>
@@ -66,7 +69,7 @@
         <div id="container">
 
             <div id="slider">
-                <form action="test.php" method = "get" class="content">
+                <form action="" method = "get" class="content">
                     <div class="content-select">
                         <div class="pick-up-location">
                             <label for="pu">
@@ -185,81 +188,68 @@
         <div id="footer">
              
         </div>
-        <div class="user-information-modal js-user-information-modal">
+         <form action ="" method ="POST" class="user-information-modal js-user-information-modal">
+             <?php
+                include '../controller/login.php';
+                new UserIformationController(); 
+            ?> 
         <div class="container js-container">
             <div class="user-information-close js-user-information-close">
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <header class="user-information-header">Thông tin chi tiết của tôi</header>
             <div class="user-information-body">
-                <span class="user-information">Số điện thoại: </span>
-                <input id="user-phone-input" type="text" class="user-information-input js-user-phone" value="0379883623" disabled>
-                <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
-                    <i class="fa-solid fa-pen js-fa-pen"></i>
-                    Chỉnh sửa
-                </label>
-                <br>
-                <span class="user-information">Thẻ căn cước: </span>
-                <input type="text" class="user-information-input" value="034202004760" disabled>
-                <br>
-                <button class="accept-edit js-accept-edit">
-                    OK
-                </button>
-            </div>
-        </div>
-    </div>
-    </div>
+                <div class="user-phone-edit-box">
+                    <span class="user-information">Số điện thoại: </span>
+                    <input id="user-phone-input" type="text" name = "UserPhoneNum" class="user-information-input js-user-phone" value="" disabled>
+                    <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
+                        <i class="fa-solid fa-pen js-fa-pen"></i>
+                        Chỉnh sửa
+                    </label>
+                    <div class="user-new-phone js-user-new-phone">
+                        <div class="wrapper-input">
+                            <span>Số điện thoại mới: </span>
+                            <input type="text" name= "newUserPhoneNum" class="user-new-phone-input">
+                        </div>
+                        <!-- <button type="submit" name="UserConfirm" class="accept-edit">
+                            Xác nhận
+                        </button> -->
+                    </div>
+                    <div class="clear"></div>
+                </div>
 
-    <div class="user-information-modal js-user-information-modal">
-        <div class="container js-container">
-            <div class="user-information-close js-user-information-close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <header class="user-information-header">Thông tin chi tiết của tôi</header>
-            <div class="user-information-body">
-                <span class="user-information">Số điện thoại: </span>
-                <input id="user-phone-input" type="text" class="user-information-input js-user-phone" value="0379883623" disabled>
-                <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
-                    <i class="fa-solid fa-pen js-fa-pen"></i>
-                    Chỉnh sửa
-                </label>
-                <br>
-                <span class="user-information">Thẻ căn cước: </span>
-                <input type="text" class="user-information-input" value="034202004760" disabled>
-                <br>
-                <button class="accept-edit js-accept-edit">
+                <div class="user-Id-box">
+                    <span class="user-information">Thẻ căn cước: </span>
+                    <input id = "user-id-input" type="text"  name = "UserIdNum" class="user-information-input" value="" disabled>
+                </div>
+                <button type = "submit" name="UserConfirm" class="accept js-accept">
                     OK
                 </button>
             </div>
         </div>
-    </div>
+     </form>
 
     <SCript>
+        const showLoginPassword = document.querySelector('.js-login-fa-eye')
+        const hideLoginPassword = document.querySelector('.js-login-fa-eye-slash')
         const showLoginFrame = document.querySelector('.js-login')
         const showUserManagement = document.querySelector('.js-nav-user-management')
         const userManagement = document.querySelector('.js-user-management-btn')
         const login = document.querySelector('.js-login-btn')
         const hotline = document.querySelector('.js-hotline-btn')
-        const showHotlineFrame = document.querySelector('.js-hotline-frame')
+        const showHomeHotlineFrame = document.querySelector('.js-hotline-frame')
+        var loginPassword = document.getElementById("user-management-password")
+        var slider = document.getElementById("slider")
+        var header = document.getElementById("header")
         const userInformationBtn = document.querySelector('.js-user-information-btn')
         const userInformationModal = document.querySelector('.js-user-information-modal')
         const userInformationContainer = document.querySelector('.js-container')
         const userInformationClose = document.querySelector('.js-user-information-close')
-        const userInformationAcceptEdit = document.querySelector('.js-accept-edit')
+        const userInformationAcceptEdit = document.querySelector('.js-accept')
         const userInformationEdit = document.querySelector('.js-edit-user-phone')
         const userInformationFapen = document.querySelector('.js-fa-pen')
         const userPhone = document.querySelector('.js-user-phone')
-        var container = document.getElementById("container")
-        var header = document.getElementById("header")
-        const typesOfCars = document.querySelector('.js-types-of-cars')
-        const typesOfCarsBox = document.querySelector('.js-types-of-cars-box')
-        const priceRange = document.querySelector('.js-price-range')
-        const priceRangeBox = document.querySelector('.js-price-range-box')
-        const typesOfCarsDown = document.querySelector('.js-types-of-cars-down')
-        const typesOfCarsUp = document.querySelector('.js-types-of-cars-up')
-        const priceRangeDown = document.querySelector('.js-price-range-down')
-        const priceRangeUp = document.querySelector('.js-price-range-up')
-
+        const userNewPhone = document.querySelector('.js-user-new-phone')
 
         function showHideUserManagement() {
             if (showUserManagement.style.display == 'none') {
@@ -268,7 +258,7 @@
                 userManagement.style.backgroundColor = '#fff'
             } else {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#000'
+                userManagement.style.color = '#fff'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
@@ -280,43 +270,43 @@
                 login.style.backgroundColor = '#fff'
             } else {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#000'
+                login.style.color = '#fff'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
 
         function showHideHotlineFrame() {
-            if (showHotlineFrame.style.display == 'none') {
-                showHotlineFrame.style.display = 'block'
+            if (showHomeHotlineFrame.style.display == 'none') {
+                showHomeHotlineFrame.style.display = 'block'
                 hotline.style.color = 'rgb(0, 96, 196)'
                 hotline.style.backgroundColor = '#fff'
             } else {
-                showHotlineFrame.style.display = 'none'
-                hotline.style.color = '#000'
+                showHomeHotlineFrame.style.display = 'none'
+                hotline.style.color = '#fff'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
 
-        container.addEventListener('click', function () {
+        slider.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#000'
+                login.style.color = '#fff'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showLoginFrame.style.display = 'none'
             }
 
-            if (showHotlineFrame.style.display === 'block') {
-                showHotlineFrame.style.display = 'none'
-                hotline.style.color = '#000'
+            if (showHomeHotlineFrame.style.display === 'block') {
+                showHomeHotlineFrame.style.display = 'none'
+                hotline.style.color = '#fff'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
-                showHotlineFrame.style.display = 'none'
+                showHomeHotlineFrame.style.display = 'none'
             }
 
             if (showUserManagement.style.display === 'block') {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#000'
+                userManagement.style.color = '#fff'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'
@@ -326,23 +316,23 @@
         header.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#000'
+                login.style.color = '#fff'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showLoginFrame.style.display = 'none'
             }
 
-            if (showHotlineFrame.style.display === 'block') {
-                showHotlineFrame.style.display = 'none'
-                hotline.style.color = '#000'
+            if (showHomeHotlineFrame.style.display === 'block') {
+                showHomeHotlineFrame.style.display = 'none'
+                hotline.style.color = '#fff'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
-                showHotlineFrame.style.display = 'none'
+                showHomeHotlineFrame.style.display = 'none'
             }
 
             if (showUserManagement.style.display === 'block') {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#000'
+                userManagement.style.color = '#fff'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'
@@ -351,25 +341,25 @@
 
         showUserManagement.addEventListener('click', function (event) {
             event.stopPropagation()
-        
+
         })
 
         showLoginFrame.addEventListener('click', function (event) {
             event.stopPropagation()
         })
 
-        showHotlineFrame.addEventListener('click', function (event) {
+        showHomeHotlineFrame.addEventListener('click', function (event) {
             event.stopPropagation()
         })
 
         userManagement.addEventListener('click', function (event) {
-            if (showLoginFrame.style.display === 'none' && showHotlineFrame.style.display === 'none') {
+            if (showLoginFrame.style.display === 'none' && showHomeHotlineFrame.style.display === 'none') {
                 event.stopPropagation()
             }
         })
 
         login.addEventListener('click', function (event) {
-            if (showUserManagement.style.display === 'none' && showHotlineFrame.style.display === 'none') {
+            if (showUserManagement.style.display === 'none' && showHomeHotlineFrame.style.display === 'none') {
                 event.stopPropagation()
             }
         })
@@ -379,9 +369,9 @@
                 event.stopPropagation()
             }
         })
-
+            
         userInformationBtn.addEventListener('click', function () {
-            userInformationModal.classList.add('open')
+        userInformationModal.classList.add('open')
         })
 
         userInformationClose.addEventListener('click', function () {
@@ -414,34 +404,17 @@
         })
 
         userInformationEdit.addEventListener('click', function () {
-            userPhone.disabled = false
-            userPhone.value = ""
-        })
-
-        typesOfCars.addEventListener('click', function () {
-            if (typesOfCarsBox.style.display === 'none') {
-                typesOfCarsBox.style.display = 'block'
-                typesOfCarsDown.classList.add('close')
-                typesOfCarsUp.classList.add('open')
+            if (userNewPhone.style.display === 'none') {
+                userNewPhone.style.display = 'block'
             } else {
-                typesOfCarsBox.style.display = 'none'
-                typesOfCarsDown.classList.remove('close')
-                typesOfCarsUp.classList.remove('open')
+                userNewPhone.style.display = 'none'
             }
-        })
+        })       
+        var usp  = '<?php echo $_SESSION['UserPhone']; ?>';
+        var usi =  '<?php echo $_SESSION['UserIDcard']; ?>';
+        document.getElementById("user-phone-input").value = usp;
+        document.getElementById("user-id-input").value = usi;
 
-        priceRange.addEventListener('click', function () {
-            if (priceRangeBox.style.display === 'none') {
-                priceRangeBox.style.display = 'block'
-                priceRangeDown.classList.add('close')
-                priceRangeUp.classList.add('open')
-            } else {
-                priceRangeBox.style.display = 'none'
-                priceRangeDown.classList.remove('close')
-                priceRangeUp.classList.remove('open')
-            }
-        })
-               
     </SCript>
 </body>
 </html>

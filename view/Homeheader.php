@@ -85,7 +85,7 @@
             </ul>
         </div>
 
-        <form action ="" method ="POST" class="user-information-modal js-user-information-modal">
+    <form action ="" method ="POST" class="user-information-modal js-user-information-modal">
              <?php
                 new UserIformationController(); 
             ?> 
