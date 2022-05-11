@@ -17,7 +17,7 @@
 </head>
 <body>
     <?php
-       session_start();
+        session_start();
     ?>
     <div id="wrapper">
         <div id="header">
@@ -59,7 +59,7 @@
                         <button class="user-information-btn js-user-information-btn">
                             Thông tin tài khoản của tôi
                         </button>
-                        <a href="../controller//logout.php" class="logout">
+                        <a href="./index.php" class="logout">
                             Đăng xuất
                         </a>
                     </div>
@@ -67,9 +67,8 @@
             </ul>
         </div>
         <div id="container">
-
             <div id="slider">
-                <form action="" method = "get" class="content">
+                <form action="test.php" method = "get" class="content">
                     <div class="content-select">
                         <div class="pick-up-location">
                             <label for="pu">
@@ -177,7 +176,9 @@
                             Trên 4.000.000 vnd
                         </label>
                     </div> 
-                    <input name = "CarType" type="submit" value="Sort">
+                    <button name = "CarType" type="submit" class="category-search-btn">
+                        Tìm kiếm
+                    </button>
                 </form>
                 <div class="list-car">
                     <header class="list-car-header">Kết quả tìm kiếm:</header>
@@ -185,50 +186,51 @@
                         include '../controller/CarList.php';
                         new CarList();
                     ?>
+                </div>    
+
         <div id="footer">
              
         </div>
-         <form action ="" method ="POST" class="user-information-modal js-user-information-modal">
+        <form action ="" method ="POST" class="user-information-modal js-user-information-modal">
              <?php
-                include '../controller/login.php';
+                include "../controller/login.php";
                 new UserIformationController(); 
             ?> 
-        <div class="container js-container">
-            <div class="user-information-close js-user-information-close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <header class="user-information-header">Thông tin chi tiết của tôi</header>
-            <div class="user-information-body">
-                <div class="user-phone-edit-box">
-                    <span class="user-information">Số điện thoại: </span>
-                    <input id="user-phone-input" type="text" name = "UserPhoneNum" class="user-information-input js-user-phone" value="" disabled>
-                    <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
-                        <i class="fa-solid fa-pen js-fa-pen"></i>
-                        Chỉnh sửa
-                    </label>
-                    <div class="user-new-phone js-user-new-phone">
-                        <div class="wrapper-input">
-                            <span>Số điện thoại mới: </span>
-                            <input type="text" name= "newUserPhoneNum" class="user-new-phone-input">
+            <div class="container js-container">
+                <div class="user-information-close js-user-information-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <header class="user-information-header">Thông tin chi tiết của tôi</header>
+                <div class="user-information-body">
+                    <div class="user-phone-edit-box">
+                        <span class="user-information">Số điện thoại: </span>
+                        <input id="user-phone-input" type="text" name = "UserPhoneNum" class="user-information-input js-user-phone" value="" disabled>
+                        <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
+                            <i class="fa-solid fa-pen js-fa-pen"></i>
+                            Chỉnh sửa
+                        </label>
+                        <div class="user-new-phone js-user-new-phone">
+                            <div class="wrapper-input">
+                                <span>Số điện thoại mới: </span>
+                                <input type="text" name= "newUserPhoneNum" class="user-new-phone-input">
+                            </div>
+                            <!-- <button type="submit" name="UserConfirm" class="accept-edit">
+                                Xác nhận
+                            </button> -->
                         </div>
-                        <!-- <button type="submit" name="UserConfirm" class="accept-edit">
-                            Xác nhận
-                        </button> -->
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
-                </div>
 
-                <div class="user-Id-box">
-                    <span class="user-information">Thẻ căn cước: </span>
-                    <input id = "user-id-input" type="text"  name = "UserIdNum" class="user-information-input" value="" disabled>
+                    <div class="user-Id-box">
+                        <span class="user-information">Thẻ căn cước: </span>
+                        <input id = "user-id-input" type="text"  name = "UserIdNum" class="user-information-input" value="" disabled>
+                    </div>
+                    <button type = "submit" name="UserConfirm" class="accept js-accept">
+                        OK
+                    </button>
                 </div>
-                <button type = "submit" name="UserConfirm" class="accept js-accept">
-                    OK
-                </button>
             </div>
-        </div>
-     </form>
-
+        </form>
     <SCript>
         const showLoginPassword = document.querySelector('.js-login-fa-eye')
         const hideLoginPassword = document.querySelector('.js-login-fa-eye-slash')
@@ -239,7 +241,7 @@
         const hotline = document.querySelector('.js-hotline-btn')
         const showHomeHotlineFrame = document.querySelector('.js-hotline-frame')
         var loginPassword = document.getElementById("user-management-password")
-        var slider = document.getElementById("slider")
+        var container = document.getElementById("container")
         var header = document.getElementById("header")
         const userInformationBtn = document.querySelector('.js-user-information-btn')
         const userInformationModal = document.querySelector('.js-user-information-modal')
@@ -250,6 +252,14 @@
         const userInformationFapen = document.querySelector('.js-fa-pen')
         const userPhone = document.querySelector('.js-user-phone')
         const userNewPhone = document.querySelector('.js-user-new-phone')
+        const typesOfCars = document.querySelector('.js-types-of-cars')
+        const typesOfCarsBox = document.querySelector('.js-types-of-cars-box')
+        const priceRange = document.querySelector('.js-price-range')
+        const priceRangeBox = document.querySelector('.js-price-range-box')
+        const typesOfCarsDown = document.querySelector('.js-types-of-cars-down')
+        const typesOfCarsUp = document.querySelector('.js-types-of-cars-up')
+        const priceRangeDown = document.querySelector('.js-price-range-down')
+        const priceRangeUp = document.querySelector('.js-price-range-up')
 
         function showHideUserManagement() {
             if (showUserManagement.style.display == 'none') {
@@ -258,7 +268,7 @@
                 userManagement.style.backgroundColor = '#fff'
             } else {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#fff'
+                userManagement.style.color = '#000'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
@@ -270,7 +280,7 @@
                 login.style.backgroundColor = '#fff'
             } else {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#fff'
+                login.style.color = '#000'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
@@ -282,15 +292,15 @@
                 hotline.style.backgroundColor = '#fff'
             } else {
                 showHomeHotlineFrame.style.display = 'none'
-                hotline.style.color = '#fff'
+                hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
 
-        slider.addEventListener('click', function () {
+        container.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#fff'
+                login.style.color = '#000'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showLoginFrame.style.display = 'none'
@@ -298,7 +308,7 @@
 
             if (showHomeHotlineFrame.style.display === 'block') {
                 showHomeHotlineFrame.style.display = 'none'
-                hotline.style.color = '#fff'
+                hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showHomeHotlineFrame.style.display = 'none'
@@ -306,7 +316,7 @@
 
             if (showUserManagement.style.display === 'block') {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#fff'
+                userManagement.style.color = '#000'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'
@@ -316,7 +326,7 @@
         header.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#fff'
+                login.style.color = '#000'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showLoginFrame.style.display = 'none'
@@ -324,7 +334,7 @@
 
             if (showHomeHotlineFrame.style.display === 'block') {
                 showHomeHotlineFrame.style.display = 'none'
-                hotline.style.color = '#fff'
+                hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showHomeHotlineFrame.style.display = 'none'
@@ -332,7 +342,7 @@
 
             if (showUserManagement.style.display === 'block') {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#fff'
+                userManagement.style.color = '#000'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'
@@ -409,12 +419,37 @@
             } else {
                 userNewPhone.style.display = 'none'
             }
-        })       
+        })
+
+        typesOfCars.addEventListener('click', function () {
+            if (typesOfCarsBox.style.display === 'none') {
+                typesOfCarsBox.style.display = 'block'
+                typesOfCarsDown.classList.add('close')
+                typesOfCarsUp.classList.add('open')
+            } else {
+                typesOfCarsBox.style.display = 'none'
+                typesOfCarsDown.classList.remove('close')
+                typesOfCarsUp.classList.remove('open')
+            }
+        })
+
+        priceRange.addEventListener('click', function () {
+            if (priceRangeBox.style.display === 'none') {
+                priceRangeBox.style.display = 'block'
+                priceRangeDown.classList.add('close')
+                priceRangeUp.classList.add('open')
+            } else {
+                priceRangeBox.style.display = 'none'
+                priceRangeDown.classList.remove('close')
+                priceRangeUp.classList.remove('open')
+            }
+        })
+
         var usp  = '<?php echo $_SESSION['UserPhone']; ?>';
         var usi =  '<?php echo $_SESSION['UserIDcard']; ?>';
         document.getElementById("user-phone-input").value = usp;
         document.getElementById("user-id-input").value = usi;
-
+       
     </SCript>
 </body>
 </html>

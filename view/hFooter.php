@@ -31,7 +31,7 @@
                 userManagement.style.backgroundColor = '#fff'
             } else {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#fff'
+                userManagement.style.color = '#000'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
@@ -43,7 +43,7 @@
                 login.style.backgroundColor = '#fff'
             } else {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#fff'
+                login.style.color = '#000'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
@@ -55,7 +55,7 @@
                 hotline.style.backgroundColor = '#fff'
             } else {
                 showHomeHotlineFrame.style.display = 'none'
-                hotline.style.color = '#fff'
+                hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
@@ -63,7 +63,7 @@
         slider.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#fff'
+                login.style.color = '#000'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showLoginFrame.style.display = 'none'
@@ -71,7 +71,7 @@
 
             if (showHomeHotlineFrame.style.display === 'block') {
                 showHomeHotlineFrame.style.display = 'none'
-                hotline.style.color = '#fff'
+                hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showHomeHotlineFrame.style.display = 'none'
@@ -79,7 +79,7 @@
 
             if (showUserManagement.style.display === 'block') {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#fff'
+                userManagement.style.color = '#000'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'
@@ -89,7 +89,7 @@
         header.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#fff'
+                login.style.color = '#000'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showLoginFrame.style.display = 'none'
@@ -97,7 +97,7 @@
 
             if (showHomeHotlineFrame.style.display === 'block') {
                 showHomeHotlineFrame.style.display = 'none'
-                hotline.style.color = '#fff'
+                hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showHomeHotlineFrame.style.display = 'none'
@@ -105,7 +105,7 @@
 
             if (showUserManagement.style.display === 'block') {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#fff'
+                userManagement.style.color = '#000'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'

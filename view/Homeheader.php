@@ -85,42 +85,42 @@
             </ul>
         </div>
 
-    <form action ="" method ="POST" class="user-information-modal js-user-information-modal">
+        <form action ="" method ="POST" class="user-information-modal js-user-information-modal">
              <?php
                 new UserIformationController(); 
             ?> 
-        <div class="container js-container">
-            <div class="user-information-close js-user-information-close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <header class="user-information-header">Thông tin chi tiết của tôi</header>
-            <div class="user-information-body">
-                <div class="user-phone-edit-box">
-                    <span class="user-information">Số điện thoại: </span>
-                    <input id="user-phone-input" type="text" name = "UserPhoneNum" class="user-information-input js-user-phone" value="" disabled>
-                    <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
-                        <i class="fa-solid fa-pen js-fa-pen"></i>
-                        Chỉnh sửa
-                    </label>
-                    <div class="user-new-phone js-user-new-phone">
-                        <div class="wrapper-input">
-                            <span>Số điện thoại mới: </span>
-                            <input type="text" name= "newUserPhoneNum" class="user-new-phone-input">
+            <div class="container js-container">
+                <div class="user-information-close js-user-information-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <header class="user-information-header">Thông tin chi tiết của tôi</header>
+                <div class="user-information-body">
+                    <div class="user-phone-edit-box">
+                        <span class="user-information">Số điện thoại: </span>
+                        <input id="user-phone-input" type="text" name = "UserPhoneNum" class="user-information-input js-user-phone" value="" disabled>
+                        <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
+                            <i class="fa-solid fa-pen js-fa-pen"></i>
+                            Chỉnh sửa
+                        </label>
+                        <div class="user-new-phone js-user-new-phone">
+                            <div class="wrapper-input">
+                                <span>Số điện thoại mới: </span>
+                                <input type="text" name= "newUserPhoneNum" class="user-new-phone-input">
+                            </div>
+                            <!-- <button type="submit" name="UserConfirm" class="accept-edit">
+                                Xác nhận
+                            </button> -->
                         </div>
-                        <!-- <button type="submit" name="UserConfirm" class="accept-edit">
-                            Xác nhận
-                        </button> -->
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
-                </div>
 
-                <div class="user-Id-box">
-                    <span class="user-information">Thẻ căn cước: </span>
-                    <input id = "user-id-input" type="text"  name = "UserIdNum" class="user-information-input" value="" disabled>
+                    <div class="user-Id-box">
+                        <span class="user-information">Thẻ căn cước: </span>
+                        <input id = "user-id-input" type="text"  name = "UserIdNum" class="user-information-input" value="" disabled>
+                    </div>
+                    <button type = "submit" name="UserConfirm" class="accept js-accept">
+                        OK
+                    </button>
                 </div>
-                <button type = "submit" name="UserConfirm" class="accept js-accept">
-                    OK
-                </button>
             </div>
-        </div>
-     </form>
+        </form>

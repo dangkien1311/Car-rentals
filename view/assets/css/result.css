@@ -18,7 +18,6 @@ html {
 
 }
 
-
 #wrapper::after {
     content: "";
     position: absolute;
@@ -28,7 +27,6 @@ html {
     height: 1px;
     background-color: #000;
 }
-
 
 #header {
     /* position: fixed; */
@@ -44,9 +42,6 @@ html {
     z-index: 1;
     background-color: rgb(255, 197, 0);
     outline-color: rgb(255, 197, 0);
-    /* background-color: rgba(255, 255, 255, 0); */
-    /* background-color: red; */
-    /* border-bottom: 0.05px solid #ccc;  */
 }
 
 #header #nav {
@@ -112,7 +107,7 @@ html {
     text-align: left;
     transform-origin: top right;
     animation: userManagement ease 0.5s;
-    z-index: 100;
+    z-index: 1;
 }
 
 .nav-user-management .user-management-header {
@@ -165,7 +160,7 @@ html {
     padding: 20px;
     transform-origin: top right;
     animation: userManagement ease 0.5s;
-    z-index: 100;
+    z-index: 1;
 }
 
 #nav .hotline-sub-header {
@@ -270,7 +265,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 99;
+    /* z-index: 99; */
 }
 
 #slider .content-select {
@@ -313,6 +308,7 @@ html {
     margin: 0 10px;
     outline: none;
     padding-left: 8px;
+    z-index: -1;
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -346,6 +342,7 @@ html {
     font-size: 18px;
     padding-left: 8px;
     cursor: pointer;
+    z-index: -1;
 }
 
 #slider .search {
@@ -440,6 +437,18 @@ html {
     font-size: 16px;
 }
 
+#container-body .category-search-btn {
+    float: right;
+    margin: 10px 0;
+    color: #fff;
+    padding: 6px;
+    background-color: #00874d;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
 #container-body .list-car {
     width: 80%;
     /* overflow: auto; */
@@ -462,12 +471,13 @@ html {
 }
 
 #container-body .list-car-select img {
-    width: 30%;
+    width: 24%;
+    object-fit: contain;
 }
 
 .list-car-select .car-information {
     width: 60%;
-    margin: 6px 0 6px 10px;
+    margin: 6px 0 6px 20px;
 }
 
 .list-car-select .car-brand {
@@ -582,7 +592,7 @@ html {
     display: inline-block;
 }
 
-.user-information-modal .accept-edit {
+.user-information-modal .accept {
     padding: 6px;
     float: right;
     color: #fff;
@@ -592,11 +602,54 @@ html {
     border-radius: 3px;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 10px 0 16px 0;
 }
 
-.user-information-modal .accept-edit:hover {
+.user-information-modal .accept:hover {
     background-color: #006e3e;
+}
+
+.user-phone-edit-box {
+    padding: 8px;
+    /* background-color: #ccc; */
+    /* margin-bottom: 8px; */
+}
+
+.user-new-phone {
+    /* background-color: #000; */
+    width: 100%;
+    /* min-height: 30px; */
+    display: none;
+    float: right;
+}
+
+.user-new-phone .user-new-phone-input {
+    outline: none;
+    padding: 2px;
+    font-size: 14px;
+    /* display: block; */
+}
+
+.wrapper-input {
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.user-new-phone .accept-edit {
+    /* float: inline; */
+    padding: 4px;
+    color: #fff;
+    background-color: #00874d;
+    font-weight: 500;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    /* display: inline-block; */
+}
+
+.user-Id-box {
+    padding: 8px;
 }
 
 @keyframes userManagement {
