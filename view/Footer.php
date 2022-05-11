@@ -29,7 +29,7 @@
                 userManagement.style.backgroundColor = '#fff'
             } else {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#fff'
+                userManagement.style.color = '#000'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
@@ -41,7 +41,7 @@
                 login.style.backgroundColor = '#fff'
             } else {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#fff'
+                login.style.color = '#000'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
@@ -53,7 +53,7 @@
                 hotline.style.backgroundColor = '#fff'
             } else {
                 showHotlineFrame.style.display = 'none'
-                hotline.style.color = '#fff'
+                hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
@@ -61,7 +61,7 @@
         slider.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#fff'
+                login.style.color = '#000'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showLoginFrame.style.display = 'none'
@@ -69,15 +69,15 @@
 
             if (showHotlineFrame.style.display === 'block') {
                 showHotlineFrame.style.display = 'none'
-                hotline.style.color = '#fff'
+                hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
-                showHotlineFrame.style.display = 'none'
+                showHomeHotlineFrame.style.display = 'none'
             }
 
             if (showUserManagement.style.display === 'block') {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#fff'
+                userManagement.style.color = '#000'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'
@@ -87,7 +87,7 @@
         header.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
-                login.style.color = '#fff'
+                login.style.color = '#000'
                 login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showLoginFrame.style.display = 'none'
@@ -95,7 +95,7 @@
 
             if (showHotlineFrame.style.display === 'block') {
                 showHotlineFrame.style.display = 'none'
-                hotline.style.color = '#fff'
+                hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showHotlineFrame.style.display = 'none'
@@ -103,7 +103,7 @@
 
             if (showUserManagement.style.display === 'block') {
                 showUserManagement.style.display = 'none'
-                userManagement.style.color = '#fff'
+                userManagement.style.color = '#000'
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'
@@ -140,21 +140,23 @@
                 event.stopPropagation()
             }
         })
-            openRegister.addEventListener('click', function () {
-                modal.classList.add('open')
-            })
 
-            closeRegister.addEventListener('click', function () {
-                modal.classList.remove('open')
-            })
+        openRegister.addEventListener('click', function () {
+            modal.classList.add('open')
+        })
 
-            modal.addEventListener('click', function () {
-                modal.classList.remove('open')
-            })
+        closeRegister.addEventListener('click', function () {
+            modal.classList.remove('open')
+        })
 
-            registerRegister.addEventListener('click', function (event) {
-                event.stopPropagation()
-            })
+        modal.addEventListener('click', function () {
+            modal.classList.remove('open')
+        })
+
+        registerRegister.addEventListener('click', function (event) {
+            event.stopPropagation()
+        })
+
         function showHideLoginPassword() {
             if (loginPassword.type === "password") {
                 loginPassword.type = "text"
