@@ -75,6 +75,7 @@ html {
 }
 
 #logo {
+    display: flex;
     align-items: center;
     line-height: 60px;
     color: #fff;
@@ -100,7 +101,7 @@ html {
     right: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: #fff;
-    width: 360px;
+    width: 420px;
     display: none;
     height: 320px;
     /* padding: 20px; */
@@ -120,11 +121,86 @@ html {
     color: #000;
     border: none;
     padding: 0 16px;
-    border-left: 1px solid #ccc;
+    /* border-left: 1px solid #ccc; */
     text-decoration: none;
     line-height: 60px;
     background-color: rgba(0, 0, 0, 0);
 }
+
+.nav-user-management .rental-car-img img{
+    width: 100%;
+}
+
+.nav-user-management .rental-car-img {
+    width: 20%;
+    align-items: center;
+    display: flex;
+    margin: 0 12px;
+}
+
+.nav-user-management .rental-car-box {
+    display: flex;
+    border: 1px solid #ccc;
+    /* padding: 6px 4px; */
+}
+
+.rental-car-information .rental-car-brand {
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.rental-car-information .rental-car-about {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.rental-car-information {
+    width: 70%;
+    margin: 6px 0;
+}
+
+.rental-car-box .rental-car-delete {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    background-color: #f03333;
+    border: none;
+    cursor: pointer;
+}
+
+.rental-car-box .rental-car-delete:hover {
+    background-color: rgba(240, 51, 51, 0.9);
+}
+
+.nav-user-management .rental-car-total-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 8px 8px 8px;
+    border-top: 1px solid #ccc;
+}
+
+.rental-car-total-amount .rental-car-accept {
+    /* float: right; */
+    color: #fff;
+    padding: 6px;
+    background-color: #00874d;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.rental-car-total-amount .rental-car-accept:hover {
+    background-color: #006e3e;
+}
+
 
 #nav .hotline {
     position: relative;
@@ -134,7 +210,7 @@ html {
     color: #000;
     border: none;
     padding: 0 16px;
-    border-left: 1px solid #ccc;
+    /* border-left: 1px solid #ccc; */
     text-decoration: none;
     line-height: 60px;
     background-color: rgba(0, 0, 0, 0);

@@ -34,6 +34,25 @@
                     </button>
                     <div class="nav-user-management js-nav-user-management">
                         <header class="user-management-header">Các lượt xe bạn thuê:</header>
+                        <div class="rental-car-box">
+                            <div class="rental-car-img">
+                                <img src="../view/assets/CarIMG/Mercedesg500.png" alt="">
+                            </div>
+                            <div class="rental-car-information">
+                                <span class="rental-car-brand">Mercedes G500</span>
+                                <br>
+                                <span class="rental-car-about">Điểm nhận: Hà Nội</span>
+                                <br>
+                                <span class="rental-car-about">Điểm trả: Quảng Ninh</span>
+                                <br>
+                                <span class="rental-car-about">Thuê từ ngày: 12/5/2022 đến ngày: 14/5/2022</span>
+                            </div>
+                            <button class="rental-car-delete">Xóa</button>
+                        </div>
+                        <div class="rental-car-total-amount">
+                            <span class="total-amount">Tổng số tiền: 1.000.000.000 vnd</span>
+                            <button class="rental-car-accept">Xác nhận</button>
+                        </div>
                     </div>
                 </li>
                 <li class="hotline">
