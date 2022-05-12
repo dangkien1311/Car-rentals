@@ -48,6 +48,24 @@
             return false;
         }
 
+        function getArrayDetail($userID) {
+            $sql = "SELECT dailyHireRate,Name,CarIMG,booking.*,accountmanager.citizenID
+            FROM carcategory
+            LEFT JOIN booking ON carcategory.carCategoryID = booking.carCategoryID 
+            LEFT JOIN accountmanager
+            ON booking.customerID = accountmanager.customerID
+            WHERE accountmanager.citizenID = $userID;";
+            if($result = $this->conn->query($sql)) {
+                $data = null;
+                while ($row = $result->fetch_assoc()) {
+                    $data[] = $row;
+                }
+                return $data;
+            } 
+            return false;
+        }
+
+
         function getArrayIn($table,$col,$CarValue) {
             if(is_array($CarValue) || !is_string($table) ||!is_string($col)) 
                 return false;
@@ -146,11 +164,12 @@
             return $this->conn->query($sql);
         }
     
-        function delete($table, $id) {
+        function delete($table, $id,$namecollumn) {
             $id = (int)$id;
-            if(!is_string($table) || !is_integer($id))
+            $nameset = $namecollumn;
+            if(!is_string($table) || !is_integer($id) || !is_string($nameset))
                 return false;
-            $sql = "DELETE FROM `$table` WHERE id = $id;";
+            $sql = "DELETE FROM `$table` WHERE $nameset = '$id';";
             return $this->conn->query($sql);
         }
 

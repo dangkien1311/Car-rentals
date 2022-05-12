@@ -30,17 +30,17 @@
         const priceRangeDown = document.querySelector('.js-price-range-down')
         const priceRangeUp = document.querySelector('.js-price-range-up')
 
-        function showHideUserManagement() {
-            if (showUserManagement.style.display == 'none') {
-                showUserManagement.style.display = 'block'
-                userManagement.style.color = 'rgb(0, 96, 196)'
-                userManagement.style.backgroundColor = '#fff'
-            } else {
-                showUserManagement.style.display = 'none'
-                userManagement.style.color = '#000'
-                userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
-            }
-        }
+        // function showHideUserManagement() {
+        //     if (showUserManagement.style.display == 'none') {
+        //         showUserManagement.style.display = 'block'
+        //         userManagement.style.color = 'rgb(0, 96, 196)'
+        //         userManagement.style.backgroundColor = '#fff'
+        //     } else {
+        //         showUserManagement.style.display = 'none'
+        //         userManagement.style.color = '#000'
+        //         userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+        //     }
+        // }
 
         function showHideLoginFrame() {
             if (showLoginFrame.style.display == 'none') {

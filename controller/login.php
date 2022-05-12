@@ -66,6 +66,7 @@ class signUpManager extends controller {
                         && $checkpassword[0]['password'] == $signInPassword){
                         $_SESSION['UserPhone'] = "(+84)"." ".$checkuser[0]['username'];
                         $_SESSION['UserIDcard'] = $checkUserIDcard[0]['citizenID'];
+                        $_SESSION['totalamount'] = 0;
                         header("Location: main.php");
                         //echo "<script>console.log('Debug Objects: " . $_SESSION['UserPhone']. "' );</script>";
                     } else {

@@ -25,8 +25,8 @@
             <ul id="nav">
                 <li class="user-management">
                     <button class="user-management-btn js-user-management-btn" onclick="showHideUserManagement()">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        Quản lí đặt chỗ
+                        <!-- <i class="fa-solid fa-pen-to-square"></i>
+                        Quản lí đặt chỗ -->
                     </button>
                     <div class="nav-user-management js-nav-user-management">
                         <header class="user-management-header">Quản lý đặt chỗ</header>

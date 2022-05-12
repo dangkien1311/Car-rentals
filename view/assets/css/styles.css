@@ -530,6 +530,7 @@ html {
     border: none;
     cursor: pointer;
     border-radius: 3px;
+    text-decoration: none;
 }
 
 .list-car-select .book:hover {

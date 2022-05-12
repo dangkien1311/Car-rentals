@@ -332,41 +332,48 @@
                         }
                     }      
                 }
-                
-                if(isset($_GET['id_product']))
-                {
-                   $idProduct =  $this->model->escape_string($_GET['id_product']);
-                   $ctID =  $this->model->escape_string($_SESSION['UserIDcard']);
-                   $result = $this->model->query("select * from `booking` where carCategoryID = '$idProduct';", true);
-                   $customerID = $this->model->query("select customerID from `accountmanager` where citizenID = '$ctID';", true);
-                   if($result === false) {
-                       die("Failed in bookingmanager");
+               if(isset($_GET['id_product'])) {    
+                 if(isset($_SESSION['pup'])&&
+                    isset($_SESSION['dop'])&&
+                    isset($_SESSION['put'])&&
+                    isset($_SESSION['dot'])){    
+                        $idProduct =  $this->model->escape_string($_GET['id_product']);
+                        $ctID =  $this->model->escape_string($_SESSION['UserIDcard']);
+                        $result = $this->model->query("select * from `booking` where carCategoryID = '$idProduct';", true);
+                        $customerID = $this->model->query("select customerID from `accountmanager` where citizenID = '$ctID';", true);
+                        if($result === false) {
+                            die("Failed in bookingmanager");
+                        }
+                        if($result === NULL){
+                                    $data = array(
+                                'customerID' => $this->model->escape_string($customerID[0]['customerID']),
+                                'dateFrom' =>  $_SESSION['put'],
+                                'dateTo' =>  $_SESSION['dot'],
+                                'carCategoryID'	=> $idProduct,
+                                'puPlace'=>   $this->model->escape_string($_SESSION['pup']),
+                                'doPlace'=>  $this->model->escape_string($_SESSION['dop']),
+                                'Quantity'=> '1'
+                            );
+                            if($this->model->insert('booking', $data) !== false){
+                                echo "<script>alert('thêm vào giỏ thành công');
+                                        window.location.replace('main.php');
+                                        </script>";
+                            }
+                            else {
+                                echo "<script>alert('add: Failed!');
+                                        window.location.replace('main.php');
+                                        </script>";
+                            }
+                            
+                            // echo "<script>console.log('Debug Objects: (" .gettype($_SESSION['put']). ")' );</script>";
+                        }
+                // echo "<script>console.log('Debug Objects: " . $_SESSION['put']. "' );</script>";
+                    } else {
+                        echo "<script>alert('vui lòng nhập đủ thông tin');
+                        window.location.replace('main.php');
+                        </script>";
                    }
-                   if($result === NULL){
-                            $data = array(
-                           'customerID' => $this->model->escape_string($customerID[0]['customerID']),
-                           'dateFrom' =>  $_SESSION['put'],
-                           'dateTo' =>  $_SESSION['dot'],
-                           'carCategoryID'	=> $idProduct,
-                           'puPlace'=>   $this->model->escape_string($_SESSION['pup']),
-                           'doPlace'=>  $this->model->escape_string($_SESSION['dop']),
-                           'Quantity'=> '1'
-                       );
-                       if($this->model->insert('booking', $data) !== false){
-                           echo "<script>alert('thêm vào giỏ thành công');
-                                   window.location.replace('main.php');
-                                   </script>";
-                       }
-                       else {
-                           echo "<script>alert('add: Failed!');
-                                   window.location.replace('main.php');
-                                   </script>";
-                       }
-                    
-                    // echo "<script>console.log('Debug Objects: (" .gettype($_SESSION['put']). ")' );</script>";
-                   }
-               // echo "<script>console.log('Debug Objects: " . $_SESSION['put']. "' );</script>";
-                }
+               } 
         } 
     }
 ?>

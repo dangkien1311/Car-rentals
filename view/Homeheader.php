@@ -32,28 +32,17 @@
                         <i class="fa-solid fa-pen-to-square"></i>
                         Quản lí đặt chỗ
                     </button>
-                    <div class="nav-user-management js-nav-user-management">
+                    <form action ="" method ="POST" class="nav-user-management js-nav-user-management">
                         <header class="user-management-header">Các lượt xe bạn thuê:</header>
-                        <div class="rental-car-box">
-                            <div class="rental-car-img">
-                                <img src="../view/assets/CarIMG/Mercedesg500.png" alt="">
-                            </div>
-                            <div class="rental-car-information">
-                                <span class="rental-car-brand">Mercedes G500</span>
-                                <br>
-                                <span class="rental-car-about">Điểm nhận: Hà Nội</span>
-                                <br>
-                                <span class="rental-car-about">Điểm trả: Quảng Ninh</span>
-                                <br>
-                                <span class="rental-car-about">Thuê từ ngày: 12/5/2022 đến ngày: 14/5/2022</span>
-                            </div>
-                            <button class="rental-car-delete">Xóa</button>
-                        </div>
+                        <?php
+                            include '../controller/PaymentDetail.php';
+                            new  PaymentDetails();
+                        ?>
                         <div class="rental-car-total-amount">
-                            <span class="total-amount">Tổng số tiền: 1.000.000.000 vnd</span>
-                            <button class="rental-car-accept">Xác nhận</button>
+                            <span class="total-amount">Tổng số tiền: <?php echo $_SESSION['totalamount'];?> vnd/ngày</span>
+                            <button name="comfirmButton" type = "submit" class="rental-car-accept">Xác nhận</button>
                         </div>
-                    </div>
+                    </form>
                 </li>
                 <li class="hotline">
                     <button class="hotline-btn js-hotline-btn" onclick="showHideHotlineFrame()">

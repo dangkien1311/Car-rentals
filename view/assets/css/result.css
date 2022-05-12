@@ -109,6 +109,7 @@ html {
     transform-origin: top right;
     animation: userManagement ease 0.5s;
     z-index: 1;
+    overflow: scroll;
 }
 
 .nav-user-management .user-management-header {
@@ -579,6 +580,7 @@ html {
     border: none;
     cursor: pointer;
     border-radius: 3px;
+    text-decoration: none;
 }
 
 .list-car-select .book:hover {
