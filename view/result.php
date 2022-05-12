@@ -1,12 +1,16 @@
     <div id="container">
             <div id="slider">
                 <form action="" method = "get" class="content">
+                    <?php
+                        include "../controller/SearchControl.php";
+                        new SearchController();
+                    ?>
                     <div class="content-select">
                         <div class="pick-up-location">
                             <label for="pu">
                                 <i class="fa-solid fa-location-dot"></i>
                             </label>
-                            <select name="pu" id="pu">
+                            <select name="pu" id="pu" required>
                                 <option value="">--Điểm nhận--</option>
                                 <option value="Hà Nội">Hà Nội</option>
                                 <option value="Hải Phòng">Hải Phòng</option>
@@ -23,7 +27,7 @@
                             <label for="do">
                                 <i class="fa-solid fa-location-dot"></i>
                             </label>
-                            <select name="do" id="do">
+                            <select name="do" id="do" required >
                                 <option value="">--Điểm trả--</option>
                                 <option value="Hà Nội">Hà Nội</option>
                                 <option value="Hải Phòng">Hải Phòng</option>
@@ -40,17 +44,17 @@
                             <!-- <label for="pu-time-input">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </label> -->
-                            <input id="pu-time-input" type="datetime-local" name = "pickUpDate" class="pick-up-time-input" placeholder="Thời gian lấy xe">
+                            <input id="pu-time-input" type="datetime-local" name = "pickUpDate" required class="pick-up-time-input" placeholder="Thời gian lấy xe">
                         </div>
                         <div class="drop-off-time">
                             <!-- <label onclick="openCalendar()" for="do-time-input">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </label> -->
-                            <input id="do-time-input" type="datetime-local" name = "dropOffDate" class="drop-off-time-input" placeholder="Thời gian trả xe">
+                            <input id="do-time-input" type="datetime-local" name = "dropOffDate" required class="drop-off-time-input" placeholder="Thời gian trả xe">
                         </div>
                     </div>
                     <div class="search-wrapper">
-                        <button type = "submit" class="search">tìm chuyến</button>
+                        <button type = "submit" name = "searchButton" class="search">tìm chuyến</button>
                     </div>
                 
                 </form>
@@ -121,12 +125,13 @@
                         Tìm kiếm
                     </button>
                 </form>
-                <div class="list-car">
+                <form  action = ""  method = "POST" class="list-car">
                     <header class="list-car-header">Kết quả tìm kiếm:</header>
                     <?php
                         include '../controller/CarList.php';
                         new CarList();
-                    ?>
-                </div>    
+                       
+                    ?> 
+                </form>    
 
      

@@ -78,12 +78,12 @@
                             Số điện thoại
                         </label>
                         <!-- <input type="hidden" value="<?php echo $rand; ?>" name="randcheck"> -->
-                        <input id="login-phone-number" name ="signInNum" type="text" class="user-management-input" placeholder="Số điện thoại">
+                        <input id="login-phone-number" name ="signInNum" type="text" required class="user-management-input" placeholder="Số điện thoại">
                         <label for="user-management-password" class="user-management-label">
                             <i class="fa-solid fa-key"></i>
                             Mật khẩu
                         </label>
-                        <input id="user-management-password" name ="signInpass" type="password" class="user-management-input" placeholder="Mật khẩu">
+                        <input id="user-management-password" name ="signInpass" type="password" required class="user-management-input" placeholder="Mật khẩu">
                         <i class="fa-solid fa-eye js-login-fa-eye" onclick="showHideLoginPassword()" style="margin-left: -30px; cursor: pointer;"></i>
                         <i class="fa-solid fa-eye-slash js-login-fa-eye-slash" onclick="showHideLoginPassword()" style="margin-left: -30px; cursor: pointer;"></i>
                         <div class="login-select">
@@ -157,17 +157,17 @@
                         <i class="fa-solid fa-square-phone"></i>
                             Số điện thoại
                     </label>
-                    <input id="register-phone-number" name = "phone_data" type="text" class="register-frame-input" placeholder="Số điện thoại">
+                    <input id="register-phone-number" name = "phone_data" type="text" required class="register-frame-input" placeholder="Số điện thoại">
                     <label for="register-identify" class="register-frame-label">
                         <i class="fa-solid fa-id-card"></i>
                         Thẻ căn cước
                     </label>
-                    <input id="register-identify" name = "reg_data" type="text" class="register-frame-input" placeholder="Số thẻ căn cước">
+                    <input id="register-identify" name = "reg_data" type="text" required class="register-frame-input" placeholder="Số thẻ căn cước">
                     <label for="register-password" class="register-frame-label">
                         <i class="fa-solid fa-key"></i>
                         Mật khẩu
                     </label>
-                    <input id="register-password" name = "pass_data" type="text" class="register-frame-input" placeholder="Mật khẩu">
+                    <input id="register-password" name = "pass_data" type="text" required class="register-frame-input" placeholder="Mật khẩu">
                     <i class="fa-solid fa-eye js-register-fa-eye" onclick="showHideRegisterPassword()" style="margin-left: -30px; cursor: pointer;"></i>
                     <i class="fa-solid fa-eye-slash js-register-fa-eye-slash" onclick="showHideRegisterPassword()" style="margin-left: -30px; cursor: pointer;"></i>
                     <p class="about">Bằng việc đăng nhập hoặc đăng ký tài khoản, bạn đồng ý với Điều Khoản & Điều Kiện và Thông báo về Quyền riêng tư.</p>

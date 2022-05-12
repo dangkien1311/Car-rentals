@@ -35,7 +35,9 @@
         function getArray($table) {
             if(!is_string($table)) 
                 return false;
-            $sql = "SELECT * FROM `$table`;";
+            $sql = "SELECT * FROM `$table` WHERE NOT EXISTS (SELECT * 
+            FROM booking 
+            WHERE carcategory.carCategoryID = booking.carCategoryID);";
             if($result = $this->conn->query($sql)) {
                 $data = null;
                 while ($row = $result->fetch_assoc()) {
@@ -50,7 +52,10 @@
             if(is_array($CarValue) || !is_string($table) ||!is_string($col)) 
                 return false;
             $CarValue = (string)$CarValue;
-            $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarValue';";
+            $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarValue' AND NOT EXISTS 
+            (SELECT * 
+            FROM booking 
+            WHERE carcategory.carCategoryID = booking.carCategoryID) ;";
             if($result = $this->conn->query($sql)) {
                 $data = null;
                 while ($row = $result->fetch_assoc()) {
@@ -72,7 +77,9 @@
                 WHEN $EPrice = 3 THEN dailyHireRate BETWEEN 3 AND 4
                 ELSE dailyHireRate > 4
                 
-            END) 
+            END) AND NOT EXISTS (SELECT * 
+                            FROM booking 
+                            WHERE carcategory.carCategoryID = booking.carCategoryID)
             ORDER BY dailyHireRate ASC;";
             if($result = $this->conn->query($sql)) {
                 $data = null;
@@ -94,7 +101,9 @@
                 WHEN $EPrice = 3 THEN dailyHireRate BETWEEN 3 AND 4
                 ELSE dailyHireRate > 4
                 
-            END) 
+            END)  AND NOT EXISTS (SELECT * 
+                            FROM booking 
+                            WHERE carcategory.carCategoryID = booking.carCategoryID)
             ORDER BY dailyHireRate ASC;";
             if($result = $this->conn->query($sql)) {
                 $data = null;
@@ -124,7 +133,7 @@
             return false;
         }
     
-        function update($table, $data, $id) {
+        function update($table, $data, $id,$name_collumn) {
             $id = (int)$id;
             if(!is_string($table) || !is_array($data) || !is_integer($id))
                 return false;
@@ -133,7 +142,7 @@
                 $content .= $key." = '".$this->conn->escape_string($value)."', ";
             }
             $content = trim($content, ', ');
-            $sql = "UPDATE `$table` SET $content WHERE citizenID = $id;";
+            $sql = "UPDATE `$table` SET $content WHERE $name_collumn = $id;";
             return $this->conn->query($sql);
         }
     

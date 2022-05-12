@@ -66,7 +66,7 @@ class signUpManager extends controller {
                         && $checkpassword[0]['password'] == $signInPassword){
                         $_SESSION['UserPhone'] = "(+84)"." ".$checkuser[0]['username'];
                         $_SESSION['UserIDcard'] = $checkUserIDcard[0]['citizenID'];
-                        header("Location: index.php?act=home");
+                        header("Location: main.php");
                         //echo "<script>console.log('Debug Objects: " . $_SESSION['UserPhone']. "' );</script>";
                     } else {
                         //header("Location:index.php");
@@ -74,13 +74,7 @@ class signUpManager extends controller {
                                 window.location.replace('index.php');
                                 </script>";
                     }
-                } else{
-                    // alert("chưa đủ thông tin đăng nhập");
-                    echo "<script>alert('chưa đủ thông tin đăng nhập');
-                            window.location.replace('index.php');
-                            </script>";
-                    //return false;
-                }
+                } 
             }
         }
         // unset($signInuser);
@@ -107,28 +101,29 @@ class UserIformationController extends Controller{
                         $data = array(
                             'username' => $userPhonedata
                         );
-                        if($this->model->update('accountmanager',$data,$userIdnum) !== FALSE) {
+                        if($this->model->update('accountmanager',$data,$userIdnum,'citizenID') !== FALSE) {
                             unset($_SESSION['UserPhone']);
                             $_SESSION['UserPhone'] = $userPhonedata;
                             echo "<script>alert('cập nhật thông tin thành công');
-                            window.location.replace('index.php?act=home');
+                            window.location.replace('main.php');
                             </script>";
                             //header("Location: index.php");
                         } else {
                             echo "<script>alert('cập nhật thông tin thất bại');
-                            window.location.replace('index.php?act=home');
+                            window.location.replace('main.php');
                             </script>";
                         }
                     } else {
                         echo "<script>alert('Số điện thoại đã tồn tại');
-                        window.location.replace('index.php?act=home');
+                        window.location.replace('main.php');
                         </script>";
                     }
                 }
             } else {
-                echo "<script>alert('Số điện thoại không được để trống');
-                            window.location.replace('index.php?act=home');
-                            </script>";
+                // echo "<script>alert('Số điện thoại không được để trống');
+                //             window.location.replace('index.php?act=home');
+                //             </script>";
+                header("Location: main.php");
             }
         //return $this->model->disconnect(); 
         }
