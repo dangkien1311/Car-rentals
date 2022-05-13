@@ -29,12 +29,12 @@
                                 <br>
                                 <span class="rental-car-about">Thuê từ : '.$product[$i]['dateFrom'].' đến : '.$product[$i]['dateTo'].'</span>
                             </div>
-                            <a href="main.php?del_product='.$product[$i]['carCategoryID'].'" class="rental-car-delete" >Xóa</a>
+                            <a href="main.php?del_product='.$product[$i]['bookingID'].'" class="rental-car-delete" >Xóa</a>
                         </div>';
                 }
                 if(isset($_GET['del_product'])){
                     $deliteam = $_GET['del_product'];
-                    if($this->model->delete('booking',$deliteam,'carCategoryID')){
+                    if($this->model->delete('booking',$deliteam,'bookingID')){
                         echo "<script>alert('xóa sản phẩm thành công');
                             window.location.replace('../controller/main.php');
                             </script>";
