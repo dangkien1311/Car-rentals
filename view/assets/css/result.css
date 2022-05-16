@@ -109,7 +109,6 @@ html {
     transform-origin: top right;
     animation: userManagement ease 0.5s;
     z-index: 1;
-    overflow: scroll;
 }
 
 .nav-user-management .user-management-header {
@@ -126,6 +125,11 @@ html {
     text-decoration: none;
     line-height: 60px;
     background-color: rgba(0, 0, 0, 0);
+}
+
+.nav-user-management .rental-car-container {
+    overflow: auto;
+    height: 236px;
 }
 
 .nav-user-management .rental-car-img img{
@@ -169,6 +173,7 @@ html {
     background-color: #f03333;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .rental-car-box .rental-car-delete:hover {
@@ -464,6 +469,7 @@ html {
 }
 
 #container-body .category-select-header {
+    font-size: 18px;
     display: block;
     padding-bottom: 6px;
     cursor: pointer;
@@ -508,10 +514,6 @@ html {
 
 #container-body .fa-sort-up.open {
     display: inline-block;
-}
-
-#container-body .category-select-header {
-    font-size: 16px;
 }
 
 #container-body .category-search-btn {

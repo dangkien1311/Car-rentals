@@ -16,21 +16,21 @@
                 }
                 for( $i = 0; $i < count($product);$i++){
                         echo '
-                        <div class="rental-car-box">
-                            <div class="rental-car-img">
-                                <img src="'.$product[$i]['CarIMG'].'" alt="">
-                            </div>
-                            <div class="rental-car-information">
-                                <span class="rental-car-brand">'.$product[$i]['Name'].'</span>
-                                <br>
-                                <span class="rental-car-about">Điểm nhận: '.$product[$i]['puPlace'].'</span>
-                                <br>
-                                <span class="rental-car-about">Điểm trả: '.$product[$i]['doPlace'].'</span>
-                                <br>
-                                <span class="rental-car-about">Thuê từ : '.$product[$i]['dateFrom'].' đến : '.$product[$i]['dateTo'].'</span>
-                            </div>
-                            <a href="main.php?del_product='.$product[$i]['bookingID'].'" class="rental-car-delete" >Xóa</a>
-                        </div>';
+                            <div class="rental-car-box">
+                                <div class="rental-car-img">
+                                    <img src="'.$product[$i]['CarIMG'].'" alt="">
+                                </div>
+                                <div class="rental-car-information">
+                                    <span class="rental-car-brand">'.$product[$i]['Name'].'</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm nhận: '.$product[$i]['puPlace'].'</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm trả: '.$product[$i]['doPlace'].'</span>
+                                    <br>
+                                    <span class="rental-car-about">Thuê từ : '.$product[$i]['dateFrom'].' đến : '.$product[$i]['dateTo'].'</span>
+                                </div>
+                                <a href="main.php?del_product='.$product[$i]['bookingID'].'" class="rental-car-delete" >Xóa</a>
+                            </div>';
                 }
                 if(isset($_GET['del_product'])){
                     $deliteam = $_GET['del_product'];

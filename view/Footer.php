@@ -19,7 +19,7 @@
         const hotline = document.querySelector('.js-hotline-btn')
         var loginPassword = document.getElementById("user-management-password")
         var registerPassword = document.getElementById("register-password")
-        var slider = document.getElementById("slider")
+        var container = document.getElementById("container")
         var header = document.getElementById("header")
         const typesOfCars = document.querySelector('.js-types-of-cars')
         const typesOfCarsBox = document.querySelector('.js-types-of-cars-box')
@@ -66,7 +66,7 @@
             }
         }
 
-        slider.addEventListener('click', function () {
+        container.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
                 login.style.color = '#000'

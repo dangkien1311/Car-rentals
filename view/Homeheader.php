@@ -34,10 +34,12 @@
                     </button>
                     <form action ="" method ="POST" class="nav-user-management js-nav-user-management">
                         <header class="user-management-header">Các lượt xe bạn thuê:</header>
-                        <?php
-                            include '../controller/PaymentDetail.php';
-                            new  PaymentDetails();
-                        ?>
+                        <div class="rental-car-container">
+                            <?php
+                                include '../controller/PaymentDetail.php';
+                                new  PaymentDetails();
+                            ?>
+                        </div>
                         <div class="rental-car-total-amount">
                             <span class="total-amount">Tổng số tiền: <?php echo $_SESSION['totalamount'];?> vnd/ngày</span>
                             <button name="comfirmButton" type = "submit" class="rental-car-accept">Xác nhận</button>

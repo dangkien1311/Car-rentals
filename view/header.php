@@ -105,7 +105,7 @@
             </div>
 
             <header class="register-header">
-                Tham gia dịch vụ thuê xe giá đắt
+                Tham gia dịch vụ thuê xe giá rẻ
             </header>
             <div class="register-content">
                 <div class="register-introduce">
@@ -167,7 +167,7 @@
                         <i class="fa-solid fa-key"></i>
                         Mật khẩu
                     </label>
-                    <input id="register-password" name = "pass_data" type="text" required class="register-frame-input" placeholder="Mật khẩu">
+                    <input id="register-password" name = "pass_data" type="password" required class="register-frame-input" placeholder="Mật khẩu">
                     <i class="fa-solid fa-eye js-register-fa-eye" onclick="showHideRegisterPassword()" style="margin-left: -30px; cursor: pointer;"></i>
                     <i class="fa-solid fa-eye-slash js-register-fa-eye-slash" onclick="showHideRegisterPassword()" style="margin-left: -30px; cursor: pointer;"></i>
                     <p class="about">Bằng việc đăng nhập hoặc đăng ký tài khoản, bạn đồng ý với Điều Khoản & Điều Kiện và Thông báo về Quyền riêng tư.</p>
