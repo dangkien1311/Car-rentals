@@ -126,7 +126,6 @@
                                                     <p  class="book" >Vui lòng đăng nhập để đặt xe</p>
                                                 </div>
                                             </div>';
-                                        
                                     }
                             }  
                     }
