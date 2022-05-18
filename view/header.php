@@ -18,9 +18,9 @@
     ?>
     <div id="wrapper">
         <div id="header">
-            <div id="logo">
+            <a href="../controller/index.php" id="logo">
                 <img src="../view/assets/img/logoCar.png" alt="" width="80px">
-            </div>
+            </a>
 
             <ul id="nav">
                 <li class="user-management">
