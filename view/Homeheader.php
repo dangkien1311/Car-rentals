@@ -71,7 +71,7 @@
                         <button class="user-information-btn js-user-information-btn">
                             Thông tin tài khoản của tôi
                         </button>
-                        <a href="./index.php" class="logout">
+                        <a href="../controller/logout.php" class="logout">
                             Đăng xuất
                         </a>
                     </div>
