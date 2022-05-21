@@ -14,12 +14,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../view/assets/css/result.css">
     <link rel="stylesheet" href="../view/assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../view/assets/CarSort.js"></script>
 </head>
 <body>
     <?php
-        include '../model/controller.php';
-        include '../model/model.php';
         session_start();
+        include '../model/controller.php';
+        // include '../model/model.php';
+        include '../controller/PaymentDetail.php';
+        include '../controller/CarList.php';
     ?>
     <div id="wrapper">
         <div id="header">
@@ -36,7 +40,6 @@
                         <header class="user-management-header">Các lượt xe bạn thuê:</header>
                         <div class="rental-car-container">
                             <?php
-                                include '../controller/PaymentDetail.php';
                                 new  PaymentDetails();
                             ?>
                         </div>

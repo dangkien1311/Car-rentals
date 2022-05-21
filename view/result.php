@@ -82,19 +82,19 @@
                 </label>
                 <div class="category-select-box js-types-of-cars-box">
                     <label class="category-select">
-                        <input type="checkbox" name = "CarBrand[]" value = "Hyundai">
+                        <input type="radio" name = "CarBrand" value = "Hyundai" class = "ProductDetail Brand">
                         Xe Hyundai
                     </label>
                     <label class="category-select">
-                        <input type="checkbox" name = "CarBrand[]" value = "BMW">
+                        <input type="radio" name = "CarBrand" value = "BMW" class = "ProductDetail Brand">
                         Xe BMW
                     </label>
                     <label class="category-select">
-                        <input type="checkbox" name = "CarBrand[]" value = "Audi">
+                        <input type="radio" name = "CarBrand" value = "Audi" class = "ProductDetail Brand">
                         Xe Audi
                     </label>
                     <label class="category-select">
-                        <input type="checkbox" name = "CarBrand[]" value= "Mercedes">
+                        <input type="radio" name = "CarBrand" value= "Mercedes" class = "ProductDetail Brand">
                         Xe Mercedes
                     </label>
                 </div>
@@ -105,36 +105,62 @@
                 </label>
                 <div class="category-select-box js-price-range-box">
                     <label class="category-select">
-                        <input type="checkbox" name = "Price[]" value = "1" onclick="onlyOne(this)">
+                        <input type="radio" name = "Price" value = "1" onclick="onlyOne(this)" class = "ProductDetail Price">
                         Từ 1.000.000 - 2.000.000 vnd
                     </label>
                     <label class="category-select">
-                        <input type="checkbox" name = "Price[]" value = "2" onclick="onlyOne(this)">
+                        <input type="radio" name = "Price" value = "2" onclick="onlyOne(this)" class = "ProductDetail Price">
                         Từ 2.000.000 - 3.000.000 vnd
                     </label>
                     <label class="category-select">
-                        <input type="checkbox" name = "Price[]" value = "3" onclick="onlyOne(this)">
+                        <input type="radio" name = "Price" value = "3" onclick="onlyOne(this)" class = "ProductDetail Price">
                         Từ 3.000.000 - 4.000.000 vnd
                     </label>
                     <label class="category-select">
-                        <input type="checkbox" name = "Price[]" value = "4" onclick="onlyOne(this)">
+                        <input type="radio" name = "Price" value = "4" onclick="onlyOne(this)" class = "ProductDetail Price">
                         Trên 4.000.000 vnd
                     </label>
                 </div> 
-                <button name = "CarType" type="submit" class="category-search-btn">
+                <!-- <button name = "CarType" type="submit" class="category-search-btn">
                     Tìm kiếm
-                </button>
+                </button> -->
             </form>
-            <form  action = ""  method = "POST" class="list-car">
+            <div class="list-car">
                 <header class="list-car-header"></header>
-                <div class="list-car-body">
+                <div class="list-car-body CarResult">
                     <?php
-                        include '../controller/CarList.php';
-                        new CarList();
-                        
+                         $product = $conn->getArray('carcategory');
+                         for( $i = 0; $i < count($product);$i++) {
+                            $EachCarPrice = number_format((float)$product[$i]['dailyHireRate'] * 1000000,0,'','.');
+                            echo'<div class="list-car-select">
+                                    <img src="'.$product[$i]['CarIMG'].'" alt="" class="car-img">
+                                    <div class="car-information">
+                                        <div class="car-brand">'.$product[$i]['Name'].'</div>
+                                        <p for="" class="reg-number">Biển số xe: '.$product[$i]['regNumber'].'</p>
+                                        <label for="" class="car-seat">
+                                            <i class="fa-solid fa-people-group"></i>
+                                            '.$product[$i]['Seat'].' chỗ ngồi
+                                        </label>
+                                        <label for="" class="package">
+                                            <i class="fa-solid fa-suitcase"></i>
+                                            '.$product[$i]['Capacity'].' hành lí
+                                        </label>
+                                        <br>
+                                        <label for="" class="car-gearbox">
+                                            <i class="fa-solid fa-gears"></i>
+                                            '.$product[$i]['Model'].'
+                                        </label>
+                                        <label for="" class="car-gearbox">
+                                            <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                                            Giá thuê xe(theo ngày): '.$EachCarPrice.' vnd
+                                        </label>
+                                        <a href="" class="book" >Vui lòng đăng nhập để đặt xe</a>
+                                    </div>
+                                </div>';
+                        }
                     ?> 
                 </div>
-            </form>
+            </div>
         </div>    
     </div>    
 

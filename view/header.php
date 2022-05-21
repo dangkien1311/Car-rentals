@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../view/assets/css/styles.css">
     <link rel="stylesheet" href="../view/assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../view/assets/CarSort.js"></script>
 </head>
 <body>
     <?php
+        session_start();
        include "../model//controller.php";
        include "../controller/login.php";
-       include "../model//model.php";
-       session_start();
+    //    include "../model//model.php";
+       include '../controller/CarList.php';
     ?>
     <div id="wrapper">
         <div id="header">
