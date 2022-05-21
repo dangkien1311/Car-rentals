@@ -23,9 +23,9 @@
     ?>
     <div id="wrapper">
         <div id="header">
-            <div id="logo">
+            <a href="../controller/main.php" id="logo">
                 <img src="../view/assets/img/logoCar.png" alt="" width="80px">
-            </div>
+            </a>
             <ul id="nav">
                 <li class="user-management">
                     <button class="user-management-btn js-user-management-btn" onclick="showHideUserManagement()">
@@ -71,7 +71,7 @@
                         <button class="user-information-btn js-user-information-btn">
                             Thông tin tài khoản của tôi
                         </button>
-                        <a href="./index.php" class="logout">
+                        <a href="../controller/logout.php" class="logout">
                             Đăng xuất
                         </a>
                     </div>

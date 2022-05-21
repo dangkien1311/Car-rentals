@@ -243,6 +243,13 @@
             priceRangeUp.classList.remove('open')
         }
     })
+
+    function onlyOne(checkbox) {
+            var checkboxes = document.getElementsByName('Price[]')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false
+            })
+        }
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>

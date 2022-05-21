@@ -1,0 +1,75 @@
+CREATE DATABASE carrental;
+
+CREATE TABLE accountmanager(
+	customerID INT(50) not null AUTO_INCREMENT,
+	citizenID INT(12) not null,
+	username INT(10) not null,
+    	password VARCHAR(60) not null,
+    	PRIMARY KEY(customerID)
+);
+
+CREATE TABLE booking(
+	bookingID INT(11) not null AUTO_INCREMENT,
+    customerID INT(50) not null ,
+    dateFrom datetime,
+    dateTo datetime,
+    carCategoryID INT(11) not null,
+    puPlace VARCHAR(100),
+    doPlace VARCHAR(100),
+	Quantity INT(11),
+    PRIMARY KEY(bookingID)
+);
+
+CREATE TABLE carcategory(
+	carCategoryID INT(11) not null AUTO_INCREMENT,
+    dailyHireRate VARCHAR(20),
+    Model VARCHAR(30),
+    regNumber VARCHAR(30),
+    Brand VARCHAR(20),
+	Seat INT(11),
+	Capacity INT(11),
+	Name VARCHAR(30),
+	CarIMG VARCHAR(100),
+    PRIMARY KEY(carCategoryID)
+);
+
+
+
+ALTER TABLE booking 
+ADD CONSTRAINT fk_carCategoryID FOREIGN KEY(carCategoryID) 
+REFERENCES carcategory(carCategoryID) 
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+
+ALTER TABLE booking 
+ADD CONSTRAINT fk_customerID FOREIGN KEY(customerID) 
+REFERENCES accountmanager(customerID) 
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+
+
+
+INSERT INTO carcategory (dailyHireRate, Model, regNumber, Brand, Seat, Capacity, Name, CarIMG) VALUES 
+('3','Auto','20A-12345', 'Audi', '5', '4', 'Audi A4','../view/assets/CarIMG/AudiA4.png'),
+('3.5','Auto','20B-12345', 'Audi', '5', '4', 'Audi A8','../view/assets/CarIMG/AudiA8.png'),
+('2.5','Auto','20C-12345', 'Audi', '5', '4', 'Audi Q3', '../view/assets/CarIMG/AudiQ3.png'),
+('4','Auto','20D-12345', 'Audi', '5', '4', 'Audi TT', '../view/assets/CarIMG/AudiTT.png'),
+('3','Auto','20E-12345', 'BMW', '5', '4', 'BMW X1','../view/assets/CarIMG/BMWX1.png'),
+('2','Auto','20F-12345', 'BMW', '5', '4', 'BMW X2', '../view/assets/CarIMG/BMWX2.png'),
+('5','Auto','20G-12345', 'BMW', '5', '4', 'BMW Z4', '../view/assets/CarIMG/BMWZ4.png'),
+('1','Auto','20H-12345', 'Hyundai', '5', '4', 'Huyndai Accent', '../view/assets/CarIMG/HyundaiAccent.png'),
+('1','Auto','20I-12345', 'Hyundai', '5', '4', 'Hyundai Solati', '../view/assets/CarIMG/HyundaiSolati.png'),
+('1.5','Auto','20K-12345', 'Hyundai', '5', '4', 'Hyundai Sonata','../view/assets/CarIMG/HyundaiSonata.png'),
+('2','Auto','20L-12345', 'Hyundai', '5', '4', 'Hyundai Starex','../view/assets/CarIMG/Hyundaistarex.png'),
+('2.5','Auto','20M-12345', 'Hyundai', '5', '4', 'Hyundai Tucson', '../view/assets/CarIMG/HyundaiTucson.png'),
+('3.5','Auto','20N-12345', 'Mercedes', '5', '4', 'Mercedes C200', '../view/assets/CarIMG/Mercedesc200.png'),
+('7','Auto','20O-12345', 'Mercedes', '5', '4', 'Mercedes G500', '../view/assets/CarIMG/Mercedesg500.png'),
+('5','Auto','20P-12345', 'Mercedes', '5', '4', 'Mercedes S450', '../view/assets/CarIMG/Mercedess450.png');
+
+
+
+
+
+
+
+
