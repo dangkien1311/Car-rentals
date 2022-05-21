@@ -126,12 +126,14 @@
                 </button>
             </form>
             <form  action = ""  method = "POST" class="list-car">
-                <header class="list-car-header">Kết quả tìm kiếm:</header>
-                <?php
-                    include '../controller/CarList.php';
-                    new CarList();
-                    
-                ?> 
+                <header class="list-car-header"></header>
+                <div class="list-car-body">
+                    <?php
+                        include '../controller/CarList.php';
+                        new CarList();
+                        
+                    ?> 
+                </div>
             </form>
         </div>    
     </div>    

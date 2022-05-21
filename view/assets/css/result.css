@@ -18,6 +18,11 @@ html {
 
 }
 
+/* #wrapper::-webkit-scrollbar {
+    background-color: rgb(255, 197, 0);
+    width: 6px;
+} */
+
 #wrapper::after {
     content: "";
     position: absolute;
@@ -477,7 +482,7 @@ html {
 
 #container-body .category-select-box {
     padding-bottom: 6px;
-    display: none;
+    display: block;
 }
 
 #container-body .category-select input{
@@ -530,12 +535,35 @@ html {
 
 #container-body .list-car {
     width: 80%;
+    
     /* overflow: auto; */
+    /* overflow-y: scroll; */
+}
+
+.list-car-body {
+    overflow-y: scroll;
+    height: 66vh;
+}
+
+.list-car-body::-webkit-scrollbar {
+    width: 6px;
+    background-color: #fff;
+} 
+
+.list-car-body::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 197, 0);
+}
+
+.list-car-body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
 }
 
 #container-body .list-car-header {
     font-size: 18px;
+    font-weight: 550;
     margin-bottom: 14px;
+    line-height: 1.6;
 }
 
 #container-body .list-car-select {
@@ -546,7 +574,7 @@ html {
 
 #container-body .list-car-select:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transform: translateY(-8px);
+    transform: translateY(-6px);
 
 }
 
@@ -556,7 +584,7 @@ html {
 }
 
 .list-car-select .car-information {
-    width: 60%;
+    width: 70%;
     margin: 6px 0 6px 20px;
 }
 
@@ -746,6 +774,65 @@ html {
     justify-content: center;
     cursor: pointer;
 }
+
+#footer {
+    background-color: #fff;
+}
+
+ #footer .footer-wrapper {
+    position: relative;
+    padding: 100px 0 20px 0;
+    text-align: center;
+    /* background-color: rgb(255, 197, 0); */
+    /* border-top: 4px solid #f5f5f5; */
+}
+
+#footer .footer-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 2px;
+    /* background-color: #000; */
+    background-color: #ccc;
+}
+
+
+#footer .footer__list{
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+#footer .footer__list .footer__list-item {
+    display: inline-block;
+    margin: 0 4px;
+    text-decoration: none;
+    color: var(--text-color)
+}
+
+#footer .footer__list .footer__list-item:hover {
+    opacity: 0.8;
+}
+
+
+
+#footer .footer__content {
+    font-size: 2rem;
+    padding: 8px;
+    
+}
+
+#footer .footer__content .footer__content-text {
+    color: var(--primary-color);
+}
+
+#footer .footer__content .footer__content-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
 
 @keyframes userManagement {
     from {
