@@ -9,7 +9,7 @@ class loginManager extends controller {
             $idcard_data = $this->model->escape_string($_POST['reg_data']);
             $password_data = $this->model->escape_string($_POST['pass_data']);
             //search username in database
-            $result = $this->model->query("select * from `accountmanager` where username = '$username_data';", true);
+            $result = $this->model->query("select * from `accountmanager` where username = '$username_data' or citizenID = '$idcard_data ';", true);
             if($result === false){ 
                 die("Failed in loginManager 1");
             }

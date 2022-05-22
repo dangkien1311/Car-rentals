@@ -76,6 +76,9 @@
     function showHideLoginFrame() {
         if (showLoginFrame.style.display == 'none') {
             showLoginFrame.style.display = 'block'
+            showHotlineFrame.style.display = 'none'
+            hotline.style.color = '#000'
+            hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             login.style.color = 'rgb(0, 96, 196)'
             login.style.backgroundColor = '#fff'
         } else {
@@ -88,6 +91,9 @@
     function showHideHotlineFrame() {
         if (showHotlineFrame.style.display == 'none') {
             showHotlineFrame.style.display = 'block'
+            showLoginFrame.style.display = 'none'
+            login.style.color = '#000'
+            login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             hotline.style.color = 'rgb(0, 96, 196)'
             hotline.style.backgroundColor = '#fff'
         } else {

@@ -1,5 +1,7 @@
 CREATE DATABASE carrental;
 
+USE carrental;
+
 CREATE TABLE accountmanager(
 	customerID INT(50) not null AUTO_INCREMENT,
 	citizenID INT(12) not null,
@@ -33,6 +35,15 @@ CREATE TABLE carcategory(
     PRIMARY KEY(carCategoryID)
 );
 
+CREATE TABLE userbookinghistory(
+	customerID INT(50) not null ,
+    dateFrom datetime,
+    dateTo datetime,
+    carCategoryID INT(11) not null,
+    puPlace VARCHAR(100),
+    doPlace VARCHAR(100),
+	bookingTime datetime
+);
 
 
 ALTER TABLE booking 
@@ -46,7 +57,10 @@ ADD CONSTRAINT fk_customerID FOREIGN KEY(customerID)
 REFERENCES accountmanager(customerID) 
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
-
+ALTER TABLE userbookinghistory
+ADD CONSTRAINT fk_customerID_userbookinghistory FOREIGN KEY(customerID) 
+REFERENCES accountmanager(customerID) 
+ON DELETE RESTRICT ON UPDATE CASCADE;
 
 
 INSERT INTO carcategory (dailyHireRate, Model, regNumber, Brand, Seat, Capacity, Name, CarIMG) VALUES 
