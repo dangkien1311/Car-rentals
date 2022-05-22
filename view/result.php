@@ -1,6 +1,6 @@
     <div id="container">
         <div id="slider">
-            <form action="" method = "get" class="content">
+            <form action="" method = "GET" class="content">
                 <?php
                     include "../controller/SearchControl.php";
                     new SearchController();
@@ -60,17 +60,7 @@
             </form>
         </div>
         <div id="container-body">
-            <form action ="<?php 
-                            if(isset($_GET['act'])) {
-                                if($_GET['act'] == 'home') {
-                                    echo '../controller/main.php';
-                                }
-                                else {
-                                    echo '../controller/index.php';
-                                }
-                            }
-                            ?>" 
-                    method = "get" class="container-body-category">
+            <form action ="" method = "get" class="container-body-category">
                 <header class="container-body-category-header">
                     <i class="fa-solid fa-filter"></i>
                     BỘ LỌC TÌM KIẾM

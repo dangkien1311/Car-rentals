@@ -28,9 +28,10 @@
         if(!$result) {
             die("<h3>No Products Found</h3>");
         } else {
-            $html = '';
+            $html = ''; 
             if(count($result) > 0) {
-                if($_SERVER['HTTP_REFERER'] == 'http://localhost/Car-rentals/controller/index.php') {
+                if(strpos($_SERVER['HTTP_REFERER'], 'index.php') !== false) {
+                    echo "<script>console.log('Debug Objects: " . $_SERVER['SCRIPT_FILENAME']. "' );</script>";
                 for( $i = 0; $i < count($result);$i++) {
                     $EachCarPrice = number_format((float)$result[$i]['dailyHireRate'] * 1000000,0,'','.');
                     $html.='<div class="list-car-select">
