@@ -121,10 +121,10 @@ class UserIformationController extends Controller{
                     }
                 }
             } else {
-                // echo "<script>alert('Số điện thoại không được để trống');
-                //             window.location.replace('index.php?act=home');
-                //             </script>";
-                header("Location: main.php");
+                echo "<script>
+                window.location.replace('main.php');
+                            </script>";
+               
             }
         //return $this->model->disconnect(); 
         }

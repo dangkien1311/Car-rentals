@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../view/assets/css/result.css">
     <link rel="stylesheet" href="../view/assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../view/assets/CarSort.js"></script>
 </head>
@@ -125,12 +126,12 @@
                 <header class="user-information-header">Thông tin chi tiết của tôi</header>
                 <div class="user-information-body">
                     <div class="user-phone-edit-box">
-                        <span class="user-information">Số điện thoại: </span>
-                        <input id="user-phone-input" type="text" name = "UserPhoneNum" class="user-information-input js-user-phone" value="" disabled>
+                        <span class="user-information">Số điện thoại: <?php echo $_SESSION['UserPhone'] ?> </span>
                         <label for="user-phone-input" class="edit-user-phone js-edit-user-phone">
                             <i class="fa-solid fa-pen js-fa-pen"></i>
                             Chỉnh sửa
                         </label>
+                        <input id="user-phone-input" type="text" name = "UserPhoneNum" class="user-information-input js-user-phone" value="" disabled>
                         <div class="user-new-phone js-user-new-phone">
                             <div class="wrapper-input">
                                 <span>Số điện thoại mới: </span>
@@ -141,7 +142,7 @@
                     </div>
 
                     <div class="user-Id-box">
-                        <span class="user-information">Thẻ căn cước: </span>
+                        <span class="user-information">Thẻ căn cước: <?php echo $_SESSION['UserIDcard'] ?> </span>
                         <input id = "user-id-input" type="text"  name = "UserIdNum" class="user-information-input" value="" disabled>
                     </div>
                     <button type = "submit" name="UserConfirm" class="accept js-accept">
