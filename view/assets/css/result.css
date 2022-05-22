@@ -6,6 +6,21 @@
 
 html {
     box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+    width: 6px;
+    background-color: #fff;
+} 
+
+html::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 197, 0);
+}
+
+html::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
 }
 
 .clear {
@@ -135,9 +150,29 @@ html {
 }
 
 .nav-user-management .rental-car-container {
-    overflow: auto;
-    height: 236px;
+    overflow-y: scroll;
+    height: 73.2%;
 }
+
+.rental-car-history-frame .rental-car-container {
+    overflow-y: scroll;
+    height: 89.2%;
+}
+
+.rental-car-container::-webkit-scrollbar {
+    width: 6px;
+    background-color: #fff;
+} 
+
+.rental-car-container::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 197, 0);
+}
+
+.rental-car-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
 
 .rental-car-img img{
     width: 100%;

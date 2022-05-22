@@ -90,18 +90,76 @@
                     </button>
                     <div class="rental-car-history-frame js-rental-car-history-frame">
                         <header class="user-management-header">Các lượt xe bạn đã thuê:</header>
-                        <div class="rental-car-box">
-                            <div class="rental-car-img">
-                                <img src="../view/assets/CarIMG/Mercedesc200.png" alt="">
+                        <div class="rental-car-container">
+                            <div class="rental-car-box">
+                                <div class="rental-car-img">
+                                    <img src="../view/assets/CarIMG/Mercedesc200.png" alt="">
+                                </div>
+                                <div class="rental-car-information">
+                                    <span class="rental-car-brand">Mercedes 200</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm nhận: Hà Nội</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm trả: Thái Bình</span>
+                                    <br>
+                                    <span class="rental-car-about">Thuê từ : 15:00 đến : 17:00</span>
+                                </div>  
                             </div>
-                            <div class="rental-car-information">
-                                <span class="rental-car-brand">Mercedes 200</span>
-                                <br>
-                                <span class="rental-car-about">Điểm nhận: Hà Nội</span>
-                                <br>
-                                <span class="rental-car-about">Điểm trả: Thái Bình</span>
-                                <br>
-                                <span class="rental-car-about">Thuê từ : 15:00 đến : 17:00</span>
+                            <div class="rental-car-box">
+                                <div class="rental-car-img">
+                                    <img src="../view/assets/CarIMG/Mercedesc200.png" alt="">
+                                </div>
+                                <div class="rental-car-information">
+                                    <span class="rental-car-brand">Mercedes 200</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm nhận: Hà Nội</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm trả: Thái Bình</span>
+                                    <br>
+                                    <span class="rental-car-about">Thuê từ : 15:00 đến : 17:00</span>
+                                </div>  
+                            </div>
+                            <div class="rental-car-box">
+                                <div class="rental-car-img">
+                                    <img src="../view/assets/CarIMG/Mercedesc200.png" alt="">
+                                </div>
+                                <div class="rental-car-information">
+                                    <span class="rental-car-brand">Mercedes 200</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm nhận: Hà Nội</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm trả: Thái Bình</span>
+                                    <br>
+                                    <span class="rental-car-about">Thuê từ : 15:00 đến : 17:00</span>
+                                </div>  
+                            </div>
+                            <div class="rental-car-box">
+                                <div class="rental-car-img">
+                                    <img src="../view/assets/CarIMG/Mercedesc200.png" alt="">
+                                </div>
+                                <div class="rental-car-information">
+                                    <span class="rental-car-brand">Mercedes 200</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm nhận: Hà Nội</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm trả: Thái Bình</span>
+                                    <br>
+                                    <span class="rental-car-about">Thuê từ : 15:00 đến : 17:00</span>
+                                </div>  
+                            </div>
+                            <div class="rental-car-box">
+                                <div class="rental-car-img">
+                                    <img src="../view/assets/CarIMG/Mercedesc200.png" alt="">
+                                </div>
+                                <div class="rental-car-information">
+                                    <span class="rental-car-brand">Mercedes 200</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm nhận: Hà Nội</span>
+                                    <br>
+                                    <span class="rental-car-about">Điểm trả: Thái Bình</span>
+                                    <br>
+                                    <span class="rental-car-about">Thuê từ : 15:00 đến : 17:00</span>
+                                </div>  
                             </div>
                             
                         </div>
