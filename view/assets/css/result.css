@@ -52,6 +52,7 @@ html {
 #header #nav {
     /* position: relative; */
     text-align: right;
+    /* display: inline-block; */
 }
 
 #nav .user-management {
@@ -116,12 +117,13 @@ html {
     z-index: 1;
 }
 
-.nav-user-management .user-management-header {
+.user-management-header {
     font-size: 16px;
     opacity: 0.8;
     padding: 8px;
 }
 
+#nav .hotline-btn,
 #nav .user-management-btn {
     color: #000;
     border: none;
@@ -137,29 +139,29 @@ html {
     height: 236px;
 }
 
-.nav-user-management .rental-car-img img{
+.rental-car-img img{
     width: 100%;
 }
 
-.nav-user-management .rental-car-img {
+.rental-car-img {
     width: 20%;
     align-items: center;
     display: flex;
     margin: 0 12px;
 }
 
-.nav-user-management .rental-car-box {
+.rental-car-box {
     display: flex;
     border: 1px solid #ccc;
     /* padding: 6px 4px; */
 }
 
-.rental-car-information .rental-car-brand {
+.rental-car-brand {
     font-size: 16px;
     font-weight: 550;
 }
 
-.rental-car-information .rental-car-about {
+.rental-car-about {
     font-size: 14px;
     opacity: 0.8;
 }
@@ -212,20 +214,18 @@ html {
     background-color: #006e3e;
 }
 
-
 #nav .hotline {
     position: relative;
 }
 
-#nav .hotline-btn {
+/* #nav .hotline-btn {
     color: #000;
     border: none;
     padding: 0 16px;
-    /* border-left: 1px solid #ccc; */
     text-decoration: none;
     line-height: 60px;
     background-color: rgba(0, 0, 0, 0);
-}
+} */
 
 #nav .hotline-header {
     font-size: 18px;
@@ -299,6 +299,46 @@ html {
     margin-bottom: 5px;
 }
 
+.login .rental-car-history {
+    position: relative;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.login .rental-car-history-frame {
+    text-align: left;
+    position: absolute;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    width: 420px;
+    display: none;
+    height: 320px;
+    /* padding: 20px; */
+    text-align: left;
+    transform-origin: top right;
+    animation: userManagement ease 0.5s;
+    z-index: 1;
+}
+
+.login .rental-car-history::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    width: 80%;
+    background-color: #ccc;
+    height: 1px;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .login .logout::before {
     content: "";
     position: absolute;
@@ -324,6 +364,7 @@ html {
     opacity: 0.8;
 }
 
+.rental-car-history:hover,
 .user-information-btn:hover,
 .logout:hover {
     color: #fff;

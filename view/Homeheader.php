@@ -48,6 +48,24 @@
                             <button name="comfirmButton" type = "submit" class="rental-car-accept">Xác nhận</button>
                         </div>
                     </form>
+                    <!-- <div class="rental-car-history">
+                        <header class="user-management-header">Các lượt xe bạn thuê:</header>
+                        <div class="rental-car-box">
+                            <div class="rental-car-img">
+                                <img src="'.$product[$i]['CarIMG'].'" alt="">
+                            </div>
+                            <div class="rental-car-information">
+                                <span class="rental-car-brand">'.$product[$i]['Name'].'</span>
+                                <br>
+                                <span class="rental-car-about">Điểm nhận: '.$product[$i]['puPlace'].'</span>
+                                <br>
+                                <span class="rental-car-about">Điểm trả: '.$product[$i]['doPlace'].'</span>
+                                <br>
+                                <span class="rental-car-about">Thuê từ : '.$product[$i]['dateFrom'].' đến : '.$product[$i]['dateTo'].'</span>
+                            </div>
+                            <a href="main.php?del_product='.$product[$i]['bookingID'].'" class="rental-car-delete" >Xóa</a>
+                        </div>
+                    </div> -->
                 </li>
                 <li class="hotline">
                     <button class="hotline-btn js-hotline-btn" onclick="showHideHotlineFrame()">
@@ -70,14 +88,37 @@
                         <i class="fa-solid fa-circle-user"></i>
                         Tài khoản của tôi
                     </button>
+                    <div class="rental-car-history-frame js-rental-car-history-frame">
+                        <header class="user-management-header">Các lượt xe bạn đã thuê:</header>
+                        <div class="rental-car-box">
+                            <div class="rental-car-img">
+                                <img src="../view/assets/CarIMG/Mercedesc200.png" alt="">
+                            </div>
+                            <div class="rental-car-information">
+                                <span class="rental-car-brand">Mercedes 200</span>
+                                <br>
+                                <span class="rental-car-about">Điểm nhận: Hà Nội</span>
+                                <br>
+                                <span class="rental-car-about">Điểm trả: Thái Bình</span>
+                                <br>
+                                <span class="rental-car-about">Thuê từ : 15:00 đến : 17:00</span>
+                            </div>
+                            
+                        </div>
+                    </div>
                     <div class="nav-user js-login">
                         <button class="user-information-btn js-user-information-btn">
                             Thông tin tài khoản của tôi
                         </button>
+                        <button class="rental-car-history js-rental-car-history">
+                            Lịch sử đặt xe 
+                        </button>
+                        
                         <a href="../controller/logout.php" class="logout">
                             Đăng xuất
                         </a>
                     </div>
+                    
                 </li>
             </ul>
         </div>
@@ -104,9 +145,6 @@
                                 <span>Số điện thoại mới: </span>
                                 <input type="text" name= "newUserPhoneNum" class="user-new-phone-input">
                             </div>
-                            <!-- <button type="submit" name="UserConfirm" class="accept-edit">
-                                Xác nhận
-                            </button> -->
                         </div>
                         <div class="clear"></div>
                     </div>

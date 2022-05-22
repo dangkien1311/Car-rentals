@@ -61,12 +61,21 @@
         const typesOfCarsUp = document.querySelector('.js-types-of-cars-up')
         const priceRangeDown = document.querySelector('.js-price-range-down')
         const priceRangeUp = document.querySelector('.js-price-range-up')
+        const rentalCarHistory = document.querySelector('.js-rental-car-history')
+        const rentalCarHistoryFrame = document.querySelector('.js-rental-car-history-frame')
 
         function showHideUserManagement() {
             if (showUserManagement.style.display == 'none') {
                 showUserManagement.style.display = 'block'
                 userManagement.style.color = 'rgb(0, 96, 196)'
                 userManagement.style.backgroundColor = '#fff'
+                showLoginFrame.style.display = 'none'
+                login.style.color = '#000'
+                login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+                showHomeHotlineFrame.style.display = 'none'
+                hotline.style.color = '#000'
+                hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+                rentalCarHistoryFrame.style.display = 'none'
             } else {
                 showUserManagement.style.display = 'none'
                 userManagement.style.color = '#000'
@@ -79,6 +88,13 @@
                 showLoginFrame.style.display = 'block'
                 login.style.color = 'rgb(0, 96, 196)'
                 login.style.backgroundColor = '#fff'
+                showUserManagement.style.display = 'none'
+                userManagement.style.color = '#000'
+                userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+                showHomeHotlineFrame.style.display = 'none'
+                hotline.style.color = '#000'
+                hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+                rentalCarHistoryFrame.style.display = 'none'
             } else {
                 showLoginFrame.style.display = 'none'
                 login.style.color = '#000'
@@ -91,13 +107,20 @@
                 showHomeHotlineFrame.style.display = 'block'
                 hotline.style.color = 'rgb(0, 96, 196)'
                 hotline.style.backgroundColor = '#fff'
+                showUserManagement.style.display = 'none'
+                userManagement.style.color = '#000'
+                userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+                showLoginFrame.style.display = 'none'
+                login.style.color = '#000'
+                login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+                rentalCarHistoryFrame.style.display = 'none'
             } else {
                 showHomeHotlineFrame.style.display = 'none'
                 hotline.style.color = '#000'
                 hotline.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         }
-
+        
         container.addEventListener('click', function () {
             if (showLoginFrame.style.display === 'block') {
                 showLoginFrame.style.display = 'none'
@@ -121,6 +144,12 @@
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'
+            }
+
+            if(rentalCarHistoryFrame.style.display === 'block') {
+                rentalCarHistoryFrame.style.display = 'none'
+                login.style.color = '#000'
+                login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         })
 
@@ -147,6 +176,12 @@
                 userManagement.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             } else {
                 showUserManagement.style.display = 'none'
+            }
+
+            if(rentalCarHistoryFrame.style.display === 'block') {
+                rentalCarHistoryFrame.style.display = 'none'
+                login.style.color = '#000'
+                login.style.backgroundColor = 'rgba(0, 0, 0, 0)'
             }
         })
 
@@ -180,9 +215,14 @@
                 event.stopPropagation()
             }
         })
+
+        rentalCarHistory.addEventListener('click', function () {
+            rentalCarHistoryFrame.style.display = 'block'
+            showLoginFrame.style.display = 'none'
+        })
             
         userInformationBtn.addEventListener('click', function () {
-        userInformationModal.classList.add('open')
+            userInformationModal.classList.add('open')
         })
 
         userInformationClose.addEventListener('click', function () {
