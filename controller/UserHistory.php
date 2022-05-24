@@ -5,7 +5,7 @@
             parent::__construct();
             $userID =  $this->model->escape_string($_SESSION['UserIDcard']);
             $customerID = $this->model->query("select customerID from `accountmanager` where citizenID = '$userID';", true);
-            $SqlHistory = $this->model->query("SELECT carcategory.CarIMG, carcategory.Name, userbookinghistory.* 
+            $SqlHistory = $this->model->query("SELECT carcategory.CarIMG, carcategory.Name, carcategory.dailyHireRate,userbookinghistory.* 
             FROM userbookinghistory
             LEFT JOIN carcategory ON userbookinghistory.carCategoryID = carcategory.carCategoryID
             WHERE userbookinghistory.customerID = '".$customerID[0]['customerID']."';", true);
@@ -25,7 +25,11 @@
                             <br>
                             <span class="rental-car-about">Điểm trả: '.$SqlHistory[$i]['doPlace'].'</span>
                             <br>
-                            <span class="rental-car-about">Thuê từ : '.$SqlHistory[$i]['dateFrom'].' đến : '.$SqlHistory[$i]['dateTo'].'</span>
+                            <span class="rental-car-about">Thuê từ : '.$SqlHistory[$i]['dateFrom'].'</span>
+                            <br>
+                            <span class="rental-car-about">Đến : '.$SqlHistory[$i]['dateTo'].'</span>
+                            <br>
+                            <span class="rental-car-about">Giá thuê: '.number_format((float)$SqlHistory[$i]['dailyHireRate'] * 1000000,0,'','.').' vnd/ngày</span>
                             <br>
                             <span class="rental-car-about">Thời gian thuê : '.$SqlHistory[$i]['bookingTime'].'</span>
                         </div>  

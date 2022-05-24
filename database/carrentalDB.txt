@@ -90,20 +90,32 @@ ON DELETE RESTRICT ON UPDATE CASCADE;
 
 
 INSERT INTO carcategory (dailyHireRate, Model, regNumber, Brand, Seat, Capacity, Name, CarIMG) VALUES 
-('3','Auto','20A-12345', 'Audi', '4', '4', 'Audi A4','../view/assets/CarIMG/AudiA4.png'),
+('2','Auto','20A-12345', 'Audi', '4', '4', 'Audi A4','../view/assets/CarIMG/AudiA4.png'),
 ('3.5','Auto','20B-12345', 'Audi', '4', '4', 'Audi A8','../view/assets/CarIMG/AudiA8.png'),
 ('2.5','Auto','20C-12345', 'Audi', '5', '4', 'Audi Q3', '../view/assets/CarIMG/AudiQ3.png'),
-('4','Auto','20D-12345', 'Audi', '2', '4', 'Audi TT', '../view/assets/CarIMG/AudiTT.png'),
+('1.5','Auto','17Q-2403', 'Audi', '5', '4', 'Audi Q2', '../view/assets/CarIMG/AudiQ2.png'),
+('4.5','Auto','17W-2403', 'Audi', '5', '4', 'Audi Q8', '../view/assets/CarIMG/AudiQ8.png'),
+('4','Auto','20D-12345', 'Audi', '2', '1', 'Audi TT', '../view/assets/CarIMG/AudiTT.png'),
 ('3','Auto','20E-12345', 'BMW', '4', '4', 'BMW X1','../view/assets/CarIMG/BMWX1.png'),
 ('2','Auto','20F-12345', 'BMW', '3', '4', 'BMW X2', '../view/assets/CarIMG/BMWX2.png'),
+('6','Auto','17E-2403', 'BMW', '7', '4', 'BMW X7', '../view/assets/CarIMG/BMWX7.png'),
+('8','Auto','17R-2403', 'BMW', '5', '4', 'BMW 750LI', '../view/assets/CarIMG/BMW750LI.png'),
+('1.5','Auto','17Y-2403', 'BMW', '5', '4', 'BMW 118I','../view/assets/CarIMG/BMW118i.png'),
 ('5','Auto','20G-12345', 'BMW', '2', '4', 'BMW Z4', '../view/assets/CarIMG/BMWZ4.png'),
 ('1','Auto','20H-12345', 'Hyundai', '5', '4', 'Huyndai Accent', '../view/assets/CarIMG/HyundaiAccent.png'),
 ('1','Auto','20I-12345', 'Hyundai', '5', '4', 'Hyundai Solati', '../view/assets/CarIMG/HyundaiSolati.png'),
 ('1.5','Auto','20K-12345', 'Hyundai', '5', '4', 'Hyundai Sonata','../view/assets/CarIMG/HyundaiSonata.png'),
 ('2','Auto','20L-12345', 'Hyundai', '5', '4', 'Hyundai Starex','../view/assets/CarIMG/Hyundaistarex.png'),
+('2','Auto','17A-2403', 'Hyundai', '7', '4', 'Hyundai Santafe', '../view/assets/CarIMG/HuyndaiSantafe.png'),
+('1.5','Auto','17B-2403', 'Hyundai', '7', '3', 'Hyundai Alcazar', '../view/assets/CarIMG/HyundaiAlcazar2022.png'),
+('1','Auto','17C-2403', 'Hyundai', '5', '3', 'Hyundai Kona', '../view/assets/CarIMG/HyundaiKona.png'),
 ('2.5','Auto','20M-12345', 'Hyundai', '5', '4', 'Hyundai Tucson', '../view/assets/CarIMG/HyundaiTucson.png'),
 ('3.5','Auto','20N-12345', 'Mercedes', '5', '4', 'Mercedes C200', '../view/assets/CarIMG/Mercedesc200.png'),
 ('7','Auto','20O-12345', 'Mercedes', '5', '4', 'Mercedes G500', '../view/assets/CarIMG/Mercedesg500.png'),
+('2','Auto','17N-2403', 'Mercedes', '5', '3', 'Mercedes GLA 250', '../view/assets/CarIMG/MercedesGla250.png'),
+('7','Auto','17K-2403', 'Mercedes', '7', '4', 'Mercedes GLS 500', '../view/assets/CarIMG/MercedesGls500.png'),
+('14','Auto','17F-2403', 'Mercedes', '5', '3', 'Mercedes Maybach S650', '../view/assets/CarIMG/MercedesMaybachS650.png'),
+('15','Auto','17T-2403', 'Mercedes', '5', '4', 'Mercedes AMG G65', '../view/assets/CarIMG/MercedesAmgG65.png'),
 ('5','Auto','20P-12345', 'Mercedes', '4', '4', 'Mercedes S450', '../view/assets/CarIMG/Mercedess450.png');
 
 

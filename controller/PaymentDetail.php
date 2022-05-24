@@ -27,7 +27,11 @@
                                     <br>
                                     <span class="rental-car-about">Điểm trả: '.$product[$i]['doPlace'].'</span>
                                     <br>
-                                    <span class="rental-car-about">Thuê từ : '.$product[$i]['dateFrom'].' đến : '.$product[$i]['dateTo'].'</span>
+                                    <span class="rental-car-about">Thuê từ : '.$product[$i]['dateFrom'].'</span>
+                                    <br>
+                                    <span class="rental-car-about">Đến : '.$product[$i]['dateTo'].'</span>
+                                    <br>
+                                    <span class="rental-car-about">Giá thuê: '.number_format((float)$product[$i]['dailyHireRate'] * 1000000,0,'','.').' vnd/ngày</span>
                                 </div>
                                 <a href="main.php?del_product='.$product[$i]['carCategoryID'].'" class="rental-car-delete" >Xóa</a>
                             </div>';
