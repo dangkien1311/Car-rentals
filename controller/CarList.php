@@ -3,8 +3,8 @@
     $conn = new database('carrental');
     if(isset($_POST['action'])){
         $sql = "SELECT * FROM carcategory WHERE NOT EXISTS (SELECT * 
-        FROM booking 
-        WHERE carcategory.carCategoryID = booking.carCategoryID)";
+        FROM bookingdetail 
+        WHERE carcategory.carCategoryID = bookingdetail .carCategoryID)";
         if(isset($_POST['brand'])) {
             $CarBrand = implode(', ', $_POST['brand']);
             $sql .= "AND Brand IN ('".$CarBrand."')";
@@ -103,22 +103,21 @@
            isset($_SESSION['dot'])){    
                $idProduct =  $conn->escape_string($_GET['id_product']);
                $ctID =  $conn->escape_string($_SESSION['UserIDcard']);
-               $result = $conn->query("select * from `booking` where carCategoryID = '$idProduct';", true);
                $customerID = $conn->query("select customerID from `accountmanager` where citizenID = '$ctID';", true);
-               if($result === false) {
-                   die("Failed in bookingmanager");
-               }
+               $result = $conn->query("select * from `usercart` where carCategoryID = '$idProduct';", true);
+            //    if($result === false) {
+            //        die("Failed in bookingmanager");
+            //    }
                if($result === NULL){
                            $data = array(
-                       'customerID' => $conn->escape_string($customerID[0]['customerID']),
+                        'customerID' => $customerID[0]['customerID'],
                        'dateFrom' =>  $_SESSION['put'],
                        'dateTo' =>  $_SESSION['dot'],
                        'carCategoryID'	=> $idProduct,
                        'puPlace'=>   $conn->escape_string($_SESSION['pup']),
                        'doPlace'=>  $conn->escape_string($_SESSION['dop']),
-                       'Quantity'=> '1'
                    );
-                   if($conn->insert('booking', $data) !== false){
+                   if($conn->insert('usercart', $data) !== false){
                        echo "<script>alert('thêm vào giỏ thành công');
                                window.location.replace('main.php');
                                </script>";
@@ -130,6 +129,10 @@
                    }
                    
                 //    echo "<script>console.log('Debug Objects: (" .gettype($_SESSION['put']). ")' );</script>";
+               } else {
+                    echo "<script>alert('xe đã tồn tại trong giỏ hàng');
+                    window.location.replace('main.php');
+                    </script>";
                }
         // echo "<script>console.log('Debug Objects: " . $_SESSION['put']. "' );</script>";
            } else {

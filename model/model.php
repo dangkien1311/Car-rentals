@@ -36,8 +36,8 @@
             if(!is_string($table)) 
                 return false;
             $sql = "SELECT * FROM `$table` WHERE NOT EXISTS (SELECT * 
-            FROM booking 
-            WHERE carcategory.carCategoryID = booking.carCategoryID);";
+            FROM bookingdetail
+            WHERE carcategory.carCategoryID = bookingdetail.carCategoryID);";
             if($result = $this->conn->query($sql)) {
                 $data = null;
                 while ($row = $result->fetch_assoc()) {
@@ -49,11 +49,11 @@
         }
 
         function getArrayDetail($userID) {
-            $sql = "SELECT dailyHireRate,Name,CarIMG,booking.*,accountmanager.citizenID
+            $sql = "SELECT dailyHireRate,Name,CarIMG,usercart.*,accountmanager.citizenID
             FROM carcategory
-            LEFT JOIN booking ON carcategory.carCategoryID = booking.carCategoryID 
-            LEFT JOIN accountmanager
-            ON booking.customerID = accountmanager.customerID
+            LEFT JOIN usercart ON carcategory.carCategoryID = usercart.carCategoryID 
+            LEFT JOIN accountmanager 
+            ON usercart.customerID = accountmanager.customerID
             WHERE accountmanager.citizenID = $userID;";
             if($result = $this->conn->query($sql)) {
                 $data = null;
@@ -66,72 +66,72 @@
         }
 
 
-        function getArrayIn($table,$col,$CarValue) {
-            if(is_array($CarValue) || !is_string($table) ||!is_string($col)) 
-                return false;
-            $CarValue = (string)$CarValue;
-            $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarValue' AND NOT EXISTS 
-            (SELECT * 
-            FROM booking 
-            WHERE carcategory.carCategoryID = booking.carCategoryID) ;";
-            if($result = $this->conn->query($sql)) {
-                $data = null;
-                while ($row = $result->fetch_assoc()) {
-                    $data[] = $row;
-                }
-                return $data;
-            } 
-            return false;
-        }
+        // function getArrayIn($table,$col,$CarValue) {
+        //     if(is_array($CarValue) || !is_string($table) ||!is_string($col)) 
+        //         return false;
+        //     $CarValue = (string)$CarValue;
+        //     $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarValue' AND NOT EXISTS 
+        //     (SELECT * 
+        //     FROM bookingdetail 
+        //     WHERE carcategory.carCategoryID = bookingdetail.carCategoryID) ;";
+        //     if($result = $this->conn->query($sql)) {
+        //         $data = null;
+        //         while ($row = $result->fetch_assoc()) {
+        //             $data[] = $row;
+        //         }
+        //         return $data;
+        //     } 
+        //     return false;
+        // }
 
-        function getArrayInPriceAndCar($table,$col,$CarName,$EPrice) {
-            if(!is_string($table) ||!is_string($col)|| is_array($CarName)) 
-                return false;
-            $CarName = (String)$CarName;
-            $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarName' AND 
-            (CASE
-                WHEN $EPrice = 1 THEN dailyHireRate BETWEEN 1 AND 2
-                WHEN $EPrice = 2 THEN dailyHireRate BETWEEN 2 AND 3
-                WHEN $EPrice = 3 THEN dailyHireRate BETWEEN 3 AND 4
-                ELSE dailyHireRate > 4
+        // function getArrayInPriceAndCar($table,$col,$CarName,$EPrice) {
+        //     if(!is_string($table) ||!is_string($col)|| is_array($CarName)) 
+        //         return false;
+        //     $CarName = (String)$CarName;
+        //     $sql = "SELECT * FROM `$table` WHERE `$col` = '$CarName' AND 
+        //     (CASE
+        //         WHEN $EPrice = 1 THEN dailyHireRate BETWEEN 1 AND 2
+        //         WHEN $EPrice = 2 THEN dailyHireRate BETWEEN 2 AND 3
+        //         WHEN $EPrice = 3 THEN dailyHireRate BETWEEN 3 AND 4
+        //         ELSE dailyHireRate > 4
                 
-            END) AND NOT EXISTS (SELECT * 
-                            FROM booking 
-                            WHERE carcategory.carCategoryID = booking.carCategoryID)
-            ORDER BY dailyHireRate ASC;";
-            if($result = $this->conn->query($sql)) {
-                $data = null;
-                while ($row = $result->fetch_assoc()) {
-                    $data[] = $row;
-                }
-                return $data;
-            } 
-            return false;
-        }
+        //     END) AND NOT EXISTS (SELECT * 
+        //                     FROM bookingdetail 
+        //                     WHERE carcategory.carCategoryID = bookingdetail.carCategoryID)
+        //     ORDER BY dailyHireRate ASC;";
+        //     if($result = $this->conn->query($sql)) {
+        //         $data = null;
+        //         while ($row = $result->fetch_assoc()) {
+        //             $data[] = $row;
+        //         }
+        //         return $data;
+        //     } 
+        //     return false;
+        // }
 
-        function getArrayInPrice($table,$EPrice) {
-            if(!is_string($table)) 
-                return false;
-            $sql = "SELECT * FROM `$table` WHERE 
-            (CASE
-                WHEN $EPrice = 1 THEN dailyHireRate BETWEEN 1 AND 2
-                WHEN $EPrice = 2 THEN dailyHireRate BETWEEN 2 AND 3
-                WHEN $EPrice = 3 THEN dailyHireRate BETWEEN 3 AND 4
-                ELSE dailyHireRate > 4
+        // function getArrayInPrice($table,$EPrice) {
+        //     if(!is_string($table)) 
+        //         return false;
+        //     $sql = "SELECT * FROM `$table` WHERE 
+        //     (CASE
+        //         WHEN $EPrice = 1 THEN dailyHireRate BETWEEN 1 AND 2
+        //         WHEN $EPrice = 2 THEN dailyHireRate BETWEEN 2 AND 3
+        //         WHEN $EPrice = 3 THEN dailyHireRate BETWEEN 3 AND 4
+        //         ELSE dailyHireRate > 4
                 
-            END)  AND NOT EXISTS (SELECT * 
-                            FROM booking 
-                            WHERE carcategory.carCategoryID = booking.carCategoryID)
-            ORDER BY dailyHireRate ASC;";
-            if($result = $this->conn->query($sql)) {
-                $data = null;
-                while ($row = $result->fetch_assoc()) {
-                    $data[] = $row;
-                }
-                return $data;
-            } 
-            return false;
-        }
+        //     END)  AND NOT EXISTS (SELECT * 
+        //                     FROM bookingdetail 
+        //                     WHERE carcategory.carCategoryID = bookingdetail.carCategoryID)
+        //     ORDER BY dailyHireRate ASC;";
+        //     if($result = $this->conn->query($sql)) {
+        //         $data = null;
+        //         while ($row = $result->fetch_assoc()) {
+        //             $data[] = $row;
+        //         }
+        //         return $data;
+        //     } 
+        //     return false;
+        // }
 
 
         function insert($table, $data) {

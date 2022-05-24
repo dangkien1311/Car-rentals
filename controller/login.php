@@ -33,7 +33,7 @@ class loginManager extends controller {
                                 </script>";
                     }
                 } else {
-                    echo "<script>alert('Tên đăng kí đã tồn tại');
+                    echo "<script>alert('Thông tin đăng kí đã tồn tại');
                                 window.location.replace('index.php');
                                 </script>";
                 }

@@ -29,12 +29,12 @@
                                     <br>
                                     <span class="rental-car-about">Thuê từ : '.$product[$i]['dateFrom'].' đến : '.$product[$i]['dateTo'].'</span>
                                 </div>
-                                <a href="main.php?del_product='.$product[$i]['bookingID'].'" class="rental-car-delete" >Xóa</a>
+                                <a href="main.php?del_product='.$product[$i]['carCategoryID'].'" class="rental-car-delete" >Xóa</a>
                             </div>';
                 }
                 if(isset($_GET['del_product'])){
                     $deliteam = $_GET['del_product'];
-                    if($this->model->delete('booking',$deliteam,'bookingID')){
+                    if($this->model->delete('usercart',$deliteam,'carCategoryID')){
                         echo "<script>alert('xóa sản phẩm thành công');
                             window.location.replace('../controller/main.php');
                             </script>";
@@ -49,32 +49,51 @@
                 if(isset($_POST['comfirmButton'])){
                     $userID =  $this->model->escape_string($_SESSION['UserIDcard']);
                     $customerID = $this->model->query("select customerID from `accountmanager` where citizenID = '$userID';", true);
-                    $booking = $this->model->query("select * from `booking` where customerID = '".$customerID[0]['customerID']."';", true);
+                    $bookingdetail = $this->model->query("select * from `usercart` where customerID = '". $customerID[0]['customerID']."';", true);
                     $IdtoString = $this->model->escape_string($customerID[0]['customerID']);
-                    $this->model->query("DELETE FROM `booking` WHERE customerID = '".$IdtoString."'");
+                    $this->model->query("DELETE FROM `usercart` WHERE customerID = '".$IdtoString."'");
                     $CurrentTime = date('Y-m-d H:i:s');
-                    // if($this->model->insert('userbookinghistory', $bookingHistory) !== false){
-                        // echo "<script>alert('".$booking[0]['bookingID']."');
-                        //         window.location.replace('main.php');
-                        //         </script>";
-                     $bookingHistory = "INSERT INTO `userbookinghistory` (`customerID`, `dateFrom`, `dateTo`,`carCategoryID`,`puPlace`,`doPlace`,`bookingTime`)
-                                            VALUES";
-                    // if(count($booking) - 1 > 0){
-                    for( $i = 0; $i < count($booking);$i++) {
-                        $bookingHistory .= "('".$IdtoString."', 
-                                            '".$booking[$i]['dateFrom']."',
-                                            '".$booking[$i]['dateTo']."',
-                                            '".$booking[$i]['carCategoryID']."',
-                                            '".$booking[$i]['puPlace']."',
-                                            '". $booking[$i]['doPlace']."',
-                                            '".$CurrentTime."'),";
-                    }
-                    // }
-                    $bookingHistory = rtrim($bookingHistory, ',');
-                    if($this->model->query($bookingHistory) != false) {
-                        echo "<script>alert('xác nhận thành công');
-                                window.location.replace('main.php');
-                                </script>";
+                    $bookingData = "INSERT INTO `booking` (`customerID`,`bookingTime`,`bookingStatus`,`paymentMethod`)
+                    VALUES ('".$IdtoString."','".$CurrentTime."','IN PROGRESS','CASH')";
+                    if($this->model->query($bookingData) != false) {
+                        $bookingIDselect = $this->model->query("select MAX(bookingID) as MAXID from `booking` where customerID = '".$customerID[0]['customerID']."';", true);
+                        // $bookingID = $this->model->escape_string($bookingIDselect);
+                        $bookingHistory = "INSERT INTO `userbookinghistory` (`customerID`, `dateFrom`, `dateTo`,`carCategoryID`,`puPlace`,`doPlace`,`bookingTime`)
+                                                VALUES";
+                        $bookingdetailData = "INSERT INTO `bookingdetail` (`bookingID`, `dateFrom`, `dateTo`,`carCategoryID`,`puPlace`,`doPlace`)
+                                                VALUES";
+                        // for( $i = 0; $i < count( $bookingdetail);$i++) {
+                        //     $bookingdetailData.= "('".$bookingID."', 
+                        //                         '".$bookingdetail[$i]['dateFrom']."',
+                        //                         '".$bookingdetail[$i]['dateTo']."',
+                        //                         '".$bookingdetail[$i]['carCategoryID']."',
+                        //                         '".$bookingdetail[$i]['puPlace']."',
+                        //                         '".$bookingdetail[$i]['doPlace']."'),";
+                        // }
+                        for( $i = 0; $i < count( $bookingdetail);$i++) {
+                            $bookingHistory .= "('".$IdtoString."',  
+                                                '".$bookingdetail[$i]['dateFrom']."',
+                                                '".$bookingdetail[$i]['dateTo']."',
+                                                '".$bookingdetail[$i]['carCategoryID']."',
+                                                '".$bookingdetail[$i]['puPlace']."',
+                                                '".$bookingdetail[$i]['doPlace']."',
+                                                '".$CurrentTime."'),";
+
+                            $bookingdetailData .= "('".$bookingIDselect[0]['MAXID']."', 
+                                                '".$bookingdetail[$i]['dateFrom']."',
+                                                '".$bookingdetail[$i]['dateTo']."',
+                                                '".$bookingdetail[$i]['carCategoryID']."',
+                                                '".$bookingdetail[$i]['puPlace']."',
+                                                '".$bookingdetail[$i]['doPlace']."'),";
+                        }
+                        $bookingHistory = rtrim($bookingHistory, ',');
+                        $bookingdetailData = rtrim($bookingdetailData, ',');
+                        if($this->model->query($bookingHistory) != false
+                            && $this->model->query($bookingdetailData) != false) {
+                            echo "<script>alert('xác nhận thành công');
+                                    window.location.replace('main.php');
+                                    </script>";
+                        }
                     }
                 }
             }

@@ -320,7 +320,7 @@ html::-webkit-scrollbar-track {
     animation: userManagement ease 0.5s;
     line-height: 1.6;
     font-size: 15px;
-    z-index: 100;
+    z-index: 1;
 }
 
 .login .user-information-btn {

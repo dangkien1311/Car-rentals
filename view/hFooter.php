@@ -23,7 +23,7 @@
             <div class="footer__content">
             <p class="footer__content-text">
                 Powered by
-                <a href="" class="footer__content-link"> Group 11</a>
+                <a href="" class="footer__content-link"> Group 18</a>
             </p>
             </div>
         </div>

@@ -13,12 +13,9 @@ CREATE TABLE accountmanager(
 CREATE TABLE booking(
 	bookingID INT(11) not null AUTO_INCREMENT,
     customerID INT(50) not null ,
-    dateFrom datetime,
-    dateTo datetime,
-    carCategoryID INT(11) not null,
-    puPlace VARCHAR(100),
-    doPlace VARCHAR(100),
-	Quantity INT(11),
+	bookingTime datetime,
+	bookingStatus VARCHAR(100),
+	paymentMethod VARCHAR(100),
     PRIMARY KEY(bookingID)
 );
 
@@ -45,10 +42,33 @@ CREATE TABLE userbookinghistory(
 	bookingTime datetime
 );
 
+CREATE TABLE bookingDetail (
+	bookingID INT(11) not null,
+	dateFrom datetime,
+    dateTo datetime,
+    carCategoryID INT(11) not null,
+    puPlace VARCHAR(100),
+    doPlace VARCHAR(100)
+);
 
-ALTER TABLE booking 
-ADD CONSTRAINT fk_carCategoryID FOREIGN KEY(carCategoryID) 
+CREATE TABLE UserCart (
+	customerID INT(50) not null ,
+	dateFrom datetime,
+    dateTo datetime,
+    carCategoryID INT(11) not null,
+    puPlace VARCHAR(100),
+    doPlace VARCHAR(100)
+);
+
+
+ALTER TABLE bookingDetail 
+ADD CONSTRAINT fk_carCategoryID_bookingDetail FOREIGN KEY(carCategoryID) 
 REFERENCES carcategory(carCategoryID) 
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE UserCart 
+ADD CONSTRAINT fk_customerID_UserCart FOREIGN KEY(customerID) 
+REFERENCES accountmanager(customerID) 
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
 
@@ -62,15 +82,21 @@ ADD CONSTRAINT fk_customerID_userbookinghistory FOREIGN KEY(customerID)
 REFERENCES accountmanager(customerID) 
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
+ALTER TABLE bookingDetail
+ADD CONSTRAINT fk_bookingID_bookingDetail FOREIGN KEY(bookingID) 
+REFERENCES booking(bookingID) 
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+
 
 INSERT INTO carcategory (dailyHireRate, Model, regNumber, Brand, Seat, Capacity, Name, CarIMG) VALUES 
-('3','Auto','20A-12345', 'Audi', '5', '4', 'Audi A4','../view/assets/CarIMG/AudiA4.png'),
-('3.5','Auto','20B-12345', 'Audi', '5', '4', 'Audi A8','../view/assets/CarIMG/AudiA8.png'),
+('3','Auto','20A-12345', 'Audi', '4', '4', 'Audi A4','../view/assets/CarIMG/AudiA4.png'),
+('3.5','Auto','20B-12345', 'Audi', '4', '4', 'Audi A8','../view/assets/CarIMG/AudiA8.png'),
 ('2.5','Auto','20C-12345', 'Audi', '5', '4', 'Audi Q3', '../view/assets/CarIMG/AudiQ3.png'),
-('4','Auto','20D-12345', 'Audi', '5', '4', 'Audi TT', '../view/assets/CarIMG/AudiTT.png'),
-('3','Auto','20E-12345', 'BMW', '5', '4', 'BMW X1','../view/assets/CarIMG/BMWX1.png'),
-('2','Auto','20F-12345', 'BMW', '5', '4', 'BMW X2', '../view/assets/CarIMG/BMWX2.png'),
-('5','Auto','20G-12345', 'BMW', '5', '4', 'BMW Z4', '../view/assets/CarIMG/BMWZ4.png'),
+('4','Auto','20D-12345', 'Audi', '2', '4', 'Audi TT', '../view/assets/CarIMG/AudiTT.png'),
+('3','Auto','20E-12345', 'BMW', '4', '4', 'BMW X1','../view/assets/CarIMG/BMWX1.png'),
+('2','Auto','20F-12345', 'BMW', '3', '4', 'BMW X2', '../view/assets/CarIMG/BMWX2.png'),
+('5','Auto','20G-12345', 'BMW', '2', '4', 'BMW Z4', '../view/assets/CarIMG/BMWZ4.png'),
 ('1','Auto','20H-12345', 'Hyundai', '5', '4', 'Huyndai Accent', '../view/assets/CarIMG/HyundaiAccent.png'),
 ('1','Auto','20I-12345', 'Hyundai', '5', '4', 'Hyundai Solati', '../view/assets/CarIMG/HyundaiSolati.png'),
 ('1.5','Auto','20K-12345', 'Hyundai', '5', '4', 'Hyundai Sonata','../view/assets/CarIMG/HyundaiSonata.png'),
@@ -78,7 +104,7 @@ INSERT INTO carcategory (dailyHireRate, Model, regNumber, Brand, Seat, Capacity,
 ('2.5','Auto','20M-12345', 'Hyundai', '5', '4', 'Hyundai Tucson', '../view/assets/CarIMG/HyundaiTucson.png'),
 ('3.5','Auto','20N-12345', 'Mercedes', '5', '4', 'Mercedes C200', '../view/assets/CarIMG/Mercedesc200.png'),
 ('7','Auto','20O-12345', 'Mercedes', '5', '4', 'Mercedes G500', '../view/assets/CarIMG/Mercedesg500.png'),
-('5','Auto','20P-12345', 'Mercedes', '5', '4', 'Mercedes S450', '../view/assets/CarIMG/Mercedess450.png');
+('5','Auto','20P-12345', 'Mercedes', '4', '4', 'Mercedes S450', '../view/assets/CarIMG/Mercedess450.png');
 
 
 
