@@ -6,4 +6,4 @@ Các thành viên gồm :
 - Đặng Trung Kiên
 - Nguyễn Công Khải
 
-![Car_rental_diagram](https://user-images.githubusercontent.com/81231986/161474048-a02fbd2a-8a69-4550-bae5-532c83fa0ccc.png)
+![carrentalDBmodel](https://user-images.githubusercontent.com/81231986/170231140-1b34bae0-3b48-4763-813f-cccba673fb58.png)
