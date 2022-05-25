@@ -29,6 +29,7 @@ CREATE TABLE carcategory(
 	Capacity INT(11),
 	Name VARCHAR(30),
 	CarIMG VARCHAR(100),
+	CarLocation VARCHAR(60),
     PRIMARY KEY(carCategoryID)
 );
 
@@ -89,34 +90,34 @@ ON DELETE RESTRICT ON UPDATE CASCADE;
 
 
 
-INSERT INTO carcategory (dailyHireRate, Model, regNumber, Brand, Seat, Capacity, Name, CarIMG) VALUES 
-('2','Auto','20A-12345', 'Audi', '4', '4', 'Audi A4','../view/assets/CarIMG/AudiA4.png'),
-('3.5','Auto','20B-12345', 'Audi', '4', '4', 'Audi A8','../view/assets/CarIMG/AudiA8.png'),
-('2.5','Auto','20C-12345', 'Audi', '5', '4', 'Audi Q3', '../view/assets/CarIMG/AudiQ3.png'),
-('1.5','Auto','17Q-2403', 'Audi', '5', '4', 'Audi Q2', '../view/assets/CarIMG/AudiQ2.png'),
-('4.5','Auto','17W-2403', 'Audi', '5', '4', 'Audi Q8', '../view/assets/CarIMG/AudiQ8.png'),
-('4','Auto','20D-12345', 'Audi', '2', '1', 'Audi TT', '../view/assets/CarIMG/AudiTT.png'),
-('3','Auto','20E-12345', 'BMW', '4', '4', 'BMW X1','../view/assets/CarIMG/BMWX1.png'),
-('2','Auto','20F-12345', 'BMW', '3', '4', 'BMW X2', '../view/assets/CarIMG/BMWX2.png'),
-('6','Auto','17E-2403', 'BMW', '7', '4', 'BMW X7', '../view/assets/CarIMG/BMWX7.png'),
-('8','Auto','17R-2403', 'BMW', '5', '4', 'BMW 750LI', '../view/assets/CarIMG/BMW750LI.png'),
-('1.5','Auto','17Y-2403', 'BMW', '5', '4', 'BMW 118I','../view/assets/CarIMG/BMW118i.png'),
-('5','Auto','20G-12345', 'BMW', '2', '4', 'BMW Z4', '../view/assets/CarIMG/BMWZ4.png'),
-('1','Auto','20H-12345', 'Hyundai', '5', '4', 'Huyndai Accent', '../view/assets/CarIMG/HyundaiAccent.png'),
-('1','Auto','20I-12345', 'Hyundai', '5', '4', 'Hyundai Solati', '../view/assets/CarIMG/HyundaiSolati.png'),
-('1.5','Auto','20K-12345', 'Hyundai', '5', '4', 'Hyundai Sonata','../view/assets/CarIMG/HyundaiSonata.png'),
-('2','Auto','20L-12345', 'Hyundai', '5', '4', 'Hyundai Starex','../view/assets/CarIMG/Hyundaistarex.png'),
-('2','Auto','17A-2403', 'Hyundai', '7', '4', 'Hyundai Santafe', '../view/assets/CarIMG/HuyndaiSantafe.png'),
-('1.5','Auto','17B-2403', 'Hyundai', '7', '3', 'Hyundai Alcazar', '../view/assets/CarIMG/HyundaiAlcazar2022.png'),
-('1','Auto','17C-2403', 'Hyundai', '5', '3', 'Hyundai Kona', '../view/assets/CarIMG/HyundaiKona.png'),
-('2.5','Auto','20M-12345', 'Hyundai', '5', '4', 'Hyundai Tucson', '../view/assets/CarIMG/HyundaiTucson.png'),
-('3.5','Auto','20N-12345', 'Mercedes', '5', '4', 'Mercedes C200', '../view/assets/CarIMG/Mercedesc200.png'),
-('7','Auto','20O-12345', 'Mercedes', '5', '4', 'Mercedes G500', '../view/assets/CarIMG/Mercedesg500.png'),
-('2','Auto','17N-2403', 'Mercedes', '5', '3', 'Mercedes GLA 250', '../view/assets/CarIMG/MercedesGla250.png'),
-('7','Auto','17K-2403', 'Mercedes', '7', '4', 'Mercedes GLS 500', '../view/assets/CarIMG/MercedesGls500.png'),
-('14','Auto','17F-2403', 'Mercedes', '5', '3', 'Mercedes Maybach S650', '../view/assets/CarIMG/MercedesMaybachS650.png'),
-('15','Auto','17T-2403', 'Mercedes', '5', '4', 'Mercedes AMG G65', '../view/assets/CarIMG/MercedesAmgG65.png'),
-('5','Auto','20P-12345', 'Mercedes', '4', '4', 'Mercedes S450', '../view/assets/CarIMG/Mercedess450.png');
+INSERT INTO carcategory (dailyHireRate, Model, regNumber, Brand, Seat, Capacity, Name, CarIMG,CarLocation) VALUES 
+('1.7','Auto','30A-12345', 'Audi', '4', '4', 'Audi A4','../view/assets/CarIMG/AudiA4.png','Hà Nội'),
+('5.6','Auto','30B-12345', 'Audi', '4', '4', 'Audi A8','../view/assets/CarIMG/AudiA8.png','Hà Nội'),
+('1.94','Auto','30C-12345', 'Audi', '5', '4', 'Audi Q3', '../view/assets/CarIMG/AudiQ3.png','Thái Nguyên'),
+('1.61','Auto','30Q-2403', 'Audi', '5', '4', 'Audi Q2', '../view/assets/CarIMG/AudiQ2.png','Thái Nguyên'),
+('4.5','Auto','30W-2403', 'Audi', '5', '4', 'Audi Q8', '../view/assets/CarIMG/AudiQ8.png','Thái Nguyên'),
+('2.1','Auto','30D-12345', 'Audi', '2', '1', 'Audi TT', '../view/assets/CarIMG/AudiTT.png','Thái Nguyên'),
+('1.6','Auto','30E-12345', 'BMW', '4', '4', 'BMW X1','../view/assets/CarIMG/BMWX1.png','Hà Nội'),
+('2.2','Auto','30F-12345', 'BMW', '3', '4', 'BMW X2', '../view/assets/CarIMG/BMWX2.png','Hà Nội'),
+('6.7','Auto','30E-2403', 'BMW', '7', '4', 'BMW X7', '../view/assets/CarIMG/BMWX7.png','Hà Nội'),
+('8.8','Auto','30R-2403', 'BMW', '5', '4', 'BMW 750LI', '../view/assets/CarIMG/BMW750LI.png','Hà Nội'),
+('1.1','Auto','30Y-2403', 'BMW', '5', '4', 'BMW 118I','../view/assets/CarIMG/BMW118i.png','Hà Nội'),
+('3.4','Auto','30G-12345', 'BMW', '2', '4', 'BMW Z4', '../view/assets/CarIMG/BMWZ4.png','Thái Nguyên'),
+('1','Auto','30H-12345', 'Hyundai', '5', '4', 'Huyndai Accent', '../view/assets/CarIMG/HyundaiAccent.png','Thái Nguyên'),
+('1','Auto','30I-12345', 'Hyundai', '5', '4', 'Hyundai Solati', '../view/assets/CarIMG/HyundaiSolati.png','Thái Bình'),
+('1.2','Auto','30K-12345', 'Hyundai', '5', '4', 'Hyundai Sonata','../view/assets/CarIMG/HyundaiSonata.png','Thái Bình'),
+('1.5','Auto','30L-12345', 'Hyundai', '5', '4', 'Hyundai Starex','../view/assets/CarIMG/Hyundaistarex.png','Thái Bình'),
+('21.4','Auto','30A-2403', 'Hyundai', '7', '4', 'Hyundai Santafe', '../view/assets/CarIMG/HuyndaiSantafe.png','Hà Nội'),
+('1.5','Auto','30B-2403', 'Hyundai', '7', '3', 'Hyundai Alcazar', '../view/assets/CarIMG/HyundaiAlcazar2022.png','Thái Bình'),
+('1','Auto','30C-2403', 'Hyundai', '5', '3', 'Hyundai Kona', '../view/assets/CarIMG/HyundaiKona.png','Thái Bình'),
+('2.5','Auto','30M-12345', 'Hyundai', '5', '4', 'Hyundai Tucson', '../view/assets/CarIMG/HyundaiTucson.png','Thái Bình'),
+('1.6','Auto','30N-12345', 'Mercedes', '5', '4', 'Mercedes C200', '../view/assets/CarIMG/Mercedesc200.png','Thái Nguyên'),
+('11','Auto','30O-12345', 'Mercedes', '5', '4', 'Mercedes G500', '../view/assets/CarIMG/Mercedesg500.png','Thái Bình'),
+('1.8','Auto','30N-2403', 'Mercedes', '5', '3', 'Mercedes GLA 250', '../view/assets/CarIMG/MercedesGla250.png','Thái Nguyên'),
+('7.8','Auto','30K-2403', 'Mercedes', '7', '4', 'Mercedes GLS 500', '../view/assets/CarIMG/MercedesGls500.png','Hà Nội'),
+('14','Auto','30F-2403', 'Mercedes', '5', '3', 'Mercedes Maybach S650', '../view/assets/CarIMG/MercedesMaybachS650.png','Hà Nội'),
+('15','Auto','30T-2403', 'Mercedes', '5', '4', 'Mercedes AMG G65', '../view/assets/CarIMG/MercedesAmgG65.png','Hà Nội'),
+('5.5','Auto','30P-12345', 'Mercedes', '4', '4', 'Mercedes S450', '../view/assets/CarIMG/Mercedess450.png','Hà Nội');
 
 
 

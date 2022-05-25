@@ -2,7 +2,6 @@
         <div id="slider">
             <form action="" method = "GET" class="content">
                 <?php
-                    include "../controller/SearchControl.php";
                     new SearchController();
                 ?>
                 <div class="content-select">
@@ -13,13 +12,8 @@
                         <select name="pu" id="pu" required>
                             <option value="">--Điểm nhận--</option>
                             <option value="Hà Nội">Hà Nội</option>
-                            <option value="Hải Phòng">Hải Phòng</option>
-                            <option value="Quảng Ninh">Quảng Ninh</option>
-                            <option value="Ninh Bình">Ninh Bình</option>
-                            <option value="Hà Nội">Hà Nội</option>
-                            <option value="Hải Phòng">Hải Phòng</option>
-                            <option value="Quảng Ninh">Quảng Ninh</option>
-                            <option value="Ninh Bình">Ninh Bình</option>
+                            <option value="Thái Nguyên">Thái Nguyên</option>
+                            <option value="Thái Bình">Thái Bình</option>
                         </select>
                         <!-- <input id="pu-input" type="text" name = "pickUp" class="pick-up-location-input" placeholder="Địa điểm lấy xe"> -->
                     </div>
@@ -30,13 +24,8 @@
                         <select name="do" id="do" required >
                             <option value="">--Điểm trả--</option>
                             <option value="Hà Nội">Hà Nội</option>
-                            <option value="Hải Phòng">Hải Phòng</option>
-                            <option value="Quảng Ninh">Quảng Ninh</option>
-                            <option value="Ninh Bình">Ninh Bình</option>
-                            <option value="Hà Nội">Hà Nội</option>
-                            <option value="Hải Phòng">Hải Phòng</option>
-                            <option value="Quảng Ninh">Quảng Ninh</option>
-                            <option value="Ninh Bình">Ninh Bình</option>
+                            <option value="Thái Nguyên">Thái Nguyên</option>
+                            <option value="Thái Bình">Thái Bình</option>
                         </select>
                         <!-- <input id="do-input" type="text" name ="dropOff" class="drop-off-location-input" placeholder="Địa điểm trả xe"> -->
                     </div>

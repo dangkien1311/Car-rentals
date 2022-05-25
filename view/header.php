@@ -14,10 +14,11 @@
 </head>
 <body>
     <?php
-        session_start();
+        // session_start();
        include "../model//controller.php";
        include "../controller/login.php";
     //    include "../model//model.php";
+     include "../controller/SearchControl.php";
        include '../controller/CarList.php';
     ?>
     <div id="wrapper">

@@ -1,8 +1,10 @@
 <?php
     include '../model/model.php';
     $conn = new database('carrental');
+    session_start();
     if(isset($_POST['action'])){
-        $sql = "SELECT * FROM carcategory WHERE NOT EXISTS (SELECT * 
+        // $car_location = $_SESSION['pup'];
+        $sql = "SELECT * FROM carcategory WHERE  NOT EXISTS (SELECT * 
         FROM bookingdetail 
         WHERE carcategory.carCategoryID = bookingdetail .carCategoryID)";
         if(isset($_POST['brand'])) {
@@ -24,6 +26,10 @@
                 $sql .="AND dailyHireRate > 4";
             }
         }
+        if(isset($_POST['pu']) && $_POST['pu'] != null) {
+            $sql .= " AND carcategory.CarLocation = '".$_POST['pu']."'";
+        }
+        $sql .= " ORDER BY dailyHireRate ASC";
         $result = $conn->query($sql,true);
         if(!$result) {
             die("<h3>No Products Found</h3>");

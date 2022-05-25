@@ -18,6 +18,7 @@
                         $_SESSION['dop'] = $_GET['do'];
                         $_SESSION['put'] = date("Y-m-d H:i:s",strtotime($_GET['pickUpDate']));
                         $_SESSION['dot'] = date("Y-m-d H:i:s",strtotime($_GET['dropOffDate']));
+                        // echo "<script>console.log('Debug Objects: (" . $_SESSION['pup']. ")' );</script>";
                         } 
                 } else {
                     if($_SERVER['PHP_SELF'] == '/Car-rentals/controller/index.php' ) {
