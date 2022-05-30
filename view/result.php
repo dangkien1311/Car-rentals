@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="search-wrapper">
-                    <button type = "submit" name = "searchButton" class="search">tìm chuyến</button>
+                    <button type = "submit" name = "searchButton" class="search">tìm xe</button>
                 </div>
             
             </form>
