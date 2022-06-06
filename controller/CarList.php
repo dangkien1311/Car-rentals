@@ -1,6 +1,6 @@
 <?php
     include '../model/model.php';
-    $conn = new database(substr($cleardb_url["path"],1));
+    $conn = new database('heroku_df919f4b7eb8c7e');
     session_start();
     if(isset($_POST['action'])){
         // $car_location = $_SESSION['pup'];

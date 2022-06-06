@@ -8,11 +8,10 @@
         private $conn;
 
         function __construct($databaseName) {
-            $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-            $this->host =  $cleardb_url["host"];
-            $this->username = $cleardb_url["user"];
-            $this->password = $cleardb_url["pass"];
-            $this->databaseName = substr($cleardb_url["path"],1);
+            $this->host =  'us-cdbr-east-05.cleardb.net';
+            $this->username = 'b9fc16673835d5';
+            $this->password = '90fc5050';
+            $this->databaseName = 'heroku_df919f4b7eb8c7e';
             $active_group = 'default';
             $query_builder = TRUE;
             $this->connect();

@@ -4,8 +4,7 @@
 		public $model;
 
 		public function __construct(){
-			$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-			$this->model = new database(substr($cleardb_url["path"],1));
+			$this->model = new database('heroku_df919f4b7eb8c7e');
 		}
 		
 	}
