@@ -1,6 +1,6 @@
 <?php
     include '../model/model.php';
-    $conn = new database('carrental');
+    $conn = new database(substr($cleardb_url["path"],1));
     session_start();
     if(isset($_POST['action'])){
         // $car_location = $_SESSION['pup'];

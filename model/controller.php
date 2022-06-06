@@ -4,7 +4,8 @@
 		public $model;
 
 		public function __construct(){
-			$this->model = new database("carrental");
+			$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+			$this->model = new database(substr($cleardb_url["path"],1));
 		}
 		
 	}
