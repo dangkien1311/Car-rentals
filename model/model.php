@@ -1,6 +1,5 @@
 <?php 
     date_default_timezone_set('Asia/Ho_Chi_Minh');
-
     class Database {
         private $host;
         private $username;
@@ -9,14 +8,18 @@
         private $conn;
 
         function __construct($databaseName) {
-            $this->host = 'localhost';
-            $this->username = 'root';
-            $this->password = '';
-            $this->databaseName = $databaseName;
+            $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+            $this->host =  $cleardb_url["host"];
+            $this->username = $cleardb_url["user"];
+            $this->password = $cleardb_url["pass"];
+            $this->databaseName = substr($cleardb_url["path"],1);
+            $active_group = 'default';
+            $query_builder = TRUE;
             $this->connect();
 	    }
-
+        
         function connect() {
+           
             $this->conn = new mysqli($this->host, $this->username, $this->password, $this->databaseName);
             if($this->conn->connect_error){
                 die("Connection failed: " . $this->conn->connect_error);
