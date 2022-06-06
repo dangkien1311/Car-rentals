@@ -27,7 +27,7 @@
             }
         }
         if(isset($_POST['pu']) && $_POST['pu'] != null) {
-            $sql .= " AND carcategory.CarLocation = '".$_POST['pu']."'";
+            $sql .= " AND carcategory.CarLocation = '".strval($_POST['pu'])."'";
         }
         $sql .= " ORDER BY dailyHireRate ASC";
         $result = $conn->query($sql,true);
